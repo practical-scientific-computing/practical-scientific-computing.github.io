@@ -20,7 +20,18 @@
     
     <!-- MathJax JavaScript
     ================================================== -->
-    <script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- code block syntax stylesheet
+    ================================================== -->
+    <link href="css/syntax.css" rel="stylesheet">
+
   </head>
 

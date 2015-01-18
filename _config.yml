@@ -50,7 +50,7 @@ defaults: []
 
 # Markdown Processors
 maruku:
-  use_tex:    true
+  use_tex:    false
   use_divs:   false
   png_engine: blahtex
   png_dir:    images/latex
