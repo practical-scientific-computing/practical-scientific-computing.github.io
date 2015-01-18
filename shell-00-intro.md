@@ -4,8 +4,8 @@ layout: default
 group: Shell
 ---
 
-C and C++
-=========
+Unix Shells
+===========
 
 All hail Brian Fox, Paul Falstad, and Stephan Bourne.
 

@@ -4,8 +4,8 @@ layout: default
 group: Mathematica
 ---
 
-C and C++
-=========
+Mathematica
+===========
 
 All hail Stephan Wolfram.
 
