@@ -1,3 +1,4 @@
+<ul class="dropdown-menu">
 {% for node in pages_list %}
   {% if group == null or group == node.group %}
     {% if page.url == node.url %}
@@ -7,5 +8,6 @@
     {% endif %}
   {% endif %}
 {% endfor %}
+</ul>
 {% assign pages_list = nil %}
 {% assign group = nil %}
