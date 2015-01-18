@@ -13,25 +13,14 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="https://github.com/practical-scientific-computing">GitHub</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tutorials <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-header">Mathematica</li>
-                  {% assign pages_list = site.pages %}
-                  {% assign group = 'mathematica' %}
-                  {% include pages_list %}
-                <li class="divider"></li>
-                <li class="dropdown-header">Shell</li>
-                  {% assign pages_list = site.pages %}
-                  {% assign group = 'shell' %}
-                  {% include pages_list %}
-                <li class="divider"></li>
-                <li class="dropdown-header">Python</li>
-                  {% assign pages_list = site.pages %}
-                  {% assign group = 'python' %}
-                  {% include pages_list %}
-              </ul>
-            </li>
+            {% assign group = 'Mathematica' %}
+            {% include nav_dropdown %}
+            {% assign group = 'Shell' %}
+            {% include nav_dropdown %}
+            {% assign group = 'Python' %}
+            {% include nav_dropdown %}
+            {% assign group = 'C/C++' %}
+            {% include nav_dropdown %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>

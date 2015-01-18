@@ -1,7 +1,7 @@
 ---
 title: 00 - Introduction
 layout: default
-group: python
+group: Python
 ---
 
 Introduction to Python
