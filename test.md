@@ -1,6 +1,7 @@
 ---
 title: Testing Page
 layout: default
+group: testing
 ---
 
 # H1

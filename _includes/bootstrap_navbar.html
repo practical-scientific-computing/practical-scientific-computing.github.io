@@ -18,11 +18,16 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Lessons <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">Mathematica</li>
-                <li><a href="#">Mathematica 1</a></li>
+                  {% assign pages_list = site.pages %}
+                  {% assign group = 'mathematica' %}
+                  {% include pages_list %}
+                <li class="divider"></li>
+                <li class="dropdown-header">Shell</li>
+                  {% assign pages_list = site.pages %}
+                  {% assign group = 'shell' %}
+                  {% include pages_list %}
                 <li class="divider"></li>
                 <li class="dropdown-header">Python</li>
-                <li><a href="#">Shell</a></li>
-                <li><a href="#">Python</a></li>
                   {% assign pages_list = site.pages %}
                   {% assign group = 'python' %}
                   {% include pages_list %}
