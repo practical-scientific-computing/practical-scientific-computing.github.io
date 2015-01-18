@@ -23,6 +23,10 @@
                 <li class="dropdown-header">Python</li>
                 <li><a href="#">Shell</a></li>
                 <li><a href="#">Python 1</a></li>
+                  {% assign sorted_pages = site.pages | sort:"name" %}
+                  {% for node in sorted_pages %}
+                    <li><a href="{{node.url}}">{{node.title}}</a></li>
+                  {% endfor %}
               </ul>
             </li>
           </ul>
