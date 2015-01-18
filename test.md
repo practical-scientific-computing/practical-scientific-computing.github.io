@@ -50,6 +50,17 @@ $$ \int x^2 dx $$
 ## Code blocks
 
  
+
+
+{% highlight python linenos %}
+import numpy
+
+s = "Python syntax highlighting"
+print s
+
+2+2
+{% endhighlight %}
+
 ```python
 import numpy
 
