@@ -1,6 +1,7 @@
 ---
 title: Introduction to Python
 layout: default
+group: python
 ---
 
 Introduction to Python
