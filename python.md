@@ -1,3 +1,8 @@
+---
+title: Introduction to Python
+layout: default
+---
+
 Introduction to Python
 ======================
 
