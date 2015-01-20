@@ -36,7 +36,7 @@ version 3.x and later as earlier versions will eventually lose support. In these
 tutorials, we will make use of Python 3.
 
 One word of caution when writing python scripts that will be run in mixed
-environments: some systems (at the time of this wrting: RHEL/CentOS, Debian,
+environments: some systems (at the time of this writing: RHEL/CentOS, Debian,
 Ubuntu) package Python version 2.x as the default 'python' and version 3.x as
 'python3' whereas other systems (Archlinux, Gentoo, etc) package version 3.x as
 'python' and legacy versions as 'python2'. Always be aware of your programming
@@ -49,8 +49,8 @@ statements such as `from __future__ import x`.
 We encourage the use of GNU/Linux for your development environment. In this
 case, Python will likely be available in your distribution's core software
 repository. In most cases, Python will be included by default on new GNU/Linux
-installs. For special cases, see https://www.python.org/downloads/ for more
-information.
+installs. For special cases, see [the official download
+page](https://www.python.org/downloads/) for more information.
 
 #### Unix-like Systems
 The installation procedure for Python is straight-forward on most `*nix`
@@ -73,12 +73,13 @@ Python ships with its own interactive command line shell called **idle**. While
 **idle** works well, other 3rd party interpereters provide significant
 enhancements to workflow. We recommend [**IPython**](http://ipython.org)
 which supports:
- - Syntax highlighting,
- - Colorized output
- - Tab completion
- - GUI and data visualization support
- - A notebook interface that can be run in any web browser.
- - And more!
+
+ * Syntax highlighting,
+ * Colorized output
+ * Tab completion
+ * GUI and data visualization support
+ * A notebook interface that can be run in any web browser.
+ * And more!
 
 IPython is available in most GNU/Linux distribution repositories. 
 
