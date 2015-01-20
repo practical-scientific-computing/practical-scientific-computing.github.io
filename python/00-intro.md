@@ -15,8 +15,46 @@ library.
 Python has found widespread use, including in the scientific community.
 Python code can be run as interpreted scripts or built into standalone
 executables. As such, it is an invaluable tool to any aspiring scientists.
+</p>
+<hr>
+<div class="row">
+<div class="col-md-3">
+#### Core Tutorials
 
-## Getting Started
+ 1. Basic Syntax
+ 1. Core Data Structures
+ 1. Flow Control
+ 1. Functions
+ 1. Classes (Part 1)
+ 1. Classes (Part 2)
+ 1. Modules
+ 1. Packages
+ 1. Numpy
+ 1. Matplotlib
+
+#### Advanced Topics
+
+ * Lambdas
+ * Comprehensions
+ * Generators
+ * String Formatting
+ * Decorators
+ * Exception Handling
+ * Pickles
+     
+</div>
+<div class="col-md-6">
+### Workshop Format
+
+This workshop will guide you through getting started with Python. We expect
+attendees of varied familiarity with Python and programming in general. As such,
+we will start with the basics and work our way towards practical examples and
+uses of Python in research.
+
+Before we can jump in, please ensure your development environment is in order by
+having an appropriate version of Python installed on your development machine.
+These tutorials will also make use of an interactive python shell and, later,
+the IPython notebook interface.
 
 ### Python Version 3 vs. 2: Which to use?
 
@@ -32,8 +70,8 @@ in research that makes use of legacy Python code, you may need to install
 version 2.7 or earlier to use your project's existing legacy software.
 
 If your project has no legacy code restrictions, then it is encouraged to use
-version 3.x and later as earlier versions will eventually lose support. In these
-tutorials, we will make use of Python 3.
+version 3.x and later as earlier versions will eventually lose support. *In these
+tutorials, we will make use of Python 3*.
 
 One word of caution when writing python scripts that will be run in mixed
 environments: some systems (at the time of this writing: RHEL/CentOS, Debian,
@@ -46,10 +84,11 @@ statements such as `from __future__ import x`.
 
 ### Installing
 
-We encourage the use of GNU/Linux for your development environment. In this
-case, Python will likely be available in your distribution's core software
-repository. In most cases, Python will be included by default on new GNU/Linux
-installs. For special cases, see [the official download page](https://www.python.org/downloads/) for more information.
+We encourage the use of GNU/Linux for your development environment where Python
+will likely be available in your distribution's core software repository. In
+most cases, Python will be included by default on new GNU/Linux installs. For
+special cases, see the official Python 
+[download page](https://www.python.org/downloads/) for more information.
 
 #### Unix-like Systems
 The installation procedure for Python is straight-forward on most \*nix
@@ -59,19 +98,21 @@ Please consult your OS's package management system documentation as required.
 
 #### MacOS
 
-See [the official python download page](https://www.python.org/downloads/ "Python Download") for the latest Mac installer.
+See the official Python [download page](https://www.python.org/downloads/) for
+the latest Mac installer.
 
 #### Windows
 
 For these tutorials, Windows as a development environment will be unsupported.
-However, an MS installer wizard is available at [the official python download page](https://www.python.org/downloads/).
+However, an MSI-based Windows installer is available at the official Python
+[download](https://www.python.org/downloads/) page.
 
 ### Interpereters
 
 Python ships with its own interactive command line shell called **idle**. While
 **idle** works well, other 3rd party interpereters provide significant
-enhancements to workflow. We recommend [**IPython**](http://ipython.org)
-which supports:
+enhancements to workflow. We recommend and will make use of
+[**IPython**](http://ipython.org) which supports:
 
  * Syntax highlighting,
  * Colorized output
@@ -82,26 +123,4 @@ which supports:
 
 IPython is available in most GNU/Linux distribution repositories. 
 
-## Tutorials
-
- 1. Basic Syntax
- 1. Core Data Structures
- 1. Flow Control
- 1. Functions
- 1. Classes (Part 1)
- 1. Classes (Part 2)
- 1. Modules
- 1. Packages
- 1. Numpy
- 1. Matplotlib
-
-### Advanced Topics
-
- * Lambdas
- * Comprehensions
- * Generators
- * String Formatting
- * Decorators
- * Exception Handling
- * Pickles
-
+</div>
