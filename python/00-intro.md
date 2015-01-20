@@ -1,5 +1,6 @@
 ---
-title: 00 - Introduction
+title: Introduction
+order: 00
 layout: default
 group: Python
 ---
@@ -132,13 +133,13 @@ IPython is available in most GNU/Linux distribution repositories.
 </div>
 <div class="col-md-3">
 
-### Further Reading
+#### Further Reading
 
- * [Python Documentation]()
- * [IPython Documentation]()
- * [PEP8 Style Guidelines]()
- * [Google Python Style]()
- * [Matplotlib Documentation]()
+ * [Python Documentation](https://docs.python.org/3/)
+ * [IPython Documentation](http://ipython.org/ipython-doc/2/)
+ * [PEP8 Style Guidelines](https://www.python.org/dev/peps/pep-0008/)
+ * [Google Python Style](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html)
+ * [Matplotlib Documentation](http://matplotlib.org/1.4.2/contents.html)
 
 </div>
 </div>

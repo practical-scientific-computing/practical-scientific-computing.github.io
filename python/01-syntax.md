@@ -1,5 +1,6 @@
 ---
-title: 01 - Basic Syntax
+title: Basic Syntax
+order: 01
 layout: default
 group: Python
 ---

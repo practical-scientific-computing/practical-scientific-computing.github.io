@@ -1,5 +1,6 @@
 ---
-title: 02 - Data Strutures
+title: Data Strutures
+order: 02
 layout: default
 group: Python
 ---
