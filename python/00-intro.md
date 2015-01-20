@@ -130,3 +130,15 @@ enhancements to workflow. We recommend and will make use of
 IPython is available in most GNU/Linux distribution repositories. 
 
 </div>
+<div class="col-md-3">
+
+### Further Reading
+
+ * [Python Documentation]()
+ * [IPython Documentation]()
+ * [PEP8 Style Guidelines]()
+ * [Google Python Style]()
+ * [Matplotlib Documentation]()
+
+</div>
+</div>
