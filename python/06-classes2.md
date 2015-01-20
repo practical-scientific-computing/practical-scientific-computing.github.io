@@ -1,5 +1,6 @@
 ---
-title: 06 - Classes II
+title: Classes II
+order: 06
 layout: default
 group: Python
 ---

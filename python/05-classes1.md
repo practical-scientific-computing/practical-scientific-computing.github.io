@@ -1,5 +1,6 @@
 ---
-title: 05 - Classes I
+title: Classes I
+order: 05
 layout: default
 group: Python
 ---

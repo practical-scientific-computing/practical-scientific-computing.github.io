@@ -1,5 +1,6 @@
 ---
-title: 04 - Functions
+title: Functions
+order: 04
 layout: default
 group: Python
 ---

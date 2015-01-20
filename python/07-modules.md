@@ -1,5 +1,6 @@
 ---
-title: 07 - Modules
+title: Modules
+order: 07
 layout: default
 group: Python
 ---
