@@ -49,11 +49,10 @@ statements such as `from __future__ import x`.
 We encourage the use of GNU/Linux for your development environment. In this
 case, Python will likely be available in your distribution's core software
 repository. In most cases, Python will be included by default on new GNU/Linux
-installs. For special cases, see [the official download
-page](https://www.python.org/downloads/) for more information.
+installs. For special cases, see [the official download page](https://www.python.org/downloads/) for more information.
 
 #### Unix-like Systems
-The installation procedure for Python is straight-forward on most `*nix`
+The installation procedure for Python is straight-forward on most \*nix
 systems. Usually both Python version 2.x and version 3.x is available in the
 standard distribution repositories, which are the preferred installation source.
 Please consult your OS's package management system documentation as required.
