@@ -85,15 +85,30 @@ statements such as `from __future__ import x`.
 
 ### Installing
 
-For installing Python on your system, see Software Carpentry's
-[excellent guide](http://software-carpentry.org/v5/setup.html).
-
 We encourage the use of GNU/Linux for your development environment where Python
-will likely be available in the distribution's core software repository. In
-most cases, Python will be included by default on new GNU/Linux installs.
-
-For special cases, see the official Python
+will likely be available in your distribution's core software repository. In
+most cases, Python will be included by default on new GNU/Linux installs. For
+special cases, see the official Python 
 [download page](https://www.python.org/downloads/) for more information.
+
+#### Unix-like Systems
+The installation procedure for Python is straight-forward on most \*nix
+systems. Usually both Python version 2.x and version 3.x is available in the
+standard distribution repositories, which are the preferred installation source.
+Please consult your OS's package management system documentation as required.
+
+#### MacOS
+
+See the official Python [download page](https://www.python.org/downloads/) for
+the latest Mac installer.
+
+#### Windows
+
+For these tutorials, Windows as a development environment will be unsupported.
+However, an MSI-based Windows installer is available at the official Python
+[download](https://www.python.org/downloads/) page. If you must use Windows as
+development environment, consider using an all-in-one Python deployment such as
+**Anaconda**.
 
 ### Interpereters
 
