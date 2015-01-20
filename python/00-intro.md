@@ -17,16 +17,16 @@ practical examples and uses of Python in scientific research.
 <div class="col-md-3">
 #### Core Tutorials
 
- 1. Basic Syntax
- 1. Core Data Structures
- 1. Flow Control
- 1. Functions
- 1. Classes (Part 1)
- 1. Classes (Part 2)
- 1. Modules
- 1. Packages
- 1. Numpy
- 1. Matplotlib
+ 1. [Basic Syntax](01-syntax.html)
+ 1. [Core Data Structures](02-data_structures.html)
+ 1. [Flow Control](03-flow_control.html)
+ 1. [Functions](04-functions.html)
+ 1. [Classes (Part 1)](05-classes1.html)
+ 1. [Classes (Part 2)](06-classes2.html)
+ 1. [Modules](07-modules.html)
+ 1. [Packages](08-packages.html)
+ 1. [Numpy](09-numpy.html)
+ 1. [Matplotlib](10-matplotlib.html)
 
 #### Advanced Topics
 
