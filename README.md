@@ -29,7 +29,7 @@ The `layout` variable is a standard Jekyll variable naming the template used
 to render the page. See the Jekyll documentation for more information and other
 built-in variables. The `layout` is **required** to properly render a page.
 
-The case-sensitive group string is used to sort pages in the main navigation bar.
+The case-sensitive `group` string is used to sort pages in the main navigation bar.
 Only groups that are hard-coded in `_include/bootstrap_navbar.html` are included 
 in the navigation.
 
