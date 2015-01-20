@@ -4,17 +4,13 @@ layout: default
 group: Python
 ---
 
-# Introduction to Python
+# Python Workshop
 
-Created in 1991 by "benevolent dictator-for-life" Guido van Rossum, Python is a
-general-purpose dynamically-typed programming language. Python supports multiple
-paradigms including object-oriented, imperative, and procedural styles. Its
-hallmarks include great readability, simplicity, and a comprehensive standard
-library. 
+This workshop aims to help get you started using Python in your research
+projects.  We expect attendees of varied familiarity with Python and programming
+in general. As such, we will start with the basics and work our way towards
+practical examples and uses of Python in scientific research.
 
-Python has found widespread use, including in the scientific community.
-Python code can be run as interpreted scripts or built into standalone
-executables. As such, it is an invaluable tool to any aspiring scientists.
 </p>
 <hr>
 <div class="row">
@@ -44,12 +40,17 @@ executables. As such, it is an invaluable tool to any aspiring scientists.
      
 </div>
 <div class="col-md-6">
-### Workshop Format
+## Introduction
 
-This workshop will guide you through getting started with Python. We expect
-attendees of varied familiarity with Python and programming in general. As such,
-we will start with the basics and work our way towards practical examples and
-uses of Python in research.
+Created in 1991 by "benevolent dictator-for-life" Guido van Rossum, Python is a
+general-purpose dynamically-typed programming language. Python supports multiple
+paradigms including object-oriented, imperative, and procedural styles. Its
+hallmarks include great readability, simplicity, and a comprehensive standard
+library. 
+
+Python has found widespread use, especially in the scientific community.
+Python code can be run as interpreted scripts or built into standalone
+executables. As such, it is an invaluable tool for aspiring scientists to learn.
 
 Before we can jump in, please ensure your development environment is in order by
 having an appropriate version of Python installed on your development machine.
