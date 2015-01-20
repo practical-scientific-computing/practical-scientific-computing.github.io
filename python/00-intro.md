@@ -16,6 +16,7 @@ practical examples and uses of Python in scientific research.
 <hr>
 <div class="row">
 <div class="col-md-3">
+
 #### Core Tutorials
 
  1. [Basic Syntax](01-syntax.html)
@@ -41,6 +42,7 @@ practical examples and uses of Python in scientific research.
      
 </div>
 <div class="col-md-6">
+
 ## Introduction
 
 Created in 1991 by "benevolent dictator-for-life" Guido van Rossum, Python is a
