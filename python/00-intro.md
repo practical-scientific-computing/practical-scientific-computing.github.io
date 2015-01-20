@@ -20,10 +20,67 @@ executables. As such, it is an invaluable tool to any aspiring scientists.
 
 ### Python Version 3 vs. 2: Which to use?
 
+In 2008, Python underwent a schism in response to the release of version 3 which
+broke backwards-compatibility with earlier versions. For many years, migration
+to v3.x was hampered by lack of support by major 3rd party packages such as
+Numpy. Furthermore, many large-scale scientific experiments that depended on
+RHEL4 supported only older versions of Python up to version 2.6. 
+
+Today, most 3rd party packages have been updated to work with either the legacy
+v2.x and currently maintained v3.x releases. However, if you are participating
+in research that makes use of legacy Python code, you may need to install
+version 2.7 or earlier to use your project's existing legacy software.
+
+If your project has no legacy code restrictions, then it is encouraged to use
+version 3.x and later as earlier versions will eventually lose support. In these
+tutorials, we will make use of Python 3.
+
+One word of caution when writing python scripts that will be run in mixed
+environments: some systems (at the time of this wrting: RHEL/CentOS, Debian,
+Ubuntu) package Python version 2.x as the default 'python' and version 3.x as
+'python3' whereas other systems (Archlinux, Gentoo, etc) package version 3.x as
+'python' and legacy versions as 'python2'. Always be aware of your programming
+environment. If you must develop a script to work in conflicting environments,
+be sure to include version checks or overload conflicted elements using special
+statements such as `from __future__ import x`.
+
 ### Installing
+
+We encourage the use of GNU/Linux for your development environment. In this
+case, Python will likely be available in your distribution's core software
+repository. In most cases, Python will be included by default on new GNU/Linux
+installs. For special cases, see https://www.python.org/downloads/ for more
+information.
+
+#### Unix-like Systems
+The installation procedure for Python is straight-forward on most `*nix`
+systems. Usually both Python version 2.x and version 3.x is available in the
+standard distribution repositories, which are the preferred installation source.
+Please consult your OS's package management system documentation as required.
+
+#### MacOS
+
+See [the official python download page](https://www.python.org/downloads/ "Python Download") for the latest Mac installer.
+
+#### Windows
+
+For these tutorials, Windows as a development environment will be unsupported.
+However, an MS installer wizard is available at [the official python download page](https://www.python.org/downloads/).
 
 ### Interpereters
 
+Python ships with its own interactive command line shell called **idle**. While
+**idle** works well, other 3rd party interpereters provide significant
+enhancements to workflow. We recommend [**IPython**](http://ipython.org)
+which supports:
+ - Syntax highlighting,
+ - Colorized output
+ - Tab completion
+ - GUI and data visualization support
+ - A notebook interface that can be run in any web browser.
+ - And more!
+
+IPython is available in most GNU/Linux distribution repositories. 
 
 ## Tutorials
 
