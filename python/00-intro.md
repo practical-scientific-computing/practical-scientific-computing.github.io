@@ -99,8 +99,11 @@ Please consult your OS's package management system documentation as required.
 
 #### MacOS
 
-See the official Python [download page](https://www.python.org/downloads/) for
-the latest Mac installer.
+Mac OS X 10.8 comes with the latest legacy version of python (version 2.7)
+pre-installed. New Python users are encouraged to adopt non-legacy
+versions 3.x and higher. To install the latest Python 3.x, see the official
+Python [download page](https://www.python.org/downloads/) and the latest
+Python 3.x [documentation](https://docs.python.org/3/using/mac.html).
 
 #### Windows
 
