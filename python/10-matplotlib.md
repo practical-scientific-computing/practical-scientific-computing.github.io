@@ -1,6 +1,6 @@
 ---
 title: Matplotlib
-order: 10
+ordering: 10
 layout: default
 group: Python
 ---

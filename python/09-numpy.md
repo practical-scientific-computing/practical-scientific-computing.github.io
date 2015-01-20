@@ -1,6 +1,6 @@
 ---
 title: Numpy
-order: 09
+ordering: 9
 layout: default
 group: Python
 ---

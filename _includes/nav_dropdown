@@ -2,7 +2,7 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
   aria-expanded="false">{{group}} <span class="caret"></span></a>
   <ul class="dropdown-menu" role="menu">
-    {% assign pages_list = site.pages | sort:"order" %}
+    {% assign pages_list = site.pages | sort:"ordering" %}
     {% for node in pages_list %}
       {% if group == node.group %}
         {% if page.url == node.url %}

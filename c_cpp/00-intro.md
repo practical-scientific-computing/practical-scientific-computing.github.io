@@ -1,5 +1,6 @@
 ---
-title: 00 - Introduction
+title: Introduction
+ordering: 0
 layout: default
 group: C/C++
 ---
