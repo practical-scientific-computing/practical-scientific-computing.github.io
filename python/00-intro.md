@@ -6,14 +6,14 @@ group: Python
 
 # Introduction to Python
 
-Created in 1991 by "benvolent dictator-for-life" Guido van Rossum, Python is a
+Created in 1991 by "benevolent dictator-for-life" Guido van Rossum, Python is a
 general-purpose dynamically-typed programming language. Python supports multiple
 paradigms including object-oriented, imperative, and procedural styles. Its
 hallmarks include great readability, simplicity, and a comprehensive standard
 library. 
 
 Python has found widespread use, including in the scientific community.
-Python code can be run as interpereted scripts or built into standalone
+Python code can be run as interpreted scripts or built into standalone
 executables. As such, it is an invaluable tool to any aspiring scientists.
 
 ## Getting Started
@@ -45,6 +45,6 @@ executables. As such, it is an invaluable tool to any aspiring scientists.
  * Generators
  * String Formatting
  * Decorators
- * Exception Handeling
+ * Exception Handling
  * Pickles
 
