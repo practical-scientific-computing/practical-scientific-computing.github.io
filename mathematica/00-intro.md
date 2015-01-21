@@ -3,6 +3,7 @@ title: Introduction
 ordering: 0
 layout: default
 group: Mathematica
+type: index
 ---
 
 Mathematica

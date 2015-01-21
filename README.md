@@ -19,6 +19,7 @@ title: Page title string
 layout: default
 group: Group Name
 ordering: 1
+type: index
 ---
 ```
 The `title` variable is the name of the page as it would appear in a browser
@@ -46,3 +47,33 @@ The `ordering` variable is used to sort pages that appear in the navigation bar.
 If `ordering` is omitted (ie, null) then those pages appear at the bottom of the
 menu and are sorted alpha-numerically by filename.
 
+The `type` variable sets the post format and can be one of the following:
+ * index
+ * tutorial
+ * example
+ * advanced
+ * hero
+ * extra
+    
+All pages of type **index** are listed first in the dropdown navigation. They
+also will include the content of any same-group hero-type pages at full width
+above the content.
+
+All pages of type **tutorial** will be listed in the site navigation drop-downs
+and under 'Core Tutorials' in the left sidebar for all pages in the same group.
+
+All pages of type **example** will be listed in the left sidebar under the
+heading "Examples" on pages of the same group.
+
+All pages of type **advanced** will be listed in the left sidebar under the
+heading "Advanced Topics" on pages of the same group.
+
+The *content-only* of all pages of type **hero** will be inserted above the content
+of index pages in the same group. They are not intended to be true pages and
+serve only as a hack to include content on pages without using Jekyll include
+commands.
+
+The *content-only* of all pages of type **extra** will be inserted in the right
+sidebar on all pages in the same group. They are not intended to be true pages
+and serve only as a hack to include content on pages without using Jekyll
+include commands.

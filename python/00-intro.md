@@ -3,45 +3,8 @@ title: Introduction
 ordering: 0
 layout: default
 group: Python
+type: index
 ---
-
-# Python Workshop
-
-This workshop aims to help get you started using Python in your research
-projects.  We expect attendees of varied familiarity with Python and programming
-in general. As such, we will start with the basics and work our way towards
-practical examples and uses of Python in scientific research.
-
-</p>
-<hr>
-<div class="row">
-<div class="col-md-3">
-
-#### Core Tutorials
-
- 1. [Basic Syntax](01-syntax.html)
- 1. [Core Data Structures](02-data_structures.html)
- 1. [Flow Control](03-flow_control.html)
- 1. [Functions](04-functions.html)
- 1. [Classes (Part 1)](05-classes1.html)
- 1. [Classes (Part 2)](06-classes2.html)
- 1. [Modules](07-modules.html)
- 1. [Packages](08-packages.html)
- 1. [Numpy](09-numpy.html)
- 1. [Matplotlib](10-matplotlib.html)
-
-#### Advanced Topics
-
- * Lambdas
- * Comprehensions
- * Generators
- * String Formatting
- * Decorators
- * Exception Handling
- * Pickles
-     
-</div>
-<div class="col-md-6">
 
 ## Introduction
 
@@ -132,16 +95,3 @@ enhancements to workflow. We recommend and will make use of
 
 IPython is available in most GNU/Linux distribution repositories. 
 
-</div>
-<div class="col-md-3">
-
-#### Further Reading
-
- * [Python Documentation](https://docs.python.org/3/)
- * [IPython Documentation](http://ipython.org/ipython-doc/2/)
- * [PEP8 Style Guidelines](https://www.python.org/dev/peps/pep-0008/)
- * [Google Python Style](https://google-styleguide.googlecode.com/svn/trunk/pyguide.html)
- * [Matplotlib Documentation](http://matplotlib.org/1.4.2/contents.html)
-
-</div>
-</div>

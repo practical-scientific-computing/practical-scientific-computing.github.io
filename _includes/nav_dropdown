@@ -5,11 +5,25 @@
     {% assign pages_list = site.pages | sort:"ordering" %}
     {% for node in pages_list %}
       {% if group == node.group %}
+      {% if node.type == 'index' %}
         {% if page.url == node.url %}
           <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
         {% else %}
           <li><a href="{{node.url}}">{{node.title}}</a></li>
         {% endif %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    <li class="divider"></li>
+    {% for node in pages_list %}
+      {% if group == node.group %}
+      {% if node.type == 'tutorial' %}
+        {% if page.url == node.url %}
+          <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+        {% else %}
+          <li><a href="{{node.url}}">{{node.title}}</a></li>
+        {% endif %}
+      {% endif %}
       {% endif %}
     {% endfor %}
   </ul>

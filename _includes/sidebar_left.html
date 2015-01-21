@@ -1,0 +1,65 @@
+<h3> Core Tutorials </h3>
+<ol>
+    {% assign populated = 'false' %}
+    {% assign pages_list = site.pages | sort:"ordering" %}
+    {% for node in pages_list %}
+      {% if page.group == node.group %}
+        {% if node.type == 'tutorial' %}
+          {% assign populated = 'true' %}
+          {% if page.url == node.url %}
+            <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+          {% else %}
+            <li><a href="{{node.url}}">{{node.title}}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if populated == 'false' %}
+      None Posted Yet
+    {% endif %}
+    {% assign pages_list = nil %}
+</ol>
+
+<h3> Examples </h3>
+<ul>
+    {% assign populated = 'false' %}
+    {% assign pages_list = site.pages | sort:"ordering" %}
+    {% for node in pages_list %}
+      {% if page.group == node.group %}
+        {% if node.type == 'example' %}
+          {% assign populated = 'true' %}
+          {% if page.url == node.url %}
+            <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+          {% else %}
+            <li><a href="{{node.url}}">{{node.title}}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if populated == 'false' %}
+      None Posted Yet
+    {% endif %}
+    {% assign pages_list = nil %}
+</ul>
+
+<h3> Advanced Topics </h3>
+<ul>
+    {% assign populated = 'false' %}
+    {% assign pages_list = site.pages | sort:"ordering" %}
+    {% for node in pages_list %}
+      {% if page.group == node.group %}
+        {% if node.type == 'advanced' %}
+          {% assign populated = 'true' %}
+          {% if page.url == node.url %}
+            <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+          {% else %}
+            <li><a href="{{node.url}}">{{node.title}}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% if populated == 'false' %}
+      None Posted Yet
+    {% endif %}
+    {% assign pages_list = nil %}
+</ul>

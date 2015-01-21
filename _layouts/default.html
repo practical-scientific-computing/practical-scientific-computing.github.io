@@ -9,11 +9,25 @@
     {% include bootstrap_navbar.html %}
 
     <div class="container">
-
-      {{ content }}
-
+        {% for node in site.pages %}
+          {% if page.group == node.group %}
+            {% if node.type == 'hero' %}
+              {% if page.type == 'index' %}
+                <div class="row">
+                  <div class="col-md-12">
+                    {{ node.content | markdownify }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      <div class="row">
+        <div class="col-md-3">{% include sidebar_left.html %}</div>
+        <div class="col-md-6">{{ content }}</div>
+        <div class="col-md-3">{% include sidebar_right.html %}</div>
+      </div>
     </div> <!-- /container -->
-
 
   </body>
 </html>

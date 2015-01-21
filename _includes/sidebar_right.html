@@ -1,0 +1,8 @@
+{% for node in site.pages %}
+  {% if page.group == node.group %}
+    {% if node.type == 'extra' %}
+      {{ node.content | markdownify }}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
