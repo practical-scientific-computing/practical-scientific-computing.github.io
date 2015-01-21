@@ -1,12 +1,12 @@
 ---
-title: Numpy
+title: Packages
 ordering: 9
 layout: default
 group: Python
 type: tutorial
 ---
 
-# Data Analysis with Numpy
+# Packages
 
 
 

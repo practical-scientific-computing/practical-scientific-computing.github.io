@@ -1,12 +1,12 @@
 ---
-title: Modules
-ordering: 7
+title: Classes I
+ordering: 6
 layout: default
 group: Python
 type: tutorial
 ---
 
-# Modules
+# Intro to Classes 
 
 
 

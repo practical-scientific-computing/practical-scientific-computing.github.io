@@ -1,12 +1,12 @@
 ---
-title: Flow Control
-ordering: 3
+title: Basic Syntax
+ordering: 2
 layout: default
 group: Python
 type: tutorial
 ---
 
-# Flow Control and Logic
+# Basic Python Syntax
 
 
 

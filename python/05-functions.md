@@ -1,12 +1,12 @@
 ---
-title: Basic Syntax
-ordering: 1
+title: Functions
+ordering: 5
 layout: default
 group: Python
 type: tutorial
 ---
 
-# Basic Python Syntax
+# Functions
 
 
 

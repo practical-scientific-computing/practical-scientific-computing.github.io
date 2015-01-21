@@ -1,6 +1,6 @@
 ---
 title: Classes II
-ordering: 6
+ordering: 7
 layout: default
 group: Python
 type: tutorial

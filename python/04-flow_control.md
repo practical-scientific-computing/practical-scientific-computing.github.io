@@ -1,12 +1,12 @@
 ---
-title: Classes I
-ordering: 5
+title: Flow Control
+ordering: 4
 layout: default
 group: Python
 type: tutorial
 ---
 
-# Intro to Classes 
+# Flow Control and Logic
 
 
 

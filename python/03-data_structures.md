@@ -1,6 +1,6 @@
 ---
 title: Data Strutures
-ordering: 02
+ordering: 03
 layout: default
 group: Python
 type: tutorial
