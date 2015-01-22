@@ -47,15 +47,19 @@ list2 = {a, b, c, d}
 
 ## Help Menus
 
-The built-in Help in Mathematica is amazing.  If you don't know what something does or how it's used, either press F1 or use
+The built-in Help in Mathematica is amazing.  If you don't know what something does or how it's used, either press F1 or use ?
 
 ```
 ?LegendreP
 ```
 
+You can find more information by using ?? before the function
+
 ```
 ?? Plot
 ```
+
+`*` is a wildcard
 
 ```
 ?*Bessel*
