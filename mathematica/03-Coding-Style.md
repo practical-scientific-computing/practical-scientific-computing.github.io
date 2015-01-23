@@ -8,17 +8,6 @@ type: tutorial
 
 # *Mathematica* Loops and Modules
 
-## Overview
-
-
-* Scope
-* Loops
-* Module
-
-## Scope
-
-**TO DO**
-
 ## Looping methods
 
 There are many ways to impliment loops in *Mathematica*, here we will stick to the base 3 types:
