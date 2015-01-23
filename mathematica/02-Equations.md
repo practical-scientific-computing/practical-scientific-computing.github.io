@@ -28,27 +28,29 @@ equation = x^2 == y
 
 ## Solving Equations Algebraically
 
-Solve[equation, x] finds the solution to an equation, or a system of equations contained in a list {...}
+`Solve[equation, x]` finds the solution to an equation, or a system of equations contained in a list:
 
 ```
 Solve[a x^2 + b x + c == 0, x]
 Solve[{x^2 + x == 2 w, 3 x^2 - 2 == w}, {x, w}]
 ```
 
-The number of equations must be equal to the number of variables.  To reduce the equations by removing one variable, use Eliminate[{eq1, eq2}, x]
+(Note that the output of `Solve` is a list of replacement rules, not an assignment.)
+
+The number of equations must be equal to the number of variables.  To reduce the equations by removing one variable, use `Eliminate[{eq1, eq2}, x]`:
 
 ```
 Eliminate[{x^2 + x == 2 w, 3 x^2 - 2 == w}, x]
 ```
 
-For differential equations, DSolve[eq1, x[t], t] finds the general solution x[t]
-(You can use an apostrophe *in a differential equation* instead of the extraneous D[x[t], t]
+For differential equations, `DSolve[eq1, x[t], t]` finds the general solution x[t]
+(You can use an apostrophe *in a differential equation* instead of the extraneous `D[x[t], t]`
 
 ```
 DSolve[x''[t] + \[Omega]^2 x[t] == 0, x[t], t]
 ```
 
-It also works for a system of equations, just like Solve
+It also works for a system of equations, just like `Solve`:
 
 ```
 DSolve[{x''[t] + \[Omega]1^2 x[t] == 0, 
@@ -63,7 +65,7 @@ DSolve[{x''[t] + \[Omega]^2 x[t] == 0, x[0] == 1, x'[1] == 2}, x[t], t]
 
 ## Solving Equations Numerically
 
-If equations don't have an exact solution (or if it takes forever to find one), use NSolve[func[x], x].  The argument must be fully numerical (have no arbitrary parameters), except for the variable x!
+If equations don't have an exact solution (or if it takes forever to find one), use `NSolve[func[x], x]`.  The argument must be fully numerical (have no arbitrary parameters), except for the variable x!
 
 ```
 NSolve[LegendreP[20, 2, x] == 0, x]
