@@ -118,5 +118,6 @@ Zeta[2.]
 ## Exercises
 
 1. Write a module that will evaluate the Bessel function of the first kind ($J_{\alpha}$) to the m=1000 term.  Use the $\Gamma$-function (`Gamma`) defined in *Mathematica*.
+
 $$ J_{\alpha }(x)=\sum _{m=0}^{\infty } \frac{(-1)^m}{m!(\Gamma  (a+m+1)}\left(\frac{x}{2}\right)^{\alpha +2 m} $$
 
