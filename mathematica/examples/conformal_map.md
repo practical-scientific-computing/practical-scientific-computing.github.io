@@ -57,10 +57,10 @@ Be sure to play with the slider!
 
 ```
 Im[f[z^(\[Pi]/\[Beta]), v0, e0, \[Beta]]]
-Out[]= -Im[e0 z^(\[Pi]/\[Beta])] + Re[v0]
+ -Im[e0 z^(\[Pi]/\[Beta])] + Re[v0]
 
 Re[f[z^(\[Pi]/\[Beta]), v0, e0, \[Beta]]]
-Out[]= -Im[v0] - Re[e0 z^(\[Pi]/\[Beta])]
+ -Im[v0] - Re[e0 z^(\[Pi]/\[Beta])]
 
 g1 = Manipulate[
   ContourPlot [{-Im[(x + I y)^(\[Pi]/\[Beta])] + Re[10]}, {x, -5, 
