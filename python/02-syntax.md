@@ -15,11 +15,11 @@ one can construct a simple instruction:
 
 **In [1]:**
 
-{% highlight python %}
+```python
 # This is a line comment.
 5 + 2 
 6 - 3 # This is an inline comment.
-{% endhighlight %}
+```
 
 
 
