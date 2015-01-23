@@ -102,16 +102,16 @@ suffixes cannot be mixed.
 
 Math operations are intuitive. The basic math operators are:
 
-| Operator | Operation      | Syntax           | English Equivalent          | Notes                                      |
-|:--------:|:--------------:|:----------------:|:---------------------------:|:-------------------------------------------|
-| `+`      | Addition       | `a + b`          | "a plus b"                  | Overloaded for built-in types              |
-| `-`      | Subtraction    | `a - b`          | "a minus b"                 |                                            |
-| `*`      | Multiplication | `a * b`          | "a times b"                 |                                            |
-| `/`      | Division       | `a / b`          | "a divided by b"            | Floating-point True division: `3/5 == 0.6` |
-| `//`     | Floor Division | `a // b`         | "floor of (a divided by b)" | Floor division: `3/5 == 0; 5.0//2 == 2.0`  |
-| `%`      | Modulus        | `a % b`          | "a mod b"                   |                                            |
-| `**`     | Exponentiation | `a**b`           | "a to the power b"          |                                            |
-| `-`      | Negation       | `-a`             | "negative a"                | Can be used to construct negative literals |
+| Operator | &nbsp; | Operation      | &nbsp; | Syntax           | &nbsp; | English Equivalent          | &nbsp; | Notes                                      |
+|---------:| ------ |:---------------| ------ |:-----------------| ------ |:----------------------------| ------ |:-------------------------------------------|
+| `+`      | &nbsp; | Addition       | &nbsp; | `a + b`          | &nbsp; | "a plus b"                  | &nbsp; | Overloaded for built-in types              |
+| `-`      | &nbsp; | Subtraction    | &nbsp; | `a - b`          | &nbsp; | "a minus b"                 | &nbsp; |                                            |
+| `*`      | &nbsp; | Multiplication | &nbsp; | `a * b`          | &nbsp; | "a times b"                 | &nbsp; |                                            |
+| `/`      | &nbsp; | Division       | &nbsp; | `a / b`          | &nbsp; | "a divided by b"            | &nbsp; | Floating-point True division: `3/5 == 0.6` |
+| `//`     | &nbsp; | Floor Division | &nbsp; | `a // b`         | &nbsp; | "floor of (a divided by b)" | &nbsp; | Floor division: `3/5 == 0; 5.0//2 == 2.0`  |
+| `%`      | &nbsp; | Modulus        | &nbsp; | `a % b`          | &nbsp; | "a mod b"                   | &nbsp; |                                            |
+| `**`     | &nbsp; | Exponentiation | &nbsp; | `a**b`           | &nbsp; | "a to the power b"          | &nbsp; |                                            |
+| `-`      | &nbsp; | Negation       | &nbsp; | `-a`             | &nbsp; | "negative a"                | &nbsp; | Can be used to construct negative literals |
 
 Math operators in Python work as they do in pen-and-paper math: they preserve
 the most exact representation whenever possible. The can be checked using the
@@ -361,16 +361,16 @@ strings) support additional do-and-reassign operators. These can be used to
 compactify a statement. The set of all assignment operators is tabulated below.
 
 
-| Operator | &nbsp; Operation             | Syntax &nbsp; | Description                                       |
-|--------------:|:--------------------------|:----------:|:------------------------------------------------------|
-| `=`         &nbsp;  | &nbsp; Assignment                | &nbsp; `a = b`    &nbsp; | Assigns the name 'a' to the **object** 'b'            |
-| `+=`        &nbsp;  | &nbsp; Add and Reassign          | &nbsp; `a += b`   &nbsp; | Equivilent to `a = (a + b)`                           |
-| `-=`        &nbsp;  | &nbsp; Subtract and Reassign     | &nbsp; `a -= b`   &nbsp; | Equivilent to `a = (a - b)`                           |
-| `*=`        &nbsp;  | &nbsp; Multiply and Reassign     | &nbsp; `a *= b`   &nbsp; | Equivilent to `a = (a * b)`                           |
-| `/=`        &nbsp;  | &nbsp; Divide and Reassign       | &nbsp; `a /= b`   &nbsp; | Equivilent to `a = (a / b)`                           |
-| `%=`        &nbsp;  | &nbsp; Modulus and Reassign      | &nbsp; `a %= b`   &nbsp; | Equivilent to `a = (a % b)`                           |
-| `**=`       &nbsp;  | &nbsp; Exp and Reassign          | &nbsp; `a **= b`  &nbsp; | Equivilent to `a = (a**b)`                            |
-| `//=`       &nbsp;  | &nbsp; Floor Divide and Reassign | &nbsp; `a //= b`  &nbsp; | Equivilent to `a = (a // b)`                          |
+| Operator      | &nbsp; | Operation                 | &nbsp; | Syntax     | &nbsp; | Description                                           |
+|--------------:| ------ |:--------------------------| ------ |:----------:| ------ |:------------------------------------------------------|
+| `=`           | &nbsp; | Assignment                | &nbsp; | `a = b`    | &nbsp; | Assigns the name 'a' to the **object** 'b'            |
+| `+=`          | &nbsp; | Add and Reassign          | &nbsp; | `a += b`   | &nbsp; | Equivilent to `a = (a + b)`                           |
+| `-=`          | &nbsp; | Subtract and Reassign     | &nbsp; | `a -= b`   | &nbsp; | Equivilent to `a = (a - b)`                           |
+| `*=`          | &nbsp; | Multiply and Reassign     | &nbsp; | `a *= b`   | &nbsp; | Equivilent to `a = (a * b)`                           |
+| `/=`          | &nbsp; | Divide and Reassign       | &nbsp; | `a /= b`   | &nbsp; | Equivilent to `a = (a / b)`                           |
+| `%=`          | &nbsp; | Modulus and Reassign      | &nbsp; | `a %= b`   | &nbsp; | Equivilent to `a = (a % b)`                           |
+| `**=`         | &nbsp; | Exp and Reassign          | &nbsp; | `a **= b`  | &nbsp; | Equivilent to `a = (a**b)`                            |
+| `//=`         | &nbsp; | Floor Divide and Reassign | &nbsp; | `a //= b`  | &nbsp; | Equivilent to `a = (a // b)`                          |
 
 
 ## Core Data Structures
@@ -648,13 +648,43 @@ len(the_squat_rack)
 
 
 The string `the_squat_rack` is 130 characters long. We'll learn more about
-special iterable stuff when we discuss lists. Strings in Python is are objects
-(*everything* in Python is an object), and they have a number of methods
-available to simplify string operations. For those who are new to object-
-oriented programming, we'll explain methods in detail later. For now, just think
-of 'methods' as functions that are in some way bound to an object. To see what
-methods and attributes an object has associated with it, you can 'introspect'
-the object using the built-in `dir` function.
+special iterable stuff when we discuss lists.
+
+One important string operation is concatenation or joining two strings together.
+This can be done several ways. This first is just by adding them:
+
+**In [88]:**
+
+{% highlight python %}
+print(king_arthur + woman_responds)
+{% endhighlight %}
+
+    Arthur says "I am your king."Woman: 'Well I didn't vote for you.'
+
+
+Other ways include implicit joining, where if two string literals are one the
+same line, they are joined together:
+
+**In [87]:**
+
+{% highlight python %}
+'Some' "string is fishy here"
+{% endhighlight %}
+
+
+
+
+    'Somestring is fishy here'
+
+
+
+Strings in Python are objects (*everything* in Python is an object), and objects
+can have associated functions attached to them called **methods**. In the case
+of strings, these method functions simplify string-related operations. For those
+who are new to object-oriented programming, we'll explain methods in detail
+later. For now, just think of methods as functions that are in some way bound to
+an object. To see what methods and attributes an object has associated with it,
+you can 'introspect' the object using the built-in `dir` function.
 
 **In [29]:**
 
@@ -739,15 +769,28 @@ dir(long_string)
 
 
 
-There are a lot of methods in a string object. For now, don't worry about the
-stuff starting with double underscores like `__add__`: Methods named this way
-are ones that a user shouldn't ever call directly, even though you can. They are
-meant to be used internally. To use an object's method, you access it by calling
-`object_name.method_name`. We can find out more information about the string
-object's methods using the built-in `help` function. Let's look at the help for
-the `format` and `upper` methods:
+There are a lot of methods in a string object. To access an object's method, you
+write `object_name.method_name`. The methods starting with double underscores
+like `__add__` are special. Methods named this way are ones that aren't normally
+called directly, even though you can. For example, `__add__` is the method
+called when you use the `+` operator:
 
-**In [30]:**
+**In [89]:**
+
+{% highlight python %}
+print(king_arthur.__add__(woman_responds)) # We don't normally call __add__ directly, since...
+print(king_arthur + woman_responds)        #  ... __add__ is the internal name for the + operator.
+{% endhighlight %}
+
+    Arthur says "I am your king."Woman: 'Well I didn't vote for you.'
+    Arthur says "I am your king."Woman: 'Well I didn't vote for you.'
+
+
+We can find out more information about the string object's methods using the
+built-in `help` function. Let's look at the help for the `__add__`, `format` and
+`upper` methods:
+
+**In [92]:**
 
 {% highlight python %}
 help(long_string.format), help(long_string.upper)
@@ -778,14 +821,16 @@ help(long_string.format), help(long_string.upper)
 
 
 Looking at the above output, we see that `help` prints a string attached to the
-method that explains what it does and it's syntax. Notice also that the return
-value of the help function is a an instance of `None` meaning that all the help
-function does is print the method's documentation string or "docstring".
+method that explains what it does and how it does it. Notice also that the
+return value of the help function is a an instance of `None` meaning that all
+the help function does is print the method's documentation called a "docstring".
 All objects CAN have docstrings and it is good practice to include them in your
 programming. They're easy to make and greatly improve the readability of your
 code. We'll show how you can write them for your functions when we get there.
 
-So how do we call a method? A first guess might be to call:
+Notice that the docstrings show indicate that the method syntax included
+parentheses. What happens if we ommit the parentheses when trying to use a
+method?
 
 **In [31]:**
 
@@ -800,13 +845,13 @@ long_string.upper
 
 
 
-But that didn't work. A method is a kind of function, and to call a function
-requires parentheses around it's arguments. If the parentheses are omitted like
-above, Python thinks you want to manipulate the method which is itself a type of
-object. All the command above tells us that the function `upper` is, well, a
-function called "upper". No surprises here. So to call the function, we must
-wrap it's arguments with parentheses. The docstring for `string.upper` tells us
-the method takes no arguments, so to call it we write:
+That didn't do anthing because a method is a kind of function. As hinted at
+earlier, to call a function requires parentheses around it's arguments. If the
+parentheses are omitted like above, Python thinks you want to manipulate the
+method which is itself a type of object. Python tells us that the function upper
+is, well, a function called upper. No surprises here. So to call the function,
+we must wrap it's arguments with parentheses. The docstring for `string.upper`
+tells us the method takes no arguments, so to call it we write:
 
 **In [32]:**
 
@@ -824,8 +869,9 @@ long_string.upper()
 So now you can find out what methods an object has and what they do with their
 help docstrings. Some smart shells like IPython provide easy access to an
 object's methods and docstrings with tab completion. As an aside, `format` is a
-really useful string method, but it's rather advanced. We'll come to it again
-later.
+really useful string method, but it's kind of advanced to use. We'll come to it
+again later.
+
 
 ## Lists
 
@@ -837,19 +883,14 @@ square braces:
 **In [33]:**
 
 {% highlight python %}
-# An empty list
-example_list = [] 
-# Another empty list
-another_example = list() 
-# The list constructor takes an interable as it's argument.
-constructed_list = list('Some string') 
-# A list of the numbers 0-9.
-some_numbers = list(range(10)) 
-# Notice that the contents needn't be the same type.
-mixed_content_list = [1, 2.0, 'three'] 
+example_list = []                       # An empty list
+another_example = list()                # Another empty list 
+constructed_list = list('Some string')  # The list constructor takes an interable as it's argument.
+some_numbers = list(range(10))          # A list of the numbers 0-9.
+mixed_content_list = [1, 2.0, 'three']  # Notice that the contents needn't be the same type.
 
 # We can even do wild things like
-# a list inside a list inside a list inside a list!
+#   a list inside a list inside a list inside a list!
 listception = [1, 2, [3, 4, 5, [6, 7, 8, [9, 10]]]] 
   #  Notice that the dimensions of the sublists needn't
   #  be the same! This is much like a tree graph.
@@ -860,17 +901,21 @@ Let's see what we've done. Lists are iterables, so we can check a list's length:
 **In [34]:**
 
 {% highlight python %}
-(len(example_list),
- len(another_example),
- len(constructed_list),
- len(mixed_content_list),
- len(listception))
+len(example_list)
+len(another_example)
+len(constructed_list)
+len(mixed_content_list)
+len(listception)
 {% endhighlight %}
 
 
 
 
-    (0, 0, 11, 3, 3)
+    0
+    0
+    11
+    3
+    3
 
 
 
@@ -890,15 +935,17 @@ We can use iterable-aware keywords on a list:
 **In [36]:**
 
 {% highlight python %}
-(2 in mixed_content_list,
- 'two' in mixed_content_list,
- 'three' in mixed_content_list)
+2 in mixed_content_list
+'two' in mixed_content_list
+'three' in mixed_content_list
 {% endhighlight %}
 
 
 
 
-    (True, False, True)
+    True
+    False
+    True
 
 
 
@@ -919,7 +966,7 @@ print(mixed_content_list[2])
 
 This syntax is actually a means of using one those 'hidden methods' I told you
 to ignore earlier. In this case, the `[]` syntax calls an object's `__getitem__`
-method:
+method, if it has one:
 
 **In [38]:**
 
@@ -1017,34 +1064,21 @@ sort lists (and most other iterables) using their methods:
 **In [42]:**
 
 {% highlight python %}
-# Make an empty list.
-method_examples = []
+method_examples = []               # Make an empty list.
 print(method_examples)
-
-# Append something to it.
-method_examples.append('appended') 
+method_examples.append('appended') # Append something to it.
 print(method_examples)
-
-# Append something else.
-method_examples.append(4)          
+method_examples.append(4)          # Append something else.
 print(method_examples)
-
-# Insert something at index 1
-method_examples.insert(1, 'insertion') 
+method_examples.insert(1, 'insertion') # Insert something at index 1
 print(method_examples)
-
-# Pop removes the last element from the list and returns it
-popped_item = method_examples.pop()    
+popped_item = method_examples.pop()    # Pop removes the last element from the list and returns it
 print(popped_item)
 print(method_examples)
-
-# Append some new stuff to the list.
-method_examples.append(4)
-method_examples.append(2)
+method_examples.append(4)  # Append some new stuff to the list.
+method_examples.append(2)  # Rinse and repeat.
 print(method_examples)
-
-# Sort in place.
-method_examples.sort()         
+method_examples.sort()     # Sort in place.
 print(method_examples)
 
 # Remove doesn't take an index, 
@@ -1078,12 +1112,9 @@ consequences for lists as we can see below:
 **In [43]:**
 
 {% highlight python %}
-# Let's make a new list. A new object is created.
-first_list = [1, 2, 3, 4]   
-# Let's assign another name to that list.
-second_list = first_list    
-# Let's mutate the second list by reassigning an item in it.
-second_list[2] = 1          
+first_list = [1, 2, 3, 4]   # Let's make a new list. A new object is created.
+second_list = first_list    # Let's assign another name to that list.
+second_list[2] = 1          # Let's mutate the second list by reassigning an item in it.
 
 # What are the contents of 'first_list' and 'second_list' now?
 print(first_list, second_list)
@@ -1101,12 +1132,9 @@ same object. If we wish to make a copy, we must do so explicitly:
 **In [44]:**
 
 {% highlight python %}
-# We create a new object.
-first_list = [1, 2, 3, 4]       
-# We use the list ctor to make a new list from the first one.
-second_list = list(first_list)  
-# Let's mutate the second list by changing an item.
-second_list[2] = 1              
+first_list = [1, 2, 3, 4]       # We create a new object.
+second_list = list(first_list)  # We use the list ctor to make a new list from the first one.
+second_list[2] = 1              # Let's mutate the second list by changing an item.
 
 # What are the contents of 'first_list' and 'second_list' now?
 print(first_list, second_list)
@@ -1186,7 +1214,7 @@ print(three)
 
 
 We'll make use of this extensively when we get to loops. As with other
-iterables, we can access tuple elements by the getitem syntax:
+iterables, we can access tuple elements by the get-item syntax:
 
 **In [49]:**
 
@@ -1375,29 +1403,129 @@ apply to dictionary keys, but not values:
 
 ## Sets
 
-Nevermind sets. You can learn about them on your own. We've already seen the
-more useful data structures.
+Python `sets` are the last principle data structure we'll look at. Sets are
+unordered lists of *unique* elements: Unlike other data structures we've seen,
+elements cannot be repeated in a set. To ensure this, all the objects in a list
+must be *hashable*. Sets lend themselves well to operations like unions,
+intersections, differences, and symmetric difference. Sets are iterable, so are
+subject to iterable-aware keywords like `in` and `len()`. Sets are created by
+enclosing comma-separated objects in curly braces or via the `set` ctor, which
+like other data structure ctors we've seen takes an iterable as it's argument.
+Note that the difference between set construction and dictionary construction is
+the lack of the colon denoted (key : value) pairs used in dictionaries.
 
-## Comparison Testing
 
-### Comparison Operators
-| **Operator** | **Operation**               | **Syntax** | **Description** |
-|--------------|-----------------------------|------------|-------------------------------------------------------|
-| `==`         | Tests Equality              | `a == b`   | True if a is equivalent to b; False otherwise         |
-| `!=`         | Tests Inequality            | `a != b`   | True if a is inequivalent to b; False otherwise       |
-| `<>`         | Tests Inequality            | `a <> b`   | True if a is inequivalent to b; False otherwise       |
-| `>`          | Tests greater-than          | `a > b`    | True if a is strictly greater than b; False otherwise |
-| `<`          | Tests less-than             | `a < b`    | True if a is strictly less than b; False otherwise    |
-| `>=`         | Tests Greater-than-or-equal | `a >= b`   | True if a is not less than b; False otherwise         |
-| `<=`         | Tests Less-than-or-equal    | `a <= b`   | True if a is not greater than b; False otherwise      |
+**In [60]:**
 
-### Bitwise Operators
-| **Operator** | **Operation**           | **Syntax** | **Description** |
-|--------------|-------------------------|------------|-------------------------------------------------------|
-| `&`          | Bitwise AND             | `a & b`    | Copies bit to result if 1 in both operands            |
-| &#124;       | Bitwise OR              | a &#124; b | Copies bit to result if 1 in either operand           |
-| `^`          | Bitwise XOR             | `a ^ b`    | Copies bit to result if 1 in only one operand         |
-| `~`          | Bitwise Complement      | `~a`       | Returns inverted bits of a                            |
-| `<<`         | Bitwise Shift Left      | `a << b`   | Shifts a to the left by b bits; b must be an integer  |
-| `>>`         | Bitwise Shift Right     | `a >> b`   | Shifts a to the right by b bits; b must be an integer |
+{% highlight python %}
+first_set = {1, 2, 3}
+second_set = set((-1, 0, 1, 2))
+third_set = {1, 2}
+{% endhighlight %}
+
+
+Set methods overload many of the math operators to do what you would expect in a
+math class. For instance, set intersection can be mediated by the `&` operator:
+
+**In [61]:**
+
+{% highlight python %}
+first_set & second_set, first_set.intersection(second_set)
+{% endhighlight %}
+
+
+
+
+    ({1, 2}, {1, 2})
+
+
+
+Set union can be mediated by the `|` operator.
+
+**In [62]:**
+
+{% highlight python %}
+first_set | second_set, first_set.union(second_set)
+{% endhighlight %}
+
+
+
+
+    ({-1, 0, 1, 2, 3}, {-1, 0, 1, 2, 3})
+
+
+
+Set difference is mediated by the `-` operator.
+
+**In [63]:**
+
+{% highlight python %}
+first_set - second_set, first_set.difference(second_set)
+{% endhighlight %}
+
+
+
+
+    ({3}, {3})
+
+
+
+Symmetric difference is mediated by the `^` operator.
+
+**In [64]:**
+
+{% highlight python %}
+first_set ^ second_set, first_set.symmetric_difference(second_set)
+{% endhighlight %}
+
+
+
+
+    ({-1, 0, 3}, {-1, 0, 3})
+
+
+
+And testing whether one set is a subset or superset of another can be done with
+the comparison operators, which will talk about next.
+
+**In [65]:**
+
+{% highlight python %}
+first_set.issubset(third_set), first_set.issuperset(third_set)
+{% endhighlight %}
+
+
+
+
+    (False, True)
+
+
+
+**In [66]:**
+
+{% highlight python %}
+first_set <= third_set, first_set >= third_set
+{% endhighlight %}
+
+
+
+
+    (False, True)
+
+
+
+## Summary
+
+So far we have discussed the basic syntax for writing instructions in Python.
+We have learned about basic numbers and math operations in Python. We have seen
+how to assign variables and saw some of the caveats to assignment concerning
+mutable objects. We are aware of the `None` object and have seen it appear as
+output. We have discussed the most salient features of the core data structures:
+Booleans, Strings, Lists, Tuples, Dictionaries, and Sets. And we've discussed
+some of the core philosophies in Python such as "Explicit is better than
+implicit" and "We're all consenting adults."
+
+
+Next we will learn about the comparison operators, conditionals/branching, and
+loops.
 
