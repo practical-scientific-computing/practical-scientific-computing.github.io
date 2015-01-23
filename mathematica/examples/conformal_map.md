@@ -18,7 +18,7 @@ Now, we want to use a conformal map to see what the field lines and equipotentia
 look like for a similar situation, but with the sides of a plate at an angle $$\beta$$ to one
 another. 
 
-First, let's draw the picture of the electric field as a function of y:
+First, let's draw the picture of the potential as a function of y:
 
 ```
 V[y_] = V0 - E0 y
