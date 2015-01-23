@@ -45,9 +45,9 @@ Sqrt[First[Eigensystem[{{ 8., 2}, { 2, 1}}]]]
 Now lets add initial conditions to the system and plot the resulting motion. 
 
 ```
-sol = Chop[
+sol = Simplify[Chop[
   DSolve[ {eq1, eq2, x[0] == 0, x'[0] == 1, y[0] == -1, 
-    y'[0] == 0  }, { x[t], y[t]} , t]]
+    y'[0] == 0  }, { x[t], y[t]} , t]]]
 Plot[ Evaluate[{ x[t], y[t]} /. sol], {t, 0, 10}]
 ```
 
@@ -66,7 +66,7 @@ eq2 = y''[t] == -  y[t]^3 + 2 x[t]^2
 DSolve[ {eq1, eq2}, { x[t], y[t]} , t] // Chop // Flatten
 ```
 
-Note that this much more complicated non - linear oscillation is not solved by DSolve, it is simply returned in the output. This means that Mathematica cannot find a closed form solution to the differential equations. This should not worry you too much, as we can use the numerical version of DSolve to find the resulting motion.
+Note that this much more complicated non - linear oscillation is not solved by `DSolve`, it is simply returned in the output. This means that Mathematica cannot find a closed form solution to the differential equations. This should not worry you too much, as we can use the numerical version of `DSolve` to find the resulting motion.
 
 ```
 sol = NDSolve[ {eq1, eq2, x[0] == 0, x'[0] == 1, y[0] == -1, 

@@ -85,7 +85,7 @@ If both of these functions use a `temp` variable to store the sum you have a ris
 
 A module allows the use of variables local to the function itself that cannot be modified by any other function.
 This takes the place of the scope of local variables in other languages like python or C.
-Evaluating mutiple sets of the same module will not effect the local varibles to each call.
+Evaluating mutiple sets of the same module will not affect the local varibles to each call.
 
 Lets look at the help for module
 
@@ -117,6 +117,6 @@ Zeta[2.]
 
 ## Exercises
 
-1. Write a module that will evaluate the Bessel function of the first kind ($J_{\alpha}$) to the m=1000 term
+1. Write a module that will evaluate the Bessel function of the first kind ($J_{\alpha}$) to the m=1000 term.  Use the $\Gamma$-function (`Gamma`) defined in *Mathematica*.
 $$ J_{\alpha }(x)=\sum _{m=0}^{\infty } \frac{(-1)^m}{m!(\Gamma  (a+m+1)}\left(\frac{x}{2}\right)^{\alpha +2 m} $$
 
