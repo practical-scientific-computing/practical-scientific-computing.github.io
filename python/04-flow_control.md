@@ -495,5 +495,5 @@ We've seen how to do **comparisons**, **conditional branches**, and two types of
 **loops**. Next we will learn how to write our own functions so we can organize
 our code into reusable logical groups.
 
-Now would also be a good time to take a look at list
-[comprehensions]{/python/adv-comprehensions.html}.
+Now would also be a good time to take a look at data structure
+[comprehensions](/python/adv-comprehensions.html).
