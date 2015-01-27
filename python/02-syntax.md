@@ -15,11 +15,11 @@ one can construct a simple instruction:
 
 **In [1]:**
 
-{% highlight python %}
+```python
 # This is a line comment.
 5 + 2 
 6 - 3 # This is an inline comment.
-{% endhighlight %}
+```
 
 
 
@@ -28,8 +28,8 @@ one can construct a simple instruction:
 
 
 
-Notice there is **no line terminators** like as in other languages (C, for
-instance). **Comments** are denoted by whatever follows a `#` keyword and can
+Notice there are **no line terminators** like as in other languages (C, for
+instance, which uses a ;). **Comments** are denoted by whatever follows a `#` keyword and can
 occur anywhere on a line. Comments are ignored by the Python interpereter. There
 are *no block comments in Python*. This is due to one of the language's core
 philosophies:
