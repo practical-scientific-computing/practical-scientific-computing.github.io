@@ -8,8 +8,7 @@ type: tutorial
 
 # Basic Python Syntax
 
-Python is a human friendly, highly readable language that attempts to minimze
-unnecessary cruft. Normally, each line forms a single instructional statement.
+Normally, each line in Python code forms a single instructional statement.
 Using *number literals* and the built-in operators `+` (add) and `-` (subtract),
 one can construct a simple instruction:
 
@@ -29,10 +28,10 @@ one can construct a simple instruction:
 
 
 Notice there are **no line terminators** like as in other languages (C, for
-instance, which uses a ;). **Comments** are denoted by whatever follows a `#` keyword and can
-occur anywhere on a line. Comments are ignored by the Python interpereter. There
-are *no block comments in Python*. This is due to one of the language's core
-philosophies:
+instance, which ends each instructional statement with a `;`). **Comments** are
+denoted by whatever follows a `#` character and can occur anywhere on a line.
+Comments are invisible to the Python interpereter. There are *no block comments in
+Python*. This is due to one of the language's core philosophies:
 
     "Explicit is better than implicit".
     
@@ -57,9 +56,9 @@ placed on the same line if separated by the `;` operator as in:
 The line above will perform both instructions sequentially. Code run in an
 interactive shell will only print the result of the last instruction processed,
 but both operations are in fact being executed. We can verify this by forcing
-each operation to print using the built-in `print` function (formerly a keyword
-prior to Python v3), which sends it's argument to the standard output. Function
-arguments are enclosed by parentheses.
+each operation to print to `stdout` using the built-in `print` function
+(formerly a keyword prior to Python v3), which sends it's argument to the
+standard output. Function arguments are enclosed by parentheses.
 
 **In [3]:**
 
@@ -71,14 +70,14 @@ print(5 + 2); print(6 - 3)
     3
 
 
- Like most programming languages, one can express numbers in a variety of ways
-using number literals. Number literals can be of three types: either an integer,
-a float, or a complex. Floats can be expressed in scientific notation with `e`
-between the significant figures and the powers of ten. Python supports complex
-numbers. Purely imaginary decimal literals are indicated with the suffix `j`.
-Ordinarily, all numbers are expressed as decimals, but one can use prefixes to
-denote hex (`0x`), binary (`0b`) or octal (`0o`) integers. Literal prefixes and
-suffixes cannot be mixed.
+Like most programming languages, one can express numbers in a variety of ways
+using number literals. Number literals can be of three types: either an
+**integer**, a **float**, or a **complex**. Floats can be expressed in
+scientific notation with `e` between the significant figures and the powers of
+ten. Python supports complex numbers. Purely imaginary decimal literals are
+indicated with the suffix `j`.  Ordinarily, all numbers are expressed as
+decimals, but one can use prefixes to denote hex (`0x`), binary (`0b`) or octal
+(`0o`) integers. Literal prefixes and suffixes cannot be mixed.
 
 **In [4]:**
 
@@ -258,11 +257,13 @@ type(5
 
 
 
-So far, we've seen the number literals, the math operators, and a few built-in
-functions. We have not yet seen any of the core keywords. Python has 33 defined
-keywords.
-
 ### Core Keywords
+
+So far, we've seen the number literals, the math operators, and a few built-in
+functions. We have not yet seen any of the core keywords. Keywords are the heart
+of a programming language by which everything in the language can be written.
+Python has 33 core keywords.
+
 
 <center>
 
@@ -281,6 +282,7 @@ keywords.
 
 Relax: you don't need to memorize these now. We'll learn them as we go. Less
 than half are used regularly and we'll focus on only the most important ones.
+
 Which are the important ones? Importance generally decreases from left to right
 and from top to bottom. Simple programs, for instance, rarely use the bottom two
 rows of commands. We'll take time to discuss these keywords in detail later. I'm
@@ -299,7 +301,12 @@ Having seen the keywords, we can take a look at assignment.
 
 ## Variables and Assignment
 
-Any object instance can be assigned to a variable name and in Python,
+In programming, an **object** is a logical structure that encapsulates data and
+behaviors. Just like the word in English, an object is a 'thing' that can be
+created, manipulated, and destroyed. We can have many objects of the same
+**type** or **class**, but where each **instance** is unique. 
+
+Any object instance can be **assigned** to a **variable name** and in Python,
 *everything is an object*. Assignment is governed principally by the binary `=`
 operator.
 
@@ -327,10 +334,11 @@ one wants to come back to code a year later and try to figure out what "em" and
 "me" mean in their code. Take time to write clear code now: your future self
 will thank you.
 
-Assignment in Python can be thought of as giving an alias to an object instance.
-You can give multiple aliases to the same object instance. To show this, we can
-use the built-in function `id()` which returns a unique number associated with
-an object in memory (in fact, it's derived from the object's memory address).
+Assignment in Python can be thought of as giving an **alias** to an object
+instance.  You can give multiple aliases to the same object instance. To show
+this, we can use the built-in function `id()` which returns a unique number
+associated with an object in memory (in fact, it's derived from the object's
+memory address).
 
 **In [15]:**
 
