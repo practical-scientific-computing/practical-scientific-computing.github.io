@@ -336,12 +336,6 @@ with or without a `return` value. For those familiar with C/C++, this is similar
 to passing-by-reference. The return value here is not strictly speaking needed
 and serves only to return an alias to the original object.
 
-**In [8]:**
-
-{% highlight python %}
-print?
-{% endhighlight %}
-
 **In [9]:**
 
 {% highlight python %}
