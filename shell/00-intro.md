@@ -8,8 +8,7 @@ type: index
 
 # Unix Shells
 
-
-![img](/shell/media/dilbert_unix.png)
+<img src="/shell/media/dilbert_unix.png" class="img-responsive">
 
 ## Linux+GNU or Unix
 
