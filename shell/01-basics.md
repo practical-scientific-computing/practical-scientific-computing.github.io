@@ -41,18 +41,18 @@ From the prompt, we can issue **commands** to do virtually anything we wish a
 computer to do. Every command is either a program, script or shell function.
 
 We issue a command by typing it in at the prompt and press *ENTER*. Most
-commands expect number of manditory **positional arguments** which are typed
-after the command name in order all separated by spaces.
+commands expect number of mandatory **positional arguments** which are typed
+after the command name, in order, and each separated by spaces.
 
-Most commands can also take a number of non-manditory **optional arguments**.
+Most commands can also take a number of non-mandatory **optional arguments**
 or **switches**. Switches can dramatically alter what a command does.  A switch
-is invoked by preceeding it's name by a number of hyphens `-`. One hyphen is used
-if the switch has a single character name and two hypens are used if the switch
+is invoked by preceding it's name by a number of hyphens `-`. One hyphen is used
+if the switch has a single character name and two hyphens are used if the switch
 name is more than one character. If a switch expects an argument, that is then
 written following the switch name separated by a space. 
 
 Commands and arguments are case-sensitive. You will find that most commands and
-multicharacter switches are all lowercase, while single character switches to be
+multi-character switches are all lowercase, while single character switches to be
 of any case.
 
 We'll look at some basic commands first.
