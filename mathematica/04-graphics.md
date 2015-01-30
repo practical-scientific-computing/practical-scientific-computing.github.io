@@ -10,8 +10,8 @@ type: tutorial
 
 The ability to graphically depict a complex problem and its solution is an essential skill to a scientist.
 Often, other scientists will skip past all writing in a paper and attempt to understand your results from figures alone.
-This requres generation of high quality figures that are clean, clear and well thought out.
-Luckily, *Mathematica* has most, if not all, of the functionallity that you might require to visualize and publish high quality figures and graphis.
+This requires generation of high quality figures that are clean, clear and well thought out.
+Luckily, *Mathematica* has most, if not all, of the functionality that you might require to visualize and publish high quality figures and graphics.
 
 Lets start with something familiar, the basic Plot:
 
@@ -26,7 +26,7 @@ For example, we can make a log plot using the same syntax
 Plot[Sin[x],{x,0,10}]
 ```
 
-There are also other log based plotting functions available (see: `LogLinearPlot` and `LogLogPlot`), and other nice ways to plot funcitons (see: `ParametricPlot`).
+There are also other log based plotting functions available (see: `LogLinearPlot` and `LogLogPlot`), and other nice ways to plot functions (see: `ParametricPlot`).
 
 ### Changing the look of a Plot
 
@@ -38,7 +38,7 @@ There are many options (too many to easily memorize) which are found in the help
 ```
 
 Now click on the `>>` at the end of the help (or search for Plot in the help browser).
-At the bottom of the help page you will find an arrow labled "options".
+At the bottom of the help page you will find an arrow labeled "options".
 Clicking this shows all of the plot options available to you for customizing your figure.
 Lets change a couple of things as a test:
 
@@ -58,7 +58,7 @@ Graphics[Circle
 
 
 These graphics can then be combined into a single image with show. 
-This makes creating complex figures easy as you can work on single parts of the figure seperately and combine them all at the end into the final figure.
+This makes creating complex figures easy as you can work on single parts of the figure separately and combine them all at the end into the final figure.
 
 ```
 plot
@@ -72,7 +72,7 @@ But there is more...
 
 ### 3 Dimensional Plotting
 
-Lets now visualize a funciton of two variables. 
+Lets now visualize a function of two variables. 
 This can be hard to do with a regular line on a figure, but becomes easy on a computer
 
 ```

@@ -1,5 +1,5 @@
 ---
-title: Data Visualization
+title: Working with Data
 ordering: 5
 layout: default
 group: Mathematica
@@ -36,7 +36,7 @@ There are **MANY** types of files that *Mathematica* can import
 $ImportFormats
 ```
 
-Some of the more used extions are "Table", "CSV", "JPEG".
+Some commonly used extensions are "Table" (for columns of numbers), "CSV" (for comma separated values) and "JPEG".
 *Mathematica* will try to guess the file type from the extension, but often messes up and needs to be told the file format to be explicitly.
 
 
@@ -50,7 +50,7 @@ Export["/path/to/file.xls",list]
 ```
 
 Now you have saved this file and can use any other program to access it as you normally would. 
-Ther are many file types you can export as shown here
+There are many file types you can export as shown here
 
 ```
 $ExportFormats
@@ -59,7 +59,7 @@ $ExportFormats
 # Making figures with numeric data
 
 For many of us, numerical data sets are the focus of much of out research.
-Visualizing a  funciton is nice, but real data is often much more messy and difficult to understand.
+Visualizing a  function is nice, but real data is often much more messy and difficult to understand.
 This is where graphics become essential, and after importing the data into *Mathematica*, there are many ways to make figures of data.
 The most basic function to make a figure with data is a ListPlot
 
