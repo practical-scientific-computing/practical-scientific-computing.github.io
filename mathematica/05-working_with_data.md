@@ -15,6 +15,8 @@ As this is a programming language, importing data is performed with a function c
 file=Import["path/to/file.txt","Table"]
 ```
 
+There is a sample file [here](/mathematica/media/sample-data.txt)
+
 Often the file path is a very long and complicated text string ("path/to/file.txt"), so choosing the file graphically and having *Mathematica* insert this string is easier than typing it all out.
 The path string can be inserted using `Insert -> File Path...` (Note: this is ** NOT file...**).
 This will simply insert the string for your file path wherever your cursor is.
@@ -63,17 +65,22 @@ Visualizing a function is nice, but real data is often much more messy and diffi
 This is where graphics become essential, and after importing the data into *Mathematica*, there are many ways to make figures of data.
 The most basic function to make a figure with data is a `ListPlot`
 
+{% raw %}
 ```
 list1 = Table[Cos[n], {n, 0, 2 Pi, .1}];
 ListPlot[list1]
 ```
+{% endraw %}
 
 Notice that the horizontal axis is not "n", as we might like; by default, the horizontal axis represents the number of the element of the list.  It is easy enough to fix this in the definition of the list:
 
+{% raw %}
 ```
 list2 = Table[{n, Cos[n]}, {n, 0, 2 Pi, .1}];
 ListPlot[list2]
 ```
+{% endraw %}
+
 (That's better.)
 
 This function carries many of the same plot options as the regular `Plot` function has.
@@ -91,8 +98,10 @@ The same 3D plotting functions that were available for the symbolic side are ava
 Many of these plots require the data to be in a specific list structure, which you will have to find from the help browser.
 Here are a few examples:
 
+{% raw %}
 ```
 matrix = {{1, 2, 3, 4}, {4, 3, 2, 2}, {1, 10, 1, 5}, {1, 1, 1, 0}, {-1, -5, 0, -1}}
 ListPlot3D[matrix]
 ListContourPlot[matrix]
 ```
+{% endraw %}
