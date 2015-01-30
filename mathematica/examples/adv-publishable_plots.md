@@ -63,5 +63,5 @@ This can be handled in two ways:
 
 When saving you should make sure you are saving the figure in a vectorized image format (EPS or PDF).
 Many journals only accept figures in a vectorized format and you cannot create a vector image from a JPEG, so be sure to do this!
-Many find saving figures in PDF format to be easier than EPS, as you have a PDF viewing program installed on their computer anyways (at least you should...).
+Many find saving figures in PDF format to be easier than EPS, as they have a PDF viewing program installed on their computer anyways (which you should).
 
