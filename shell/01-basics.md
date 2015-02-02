@@ -132,6 +132,8 @@ name of the command you wish to see the manual for as an argument.
 $ man whoami
 ```
 
+![man page](media/man.png)
+
 The manual pages tend to be complete and will tell you everything you could want
 to know, but they can sometimes be daunting. So, as always, Google is your
 friend.
