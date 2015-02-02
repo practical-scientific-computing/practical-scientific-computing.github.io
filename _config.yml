@@ -75,6 +75,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
       line_numbers: false
+      css_class: 'highlight'
       wrap: true
 
   enable_coderay:   false

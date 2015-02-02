@@ -6,7 +6,7 @@ group: Shell
 type: tutorial
 ---
 
-# The Prompt
+# Basic Shell Usage
 
 Upon firing up a terminal emulator, it will start some flavor of textual
 command-line-interface (**cli**) called a **shell**. There are many
@@ -27,6 +27,8 @@ stated we will assume the use of bash, although many shells are so similar that
 there is little functional difference for the casual user. Bash is arguably the
 best and certainly the most popular shell although some newer shells like zsh and
 fish are making their way onto systems by default.
+
+## The Prompt
 
 The shell presents itself as a **prompt**. The appearance of the prompt can be
 customized and often is different from system to system even if they are running
