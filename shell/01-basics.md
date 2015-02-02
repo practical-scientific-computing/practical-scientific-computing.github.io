@@ -364,7 +364,7 @@ The first column shows the file's permissions as a string of characters.
 
 In order from left to right, the characters indicate:
 
-  * File is a directory (**d**) or not (**-**)
+  * File is a directory (**d**), symbolic link (**l**), or neither (**-**)
   * Owning user has read access (**r**) or not (**-**)
   * Owning user has write access (**w**) or not (**-**)
   * Owning user has execute access (**x**) or not (**-**)
