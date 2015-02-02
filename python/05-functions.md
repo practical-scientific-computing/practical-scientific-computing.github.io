@@ -32,7 +32,7 @@ Let's look at some examples.
 
 **In [1]:**
 
-{% highlight python %}
+``` python
 # Take an iterable of arbitrary length as a vector
 #   and return a list representing the normalized
 #   input vector.
@@ -50,13 +50,13 @@ def verbose_normalize(vector):
 def normalize(vector):
     magnitude = (sum((i**2 for i in vector)))**(1/2)
     return [i/magnitude for i in vector]
-{% endhighlight %}
+```
 
 **In [2]:**
 
-{% highlight python %}
+``` python
 normalize([1, 2, 3]), normalize((1, 2, 3))
-{% endhighlight %}
+```
 
 
 
@@ -94,9 +94,9 @@ Here's an example of the first type of error:
 
 **In [3]:**
 
-{% highlight python %}
+``` python
 normalize([1, 2, 3j])
-{% endhighlight %}
+```
 
 
 
@@ -115,9 +115,9 @@ this context. The second type of error is easier to catch at runtime:
 
 **In [4]:**
 
-{% highlight python %}
+``` python
 normalize('1, 2, 3')
-{% endhighlight %}
+```
 
 
     ---------------------------------------------------------------------------
@@ -178,7 +178,7 @@ what the argument should be. Let's see the normalize example again:
 
 **In [5]:**
 
-{% highlight python %}
+``` python
 def nml(v):
     se = []
     for i in v:
@@ -188,7 +188,7 @@ def nml(v):
     for i in v:
         o.append(i / m)
     return o
-{% endhighlight %}
+```
 
 Using crummy names for things forces the author to read the code carefully to
 make sure they understand what's happening. This is bad for duck typed languages
@@ -205,7 +205,7 @@ know that this string is intended to be the docstring.
 
 **In [6]:**
 
-{% highlight python %}
+``` python
 def normalize(vector):
     '''Takes an arbitrary length iterable of real 
     numbers "vector" and returns the normalized
@@ -215,7 +215,7 @@ def normalize(vector):
     return [i/magnitude for i in vector]
   
 help(normalize)
-{% endhighlight %}
+```
 
     Help on function normalize in module __main__:
     
@@ -241,7 +241,7 @@ one. Take for example this function to rotate a vector using Tait-Bryan angles:
 
 **In [7]:**
 
-{% highlight python %}
+``` python
 import numpy as np
 
 def normalize(vector):
@@ -282,7 +282,7 @@ def rotate_yxz_tait_bryan(vector, angles):
     output = rotate_vector(output, angle, axes[axis])
   return output
 
-{% endhighlight %}
+```
 
 Chances are, even without reading the code in great detail, you can build a
 sense of what each function does because of the adherence to good programming
@@ -338,7 +338,7 @@ and serves only to return an alias to the original object.
 
 **In [9]:**
 
-{% highlight python %}
+``` python
 def mutate_input(argument):
     '''Attempts to mutate the input argument.'''
     argument += '2'
@@ -349,7 +349,7 @@ b = mutate_input(a)
 print('The input is:', a,
       '\nThe return value is:', b,
       '\nAre they the same object?', a is b)
-{% endhighlight %}
+```
 
     The input is: [1, 2, 3, '2'] 
     The return value is: [1, 2, 3, '2'] 
@@ -358,7 +358,7 @@ print('The input is:', a,
 
 **In [10]:**
 
-{% highlight python %}
+``` python
 def returnless_mutate_input(argument):
     '''Attempts to mutate the input argument without returning
     an alias for it.'''
@@ -369,7 +369,7 @@ b = returnless_mutate_input(a)
 print('The input is:', a,
       '\nThe return value is:', b,
       '\nAre they the same object?', a is b)
-{% endhighlight %}
+```
 
     The input is: [1, 2, 3, '2'] 
     The return value is: None 
@@ -381,13 +381,13 @@ must explicitly pass a clone or clone the object within the function.
 
 **In [11]:**
 
-{% highlight python %}
+``` python
 a = [1, 2, 3]
 b = mutate_input(list(a)) # Use the list ctor to pass a copy of 'a'.
 print('The input is:', a,
       '\nThe return value is:', b,
       '\nAre they the same object?', a is b)
-{% endhighlight %}
+```
 
     The input is: [1, 2, 3] 
     The return value is: [1, 2, 3, '2'] 
@@ -400,13 +400,13 @@ immutable argument is never modified in place.
 
 **In [12]:**
 
-{% highlight python %}
+``` python
 a = 'abc' # Immutable
 b = mutate_input(a) # Cleverly crafted to work with strings and lists (quack quack). Returns a new object.
 print('The input is:', a,
       '\nThe return value is:', b,
       '\nAre they the same object?', a is b)
-{% endhighlight %}
+```
 
     The input is: abc 
     The return value is: abc2 
@@ -415,13 +415,13 @@ print('The input is:', a,
 
 **In [13]:**
 
-{% highlight python %}
+``` python
 a = 'abc' # Immutable
 b = returnless_mutate_input(a)  # Returns nothing, new object created within is destroyed on exit.
 print('The input is:', a,
       '\nThe return value is:', b,
       '\nAre they the same object?', a is b)
-{% endhighlight %}
+```
 
     The input is: abc 
     The return value is: None 
@@ -436,7 +436,7 @@ variable they are assigned to:
 
 **In [14]:**
 
-{% highlight python %}
+``` python
 def print_positional_arguments(first, second, third):
     '''Prints the arguments passed to the function in order
     to demonstrate positional arguments.'''
@@ -445,7 +445,7 @@ def print_positional_arguments(first, second, third):
     print(third)
     
 print_positional_arguments('cat', [0, 1, 2], None)
-{% endhighlight %}
+```
 
     cat
     [0, 1, 2]
@@ -456,9 +456,9 @@ A function requires all positional arguments to have an object passed to them:
 
 **In [15]:**
 
-{% highlight python %}
+``` python
 print_positional_arguments('cat', [1, 2, 3]) # missing the third argument
-{% endhighlight %}
+```
 
 
     ---------------------------------------------------------------------------
@@ -481,9 +481,9 @@ function definition.
 
 **In [16]:**
 
-{% highlight python %}
+``` python
 print_positional_arguments(second='cat', third=[0, 1, 2], first=None)
-{% endhighlight %}
+```
 
     None
     cat
@@ -498,7 +498,7 @@ the function definition.
 
 **In [17]:**
 
-{% highlight python %}
+``` python
 def demo_default_args(logic, bargument='fun', spouse=None):
     '''Demonstrates default arguments. Argument 'logic' needs
     to be supplied, 'bargument' defaults to 'fun', and the
@@ -509,7 +509,7 @@ def demo_default_args(logic, bargument='fun', spouse=None):
     print('spouse argument is', spouse)
     
 demo_default_args('interesting')
-{% endhighlight %}
+```
 
     logic argument is interesting
     bargument is fun
@@ -521,7 +521,7 @@ especially when we'd like a mutable default. Take for instance this:
 
 **In [18]:**
 
-{% highlight python %}
+``` python
 def demo_mutable_default(mutable=[1, 2, 3]):
     '''Demonstrates why you want to use None instead of
     a mutable default argument.'''
@@ -535,7 +535,7 @@ print('a is ', a,
       '\nb is', b,
       '\nc is', c,
       "\nIs 'a' identically 'c'?", a is c)
-{% endhighlight %}
+```
 
     a is  [3, 2, 3] 
     b is [1, 2, 3] 
@@ -550,7 +550,7 @@ this?
 
 **In [19]:**
 
-{% highlight python %}
+``` python
 def demo_safe_mutable_default(mutable=None):
     '''Safely returns a default value for mutable [1, 2, 3]
     by using 'None' as the argument default and providing
@@ -565,7 +565,7 @@ print('a is ', a,
       '\nb is', b,
       '\nc is', c,
       "\nIs 'a' identically 'c'?", a is c)
-{% endhighlight %}
+```
 
     a is  [3, 2, 3] 
     b is [1, 2, 3] 
@@ -581,21 +581,21 @@ look for and catch any unknown argument by writing:
 
 **In [20]:**
 
-{% highlight python %}
+``` python
 def demonstrate_kwargs(first, second, **kwargs):
     '''Demonstrates keyword arguments.'''
     print(first)
     print(second)
     print(kwargs)
-{% endhighlight %}
+```
 
 To catch kwargs, all positional arguments must come first in the argument tuple.
 
 **In [21]:**
 
-{% highlight python %}
+``` python
 demonstrate_kwargs('first', 'second')
-{% endhighlight %}
+```
 
     first
     second
@@ -607,9 +607,9 @@ the function.
 
 **In [22]:**
 
-{% highlight python %}
+``` python
 demonstrate_kwargs('first', 'second', third='third', fourth=4)
-{% endhighlight %}
+```
 
     first
     second
@@ -625,9 +625,9 @@ dictionary must have unique keys).
 
 **In [23]:**
 
-{% highlight python %}
+``` python
 demonstrate_kwargs('first', 'second', third='third', first=4)
-{% endhighlight %}
+```
 
 
     ---------------------------------------------------------------------------
@@ -642,9 +642,9 @@ demonstrate_kwargs('first', 'second', third='third', first=4)
 
 **In [24]:**
 
-{% highlight python %}
+``` python
 demonstrate_kwargs('first', 'second', third='third', third=4)
-{% endhighlight %}
+```
 
 
       File "<ipython-input-24-668f095ea2f7>", line 1
@@ -659,9 +659,9 @@ arguments.
 
 **In [25]:**
 
-{% highlight python %}
+``` python
 demonstrate_kwargs(fourth=4, first='first', second='second', third='third')
-{% endhighlight %}
+```
 
     first
     second
@@ -676,14 +676,14 @@ into a tuple of `key=value` pairs.
 
 **In [26]:**
 
-{% highlight python %}
+``` python
 def more_kwargs(**whatever_you_want):
     '''Demonstrates that the unpacked dictionary can be named
     whatever you want.'''
     print(whatever_you_want)
     
 more_kwargs(see='told you')
-{% endhighlight %}
+```
 
     {'see': 'told you'}
 
@@ -693,10 +693,10 @@ unpacked dictionary.
 
 **In [27]:**
 
-{% highlight python %}
+``` python
 packed_arguments = {'first':1, 'second':2}
 demonstrate_kwargs(**packed_arguments)
-{% endhighlight %}
+```
 
     1
     2
@@ -717,7 +717,7 @@ the function. Likewise, higher scopes cannot introspect within lower scopes.
 
 **In [28]:**
 
-{% highlight python %}
+``` python
 defined_without = '"defined outside"'
 
 def demo_scope():
@@ -729,7 +729,7 @@ demo_scope()
 
 print('Outside sees', defined_without)
 print('But not', defined_within)
-{% endhighlight %}
+```
 
     Inside sees "defined inside" and "defined outside"
     Outside sees "defined outside"
@@ -754,12 +754,12 @@ instance, if statements in C change scope, but not in Python:
 
 **In [29]:**
 
-{% highlight python %}
+``` python
 if 4 < 5:
     this_is_a_new_name = "How'd this get here?"
 
 print(this_is_a_new_name)
-{% endhighlight %}
+```
 
     How'd this get here?
 
@@ -771,7 +771,7 @@ calculate the factorial of a natural number:
 
 **In [30]:**
 
-{% highlight python %}
+``` python
 def factorial(number):
     '''Recursively computes the factorial of a
     natural number "number"'''
@@ -783,7 +783,7 @@ def factorial(number):
 
 
 factorial(5)
-{% endhighlight %}
+```
 
 
 
@@ -802,9 +802,9 @@ tells us we're looking at an object of type `function`:
 
 **In [31]:**
 
-{% highlight python %}
+``` python
 factorial
-{% endhighlight %}
+```
 
 
 
@@ -817,10 +817,10 @@ We can assign a new name to this object just like any other object:
 
 **In [32]:**
 
-{% highlight python %}
+``` python
 factorial_alias = factorial
 factorial_alias(5)
-{% endhighlight %}
+```
 
 
 
@@ -833,7 +833,7 @@ We can pass a function to another function if we like:
 
 **In [33]:**
 
-{% highlight python %}
+``` python
 def use_five_times(function):
     '''Calls a function that accepts a single
     number as it's argument on the first five
@@ -841,7 +841,7 @@ def use_five_times(function):
     return [function(i) for i in range(1,6)]
   
 use_five_times(factorial)
-{% endhighlight %}
+```
 
 
 
@@ -860,23 +860,23 @@ useless and trivial example looks like this:
 
 **In [34]:**
 
-{% highlight python %}
+``` python
 def outer(x, y):
     '''Weak example of nested functions.'''
     def nested_function():
         '''Multiplies two variables from a higher scope.'''
         return x * y
     return x + nested_function()
-{% endhighlight %}
+```
 
 The function `outer` has defined within it another function which can be used
 internally:
 
 **In [35]:**
 
-{% highlight python %}
+``` python
 outer(5, 2)
-{% endhighlight %}
+```
 
 
 
@@ -889,9 +889,9 @@ but not externally:
 
 **In [36]:**
 
-{% highlight python %}
+``` python
 nested_function()
-{% endhighlight %}
+```
 
 
     ---------------------------------------------------------------------------
@@ -909,7 +909,7 @@ doing things like this:
 
 **In [37]:**
 
-{% highlight python %}
+``` python
 def functionception(function, text):
     '''Demonstrates a function defined within a function.'''
     def pretty_print(*args):
@@ -922,14 +922,14 @@ def functionception(function, text):
         
     return pretty_print
     
-{% endhighlight %}
+```
 
 **In [38]:**
 
-{% highlight python %}
+``` python
 decorated_add = functionception(add, 'sum')
 decorated_add(3, 5)
-{% endhighlight %}
+```
 
     The sum of 3 and 5 is 8
 
@@ -946,10 +946,10 @@ function we fed into `functionception`.
 
 **In [39]:**
 
-{% highlight python %}
+``` python
 factorial = functionception(factorial, 'factorial')
 factorial(5)
-{% endhighlight %}
+```
 
     The factorial of 0 is 1
     The factorial of 1 is 1
@@ -980,7 +980,7 @@ applied to:
 
 **In [40]:**
 
-{% highlight python %}
+``` python
 def time_this(function):
     '''A decorator to print the execution time
     of a function.'''
@@ -1012,7 +1012,7 @@ def factorial(number):
         return number * factorial(number - 1)
       
 factorial(5)
-{% endhighlight %}
+```
 
     factorial : 3.0000000001972893e-06 s
     factorial : 0.00010399999999988196 s

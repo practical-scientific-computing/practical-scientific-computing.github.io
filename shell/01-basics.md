@@ -33,7 +33,7 @@ customized and often is different from system to system even if they are running
 the same shell. It is common, however, to have the last character in the prompt
 be `$`. 
 
-```console
+``` bash
 $ 
 ```
 
@@ -61,7 +61,7 @@ We'll look at some basic commands first.
 
 The command `whoami` will return the username you are currently logged in as:
 
-```console
+``` bash
 $ whoami
 user
 ```
@@ -73,7 +73,7 @@ commands that you issue need the location of files relative to where you
 currently are. To find out what directory you are currently in, issue the
 command `pwd` (short for 'print working directory'):
 
-```console
+``` bash
 $ pwd
 /home/user
 ```
@@ -81,7 +81,7 @@ $ pwd
 If you are using a machine remotely through a terminal, it helps to know the
 hostname of the machine you are using. We find this with the command `hostname`:
 
-```console
+``` bash
 $ hostname
 laptop
 ```
@@ -90,7 +90,7 @@ Many folks will modify their prompt to include all this information in the
 prompt so they don't lose track of who and where they are so some prompts may
 look like:
 
-```console
+``` bash
 [username@laptop: /home/user] $
 ```
 
@@ -110,7 +110,7 @@ denoted by one or two dashes followed by a keyword indicating the option to
 invoke. Most commands have implemented an option named `--help` that will print a
 summary of a command's use and syntax. It looks like this:
 
-```console
+``` 
 $ whoami --help
 Usage: whoami [OPTION]...
 Print the user name associated with the current effective user ID.
@@ -128,7 +128,7 @@ which will bring up a command's manual page (if it exists, and it usually will)
 in a text-viewing program called a **pager**. The command `man` takes the
 name of the command you wish to see the manual for as an argument.
 
-```console
+``` bash
 $ man whoami
 ```
 
@@ -147,6 +147,7 @@ around the filesystem.
 |---------|------------------|------------------------------------------------
 | `ls`    | list             | Lists directory contents
 | `cd`    | change directory | Change current working directory
+{:.table}
 
 ### ls
 
@@ -216,6 +217,7 @@ most of your time.
 | `/usr/local`      | user local        | same as /usr but for host-specific files/commands     |
 | `/usr/share`      | user share        | system shared resource files                          |
 | `/var`            | variable, var     | runtime variable files                                |
+{:.table}
 
 ### Using cd
 
@@ -223,7 +225,7 @@ Absolute paths are always referenced from the root directory and will always
 start with a `/` like this path to a directory 'documents' in the home directory
 of the user 'prismo':
 
-```console
+``` bash
 $ cd /home/prismo/documents
 ```
 Regardless of what directory you are currently in, changing directory with an
@@ -232,7 +234,7 @@ writing and often we are already in a directory that is close to our intended
 destination. In this case, we can use a relative path with respect to our
 current working directory:
 
-```console
+``` bash
 $ pwd
 /home/prismo
 $ cd documents
@@ -247,7 +249,7 @@ special hidden directories:
 
 We can use these to make relative paths up the directory tree:
 
-```console
+``` bash
 $ pwd
 /home/prismo/documents
 $ cd ../science
@@ -260,7 +262,7 @@ special ways of refering to your home directory. The name `~` refers to the
 absolute path of your home directory. So, regardless of where you are in the
 filesystem, you can do things like:
 
-```console
+``` bash
 $ pwd
 /var/log
 $ cd ~/documents
@@ -272,7 +274,7 @@ We'll learn more about environment variables later.
 
 If `cd` is given no arguments, it will return you to `~`.
 
-```console
+``` bash
 $ pwd
 /var/log
 $ cd
@@ -284,7 +286,7 @@ Lastly, `cd` remembers the last working directory in an environment variable
 `$OLDPWD`. When `cd` is called with a hyphen as it's argument, it will change
 directories to the last remembered working directory and print its name:
 
-```console
+``` bash
 $ pwd
 /home/prismo/documents
 $ cd ../research/pickle_recipes
@@ -304,6 +306,7 @@ So to summarize the special directory names:
 | `..`   | parent of cwd             |
 | `~`    | user home directory       |
 | `-`    | last working directory    |
+{:.table}
 
 
 ## Manipulating Files
@@ -324,6 +327,7 @@ So to summarize the special directory names:
 |=========|===============================|================================================
 | `touch` | `touch [OPT]... FILE...`      | Touches the filesystem, creating empty FILEs
 | `rmdir` | `rmdir DIR...`                | Removes empty DIRs from the filesystem
+{:.table}
 
 
 ## File Permissions
@@ -345,7 +349,7 @@ We can inpect what permissions a file has by looking at the long-form output of
 `ls -l`:
 
 
-```console
+``` bash
 $ ls -l
 total 0
 drwxr-x--- 2 prismo cosmowl     40 Feb  2 01:26 limited
@@ -394,7 +398,7 @@ The seventh column is the filename.
 We can modify the permissions of a file with the command `chmod` (short for 'change mode
 bits'). The syntax is 
 
-```console
+``` bash
 $ chmod MODE FILE
 ```
 
@@ -419,7 +423,7 @@ Multiple symbolic modes, separated by commas, can be passed at the same time.
 So for example to add the read and write permissions for the owning user and
 group of a file, while removing everything from others, we write:
 
-```console
+``` bash
 $ chmod ug+rw,o-wrx file
 ```
 

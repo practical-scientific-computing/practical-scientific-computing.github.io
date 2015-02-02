@@ -41,10 +41,10 @@ placed on the same line if separated by the `;` operator as in:
 
 **In [2]:**
 
-{% highlight python %}
+``` python
 # Now both instructions are on the same line.
 5 + 2; 6 - 3
-{% endhighlight %}
+```
 
 
 
@@ -62,9 +62,9 @@ standard output. Function arguments are enclosed by parentheses.
 
 **In [3]:**
 
-{% highlight python %}
+``` python
 print(5 + 2); print(6 - 3)
-{% endhighlight %}
+```
 
     7
     3
@@ -81,7 +81,7 @@ decimals, but one can use prefixes to denote hex (`0x`), binary (`0b`) or octal
 
 **In [4]:**
 
-{% highlight python %}
+``` python
 50       # 50 as a decimal integer
 50.0     # 50 as a floating-point decimal
 50.      # 50 again as a floating-point decimal
@@ -90,7 +90,7 @@ decimals, but one can use prefixes to denote hex (`0x`), binary (`0b`) or octal
 0x32     # 50 as a hexidecimal integer
 0b110010 # 50 as a binary integer
 0o62     # 50 as an octal integer
-{% endhighlight %}
+```
 
 
 
@@ -101,16 +101,17 @@ decimals, but one can use prefixes to denote hex (`0x`), binary (`0b`) or octal
 
 Math operations are intuitive. The basic math operators are:
 
-| Operator | &nbsp; | Operation      | &nbsp; | Syntax           | &nbsp; | English Equivalent          | &nbsp; | Notes                                      |
-|---------:| ------ |:---------------| ------ |:-----------------| ------ |:----------------------------| ------ |:-------------------------------------------|
-| `+`      | &nbsp; | Addition       | &nbsp; | `a + b`          | &nbsp; | "a plus b"                  | &nbsp; | Overloaded for built-in types              |
-| `-`      | &nbsp; | Subtraction    | &nbsp; | `a - b`          | &nbsp; | "a minus b"                 | &nbsp; |                                            |
-| `*`      | &nbsp; | Multiplication | &nbsp; | `a * b`          | &nbsp; | "a times b"                 | &nbsp; |                                            |
-| `/`      | &nbsp; | Division       | &nbsp; | `a / b`          | &nbsp; | "a divided by b"            | &nbsp; | Floating-point True division: `3/5 == 0.6` |
-| `//`     | &nbsp; | Floor Division | &nbsp; | `a // b`         | &nbsp; | "floor of (a divided by b)" | &nbsp; | Floor division: `3/5 == 0; 5.0//2 == 2.0`  |
-| `%`      | &nbsp; | Modulus        | &nbsp; | `a % b`          | &nbsp; | "a mod b"                   | &nbsp; |                                            |
-| `**`     | &nbsp; | Exponentiation | &nbsp; | `a**b`           | &nbsp; | "a to the power b"          | &nbsp; |                                            |
-| `-`      | &nbsp; | Negation       | &nbsp; | `-a`             | &nbsp; | "negative a"                | &nbsp; | Can be used to construct negative literals |
+| Operator | Operation      | Syntax&nbsp;&nbsp;&nbsp;&nbsp; | English Equivalent          | Notes                                      |
+|---------:|:---------------|:-----------------|:----------------------------|:-------------------------------------------|
+| `+`      | Addition       | `a + b`          | "a plus b"                  | Overloaded for built-in types              |
+| `-`      | Subtraction    | `a - b`          | "a minus b"                 |                                            |
+| `*`      | Multiplication | `a * b`          | "a times b"                 |                                            |
+| `/`      | Division       | `a / b`          | "a divided by b"            | Floating-point True division: `3/5 == 0.6` |
+| `//`     | Floor Division | `a // b`         | "floor of (a divided by b)" | Floor division: `3/5 == 0; 5.0//2 == 2.0`  |
+| `%`      | Modulus        | `a % b`          | "a mod b"                   |                                            |
+| `**`     | Exponentiation | `a**b`           | "a to the power b"          |                                            |
+| `-`      | Negation       | `-a`             | "negative a"                | Can be used to construct negative literals |
+{:.table}
 
 Math operators in Python work as they do in pen-and-paper math: they preserve
 the most exact representation whenever possible. The can be checked using the
@@ -119,9 +120,9 @@ possible types are integer, float, and complex.
 
 **In [5]:**
 
-{% highlight python %}
+``` python
 type(5)
-{% endhighlight %}
+```
 
 
 
@@ -132,9 +133,9 @@ type(5)
 
 **In [6]:**
 
-{% highlight python %}
+``` python
 type(2)
-{% endhighlight %}
+```
 
 
 
@@ -145,9 +146,9 @@ type(2)
 
 **In [7]:**
 
-{% highlight python %}
+``` python
 type(5 + 2)
-{% endhighlight %}
+```
 
 
 
@@ -158,9 +159,9 @@ type(5 + 2)
 
 **In [8]:**
 
-{% highlight python %}
+``` python
 type(2.0)
-{% endhighlight %}
+```
 
 
 
@@ -171,9 +172,9 @@ type(2.0)
 
 **In [9]:**
 
-{% highlight python %}
+``` python
 type(2.0j)
-{% endhighlight %}
+```
 
 
 
@@ -184,9 +185,9 @@ type(2.0j)
 
 **In [10]:**
 
-{% highlight python %}
+``` python
 type(5 + 2.0)
-{% endhighlight %}
+```
 
 
 
@@ -197,9 +198,9 @@ type(5 + 2.0)
 
 **In [11]:**
 
-{% highlight python %}
+``` python
 type(5 + 2.0j)
-{% endhighlight %}
+```
 
 
 
@@ -213,9 +214,9 @@ Exponents, Multiplication, Division, Addition, Subtraction):
 
 **In [12]:**
 
-{% highlight python %}
+``` python
 5 * (2 + 3) - 3**2
-{% endhighlight %}
+```
 
 
 
@@ -231,10 +232,10 @@ always carry over new lines and are thus a way of splitting long lines:
 
 **In [13]:**
 
-{% highlight python %}
+``` python
 (5 + 3
  - 2)
-{% endhighlight %}
+```
 
 
 
@@ -245,10 +246,10 @@ always carry over new lines and are thus a way of splitting long lines:
 
 **In [14]:**
 
-{% highlight python %}
+``` python
 type(5
      + 3 -2)
-{% endhighlight %}
+```
 
 
 
@@ -265,20 +266,17 @@ of a programming language by which everything in the language can be written.
 Python has 33 core keywords.
 
 
-<center>
-
-|                     | &nbsp; | Keywords                                      |
-|--------------------:| ------ |:----------------------------------------------|
-| **Boolean Logic:**  | &nbsp; | `True`, `False`, `in`, `and`, `or`, `not`     |
-| **Identities:**     | &nbsp; | `None`, `is`                                  |
-| **Conditionals:**   | &nbsp; | `if`, `elif`, `else`                          |
-| **Flow Controls:**  | &nbsp; | `for`, `while`, `continue`, `pass`, `break`   |
-| **Abstraction:**    | &nbsp; | `class`, `def`, `return`, `lambda`, `yield`   |
-| **Namespaces:**     | &nbsp; | `import`, `from`, `as`, `with`                |
-| **Excpetions:**     | &nbsp; | `try`, `except`, `raise`, `finally`, `assert` |
-| **Memory:**         | &nbsp; | `del`, `global`, `nonlocal`                   |
-
-</center>
+|  Keywords           |                                               |
+|--------------------:|:----------------------------------------------|
+| **Boolean Logic:**  | `True`, `False`, `in`, `and`, `or`, `not`     |
+| **Identities:**     | `None`, `is`                                  |
+| **Conditionals:**   | `if`, `elif`, `else`                          |
+| **Flow Controls:**  | `for`, `while`, `continue`, `pass`, `break`   |
+| **Abstraction:**    | `class`, `def`, `return`, `lambda`, `yield`   |
+| **Namespaces:**     | `import`, `from`, `as`, `with`                |
+| **Excpetions:**     | `try`, `except`, `raise`, `finally`, `assert` |
+| **Memory:**         | `del`, `global`, `nonlocal`                   |
+{:.table}
 
 Relax: you don't need to memorize these now. We'll learn them as we go. Less
 than half are used regularly and we'll focus on only the most important ones.
@@ -342,12 +340,12 @@ memory address).
 
 **In [15]:**
 
-{% highlight python %}
+``` python
 a_literal = 5  # Assign an instance of the literal '5' to the name 'a_literal'
 print(a_literal, id(a_literal)) # print the value of 'a_literal' along with it's unique ID.
 another_literal = a_literal     # Assign the object assigned to 'a_literal' to 'another_literal'
 print(another_literal, id(another_literal)) # Look at that: both 'a_literal' and 'another_literal' have the same ID.
-{% endhighlight %}
+```
 
     (5, 21008696)
     (5, 21008696)
@@ -369,16 +367,17 @@ strings) support additional do-and-reassign operators. These can be used to
 compactify a statement. The set of all assignment operators is tabulated below.
 
 
-| Operator      | &nbsp; | Operation                 | &nbsp; | Syntax     | &nbsp; | Description                                           |
-|--------------:| ------ |:--------------------------| ------ |:----------:| ------ |:------------------------------------------------------|
-| `=`           | &nbsp; | Assignment                | &nbsp; | `a = b`    | &nbsp; | Assigns the name 'a' to the **object** 'b'            |
-| `+=`          | &nbsp; | Add and Reassign          | &nbsp; | `a += b`   | &nbsp; | Equivilent to `a = (a + b)`                           |
-| `-=`          | &nbsp; | Subtract and Reassign     | &nbsp; | `a -= b`   | &nbsp; | Equivilent to `a = (a - b)`                           |
-| `*=`          | &nbsp; | Multiply and Reassign     | &nbsp; | `a *= b`   | &nbsp; | Equivilent to `a = (a * b)`                           |
-| `/=`          | &nbsp; | Divide and Reassign       | &nbsp; | `a /= b`   | &nbsp; | Equivilent to `a = (a / b)`                           |
-| `%=`          | &nbsp; | Modulus and Reassign      | &nbsp; | `a %= b`   | &nbsp; | Equivilent to `a = (a % b)`                           |
-| `**=`         | &nbsp; | Exp and Reassign          | &nbsp; | `a **= b`  | &nbsp; | Equivilent to `a = (a**b)`                            |
-| `//=`         | &nbsp; | Floor Divide and Reassign | &nbsp; | `a //= b`  | &nbsp; | Equivilent to `a = (a // b)`                          |
+| Operator      | Operation                 | Syntax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                           |
+|--------------:|:--------------------------|:----------:|:------------------------------------------------------|
+| `=`           | Assignment                | `a = b`    | Assigns the name 'a' to the **object** 'b'            |
+| `+=`          | Add and Reassign          | `a += b`   | Equivilent to `a = (a + b)`                           |
+| `-=`          | Subtract and Reassign     | `a -= b`   | Equivilent to `a = (a - b)`                           |
+| `*=`          | Multiply and Reassign     | `a *= b`   | Equivilent to `a = (a * b)`                           |
+| `/=`          | Divide and Reassign       | `a /= b`   | Equivilent to `a = (a / b)`                           |
+| `%=`          | Modulus and Reassign      | `a %= b`   | Equivilent to `a = (a % b)`                           |
+| `**=`         | Exp and Reassign          | `a **= b`  | Equivilent to `a = (a**b)`                            |
+| `//=`         | Floor Divide and Reassign | `a //= b`  | Equivilent to `a = (a // b)`                          |
+{:.table}
 
 
 ## Core Data Structures
@@ -405,9 +404,9 @@ of value. It is a null value. It has type `NoneType`.
 
 **In [16]:**
 
-{% highlight python %}
+``` python
 type(None)
-{% endhighlight %}
+```
 
 
 
@@ -438,9 +437,9 @@ objects return boolean types.
 
 **In [17]:**
 
-{% highlight python %}
+``` python
 type(True)
-{% endhighlight %}
+```
 
 
 
@@ -455,9 +454,9 @@ explicitly cast non-bool types into bools using the built-in `bool` contructor.
 
 **In [18]:**
 
-{% highlight python %}
+``` python
 bool(1), bool(0), bool(5), bool(-2), bool([]), bool([1, 2, 3]), bool(None)
-{% endhighlight %}
+```
 
 
 
@@ -483,9 +482,9 @@ The keyword `not` negates a boolean.
 
 **In [19]:**
 
-{% highlight python %}
+``` python
 not True, not False
-{% endhighlight %}
+```
 
 
 
@@ -500,9 +499,9 @@ The keyword `in` tests for an object's membership in an *iterable sequence*
 
 **In [20]:**
 
-{% highlight python %}
+``` python
 1 in (1, 2, 3)
-{% endhighlight %}
+```
 
 
 
@@ -516,9 +515,9 @@ is is not.
 
 **In [21]:**
 
-{% highlight python %}
+``` python
 5 in (1, 2, 3)
-{% endhighlight %}
+```
 
 
 
@@ -532,9 +531,9 @@ can have Python return the truth-table:
 
 **In [22]:**
 
-{% highlight python %}
+``` python
 True and True, True and False, False and True, False and False
-{% endhighlight %}
+```
 
 
 
@@ -548,9 +547,9 @@ operands:
 
 **In [23]:**
 
-{% highlight python %}
+``` python
 True or True, True or False, False or True, False or False
-{% endhighlight %}
+```
 
 
 
@@ -576,7 +575,7 @@ want a quotation mark character in your string:
 
 **In [24]:**
 
-{% highlight python %}
+``` python
 king_arthur = 'Arthur says "I am your king."'
 print(king_arthur)
 woman_responds = "Woman: 'Well I didn't vote for you.'"
@@ -585,7 +584,7 @@ chock_full_of_quotes = '''"I've got to use a multiline string to handle all the 
 print(chock_full_of_quotes)
 string_from_a_number = str(2.54)
 print(string_from_a_number)
-{% endhighlight %}
+```
 
     Arthur says "I am your king."
     Woman: 'Well I didn't vote for you.'
@@ -600,23 +599,23 @@ several lines. They will preserve carriage returns in the string.
 
 **In [25]:**
 
-{% highlight python %}
+``` python
 long_string = 'The quick brown fox jumped \
 over the lazy dog.'
 print(long_string)
-{% endhighlight %}
+```
 
     The quick brown fox jumped over the lazy dog.
 
 
 **In [26]:**
 
-{% highlight python %}
+``` python
 the_squat_rack = '''allows for a free-weight workout using
 a barbell without the movement restrictions imposed
 by equipment such as the Smith machine.'''
 print(the_squat_rack)
-{% endhighlight %}
+```
 
     allows for a free-weight workout using
     a barbell without the movement restrictions imposed
@@ -628,9 +627,9 @@ tricks with them.
 
 **In [27]:**
 
-{% highlight python %}
+``` python
 ("barbell" in the_squat_rack), ("curls" in the_squat_rack), 
-{% endhighlight %}
+```
 
 
 
@@ -644,9 +643,9 @@ can be retrieved with the built-in function `len`:
 
 **In [28]:**
 
-{% highlight python %}
+``` python
 len(the_squat_rack)
-{% endhighlight %}
+```
 
 
 
@@ -663,9 +662,9 @@ This can be done several ways. This first is just by adding them:
 
 **In [88]:**
 
-{% highlight python %}
+``` python
 print(king_arthur + woman_responds)
-{% endhighlight %}
+```
 
     Arthur says "I am your king."Woman: 'Well I didn't vote for you.'
 
@@ -675,9 +674,9 @@ same line, they are joined together:
 
 **In [87]:**
 
-{% highlight python %}
+``` python
 'Some' "string is fishy here"
-{% endhighlight %}
+```
 
 
 
@@ -696,9 +695,9 @@ you can 'introspect' the object using the built-in `dir` function.
 
 **In [29]:**
 
-{% highlight python %}
+``` python
 dir(long_string)
-{% endhighlight %}
+```
 
 
 
@@ -785,10 +784,10 @@ called when you use the `+` operator:
 
 **In [89]:**
 
-{% highlight python %}
+``` python
 print(king_arthur.__add__(woman_responds)) # We don't normally call __add__ directly, since...
 print(king_arthur + woman_responds)        #  ... __add__ is the internal name for the + operator.
-{% endhighlight %}
+```
 
     Arthur says "I am your king."Woman: 'Well I didn't vote for you.'
     Arthur says "I am your king."Woman: 'Well I didn't vote for you.'
@@ -800,9 +799,9 @@ built-in `help` function. Let's look at the help for the `__add__`, `format` and
 
 **In [92]:**
 
-{% highlight python %}
+``` python
 help(long_string.format), help(long_string.upper)
-{% endhighlight %}
+```
 
     Help on built-in function format:
     
@@ -842,9 +841,9 @@ method?
 
 **In [31]:**
 
-{% highlight python %}
+``` python
 long_string.upper
-{% endhighlight %}
+```
 
 
 
@@ -863,9 +862,9 @@ tells us the method takes no arguments, so to call it we write:
 
 **In [32]:**
 
-{% highlight python %}
+``` python
 long_string.upper()
-{% endhighlight %}
+```
 
 
 
@@ -890,7 +889,7 @@ square braces:
 
 **In [33]:**
 
-{% highlight python %}
+``` python
 example_list = []                       # An empty list
 another_example = list()                # Another empty list 
 constructed_list = list('Some string')  # The list constructor takes an interable as it's argument.
@@ -902,19 +901,19 @@ mixed_content_list = [1, 2.0, 'three']  # Notice that the contents needn't be th
 listception = [1, 2, [3, 4, 5, [6, 7, 8, [9, 10]]]] 
   #  Notice that the dimensions of the sublists needn't
   #  be the same! This is much like a tree graph.
-{% endhighlight %}
+```
 
 Let's see what we've done. Lists are iterables, so we can check a list's length:
 
 **In [34]:**
 
-{% highlight python %}
+``` python
 len(example_list)
 len(another_example)
 len(constructed_list)
 len(mixed_content_list)
 len(listception)
-{% endhighlight %}
+```
 
 
 
@@ -931,9 +930,9 @@ We can print the contents of a list:
 
 **In [35]:**
 
-{% highlight python %}
+``` python
 print(some_numbers)
-{% endhighlight %}
+```
 
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -942,11 +941,11 @@ We can use iterable-aware keywords on a list:
 
 **In [36]:**
 
-{% highlight python %}
+``` python
 2 in mixed_content_list
 'two' in mixed_content_list
 'three' in mixed_content_list
-{% endhighlight %}
+```
 
 
 
@@ -964,10 +963,10 @@ Python, iterable **indexes start from 0**!
 
 **In [37]:**
 
-{% highlight python %}
+``` python
 # New school iterable awesomeness.
 print(mixed_content_list[2]) 
-{% endhighlight %}
+```
 
     three
 
@@ -978,9 +977,9 @@ method, if it has one:
 
 **In [38]:**
 
-{% highlight python %}
+``` python
 mixed_content_list.__getitem__(2)
-{% endhighlight %}
+```
 
 
 
@@ -993,9 +992,9 @@ We can get more information about `__getitem__` using help:
 
 **In [39]:**
 
-{% highlight python %}
+``` python
 help(mixed_content_list.__getitem__)
-{% endhighlight %}
+```
 
     Help on built-in function __getitem__:
     
@@ -1010,14 +1009,14 @@ but a different argument:  2 indexes separated by ':' in the special notation:
 
 **In [40]:**
 
-{% highlight python %}
+``` python
 (some_numbers,
  some_numbers[0:5],  # Slice from index [0,5).
  some_numbers[:5],   # Another slice from index [0,5).
  some_numbers[3:5],  # A slice from index [3, 5).
  some_numbers[3:10], # A slice from index [3, 10)
  some_numbers[3:])   # A slice from index [3, infinity).
-{% endhighlight %}
+```
 
 
 
@@ -1036,14 +1035,14 @@ list.
 
 **In [41]:**
 
-{% highlight python %}
+``` python
 (some_numbers,
  some_numbers[-2],
  some_numbers[-3:],
  some_numbers[:-3],
  some_numbers[-5:-2],
  some_numbers[3:-3])
-{% endhighlight %}
+```
 
 
 
@@ -1071,7 +1070,7 @@ sort lists (and most other iterables) using their methods:
 
 **In [42]:**
 
-{% highlight python %}
+``` python
 method_examples = []               # Make an empty list.
 print(method_examples)
 method_examples.append('appended') # Append something to it.
@@ -1093,7 +1092,7 @@ print(method_examples)
 #   instead it removes the first occurance of 4.
 method_examples.remove(4)      
 print(method_examples)
-{% endhighlight %}
+```
 
     []
     ['appended']
@@ -1119,14 +1118,14 @@ consequences for lists as we can see below:
 
 **In [43]:**
 
-{% highlight python %}
+``` python
 first_list = [1, 2, 3, 4]   # Let's make a new list. A new object is created.
 second_list = first_list    # Let's assign another name to that list.
 second_list[2] = 1          # Let's mutate the second list by reassigning an item in it.
 
 # What are the contents of 'first_list' and 'second_list' now?
 print(first_list, second_list)
-{% endhighlight %}
+```
 
     ([1, 2, 1, 4], [1, 2, 1, 4])
 
@@ -1139,14 +1138,14 @@ same object. If we wish to make a copy, we must do so explicitly:
 
 **In [44]:**
 
-{% highlight python %}
+``` python
 first_list = [1, 2, 3, 4]       # We create a new object.
 second_list = list(first_list)  # We use the list ctor to make a new list from the first one.
 second_list[2] = 1              # Let's mutate the second list by changing an item.
 
 # What are the contents of 'first_list' and 'second_list' now?
 print(first_list, second_list)
-{% endhighlight %}
+```
 
     ([1, 2, 3, 4], [1, 2, 1, 4])
 
@@ -1161,10 +1160,10 @@ objects with commas:
 
 **In [45]:**
 
-{% highlight python %}
+``` python
 my_tuple = 'a', 'tuple', 'is formed'
 print(my_tuple)
-{% endhighlight %}
+```
 
     ('a', 'tuple', 'is formed')
 
@@ -1179,10 +1178,10 @@ which will make a tuple out of an iterable:
 
 **In [46]:**
 
-{% highlight python %}
+``` python
 another_tuple = tuple(range(5))
 print(another_tuple)
-{% endhighlight %}
+```
 
     (0, 1, 2, 3, 4)
 
@@ -1192,12 +1191,12 @@ can go the other way making three objects from one using tuples:
 
 **In [47]:**
 
-{% highlight python %}
+``` python
 one, two, three = my_tuple
 print(one)
 print(two)
 print(three)
-{% endhighlight %}
+```
 
     a
     tuple
@@ -1209,12 +1208,12 @@ variables created is equal to the length of the iterable. Let's see it again:
 
 **In [48]:**
 
-{% highlight python %}
+``` python
 one, two, three = 'wut'
 print(one)
 print(two)
 print(three)
-{% endhighlight %}
+```
 
     w
     u
@@ -1226,9 +1225,9 @@ iterables, we can access tuple elements by the get-item syntax:
 
 **In [49]:**
 
-{% highlight python %}
+``` python
 my_tuple[2]
-{% endhighlight %}
+```
 
 
 
@@ -1241,9 +1240,9 @@ Tuples are immutable so unlike lists, we can't change them once their made:
 
 **In [50]:**
 
-{% highlight python %}
+``` python
 my_tuple[2] = 'is modified'
-{% endhighlight %}
+```
 
 
     ---------------------------------------------------------------------------
@@ -1266,11 +1265,11 @@ string's items, we can't modify them:
 
 **In [51]:**
 
-{% highlight python %}
+``` python
 print(long_string)
 print(long_string[4])
 long_string[4] = 'Q'
-{% endhighlight %}
+```
 
     The quick brown fox jumped over the lazy dog.
     q
@@ -1314,9 +1313,9 @@ mad_dict = {1:'first element',
 
 **In [53]:**
 
-{% highlight python %}
+``` python
 what_colliders_collide
-{% endhighlight %}
+```
 
 
 
@@ -1327,9 +1326,9 @@ what_colliders_collide
 
 **In [54]:**
 
-{% highlight python %}
+``` python
 mad_dict[1]
-{% endhighlight %}
+```
 
 
 
@@ -1340,9 +1339,9 @@ mad_dict[1]
 
 **In [55]:**
 
-{% highlight python %}
+``` python
 mad_dict['twos']
-{% endhighlight %}
+```
 
 
 
@@ -1353,9 +1352,9 @@ mad_dict['twos']
 
 **In [56]:**
 
-{% highlight python %}
+``` python
 mad_dict['third key']
-{% endhighlight %}
+```
 
 
 
@@ -1366,9 +1365,9 @@ mad_dict['third key']
 
 **In [57]:**
 
-{% highlight python %}
+``` python
 mad_dict[(4,4)]
-{% endhighlight %}
+```
 
 
 
@@ -1381,9 +1380,9 @@ To see list of keys in a dictionary, one can use the `keys` method:
 
 **In [58]:**
 
-{% highlight python %}
+``` python
 mad_dict.keys()
-{% endhighlight %}
+```
 
 
 
@@ -1398,9 +1397,9 @@ apply to dictionary keys, but not values:
 
 **In [59]:**
 
-{% highlight python %}
+``` python
 1 in mad_dict, (4, 4) in mad_dict, 2222 in mad_dict
-{% endhighlight %}
+```
 
 
 
@@ -1425,11 +1424,11 @@ the lack of the colon denoted (key : value) pairs used in dictionaries.
 
 **In [60]:**
 
-{% highlight python %}
+``` python
 first_set = {1, 2, 3}
 second_set = set((-1, 0, 1, 2))
 third_set = {1, 2}
-{% endhighlight %}
+```
 
 
 Set methods overload many of the math operators to do what you would expect in a
@@ -1437,9 +1436,9 @@ math class. For instance, set intersection can be mediated by the `&` operator:
 
 **In [61]:**
 
-{% highlight python %}
+``` python
 first_set & second_set, first_set.intersection(second_set)
-{% endhighlight %}
+```
 
 
 
@@ -1452,9 +1451,9 @@ Set union can be mediated by the `|` operator.
 
 **In [62]:**
 
-{% highlight python %}
+``` python
 first_set | second_set, first_set.union(second_set)
-{% endhighlight %}
+```
 
 
 
@@ -1467,9 +1466,9 @@ Set difference is mediated by the `-` operator.
 
 **In [63]:**
 
-{% highlight python %}
+``` python
 first_set - second_set, first_set.difference(second_set)
-{% endhighlight %}
+```
 
 
 
@@ -1482,9 +1481,9 @@ Symmetric difference is mediated by the `^` operator.
 
 **In [64]:**
 
-{% highlight python %}
+``` python
 first_set ^ second_set, first_set.symmetric_difference(second_set)
-{% endhighlight %}
+```
 
 
 
@@ -1498,9 +1497,9 @@ the comparison operators, which will talk about next.
 
 **In [65]:**
 
-{% highlight python %}
+``` python
 first_set.issubset(third_set), first_set.issuperset(third_set)
-{% endhighlight %}
+```
 
 
 
@@ -1511,9 +1510,9 @@ first_set.issubset(third_set), first_set.issuperset(third_set)
 
 **In [66]:**
 
-{% highlight python %}
+``` python
 first_set <= third_set, first_set >= third_set
-{% endhighlight %}
+```
 
 
 

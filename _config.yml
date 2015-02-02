@@ -26,7 +26,7 @@ whitelist: []
 gems:      []
 
 # Conversion
-markdown: redcarpet
+markdown:    kramdown
 highlighter: pygments
 lsi:         false
 excerpt_separator: "\n\n"
@@ -64,13 +64,20 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+  input:            GFM
+  hard_wrap:        false
+  parse_block_html: true
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  smart_quotes:     lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+      line_numbers: false
+      wrap: true
 
+  enable_coderay:   false
   coderay:
     coderay_wrap:              div
     coderay_line_numbers:      inline

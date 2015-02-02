@@ -11,7 +11,7 @@ type: tutorial
 Moving data from a saved text file (or other format) using *Mathematica* is very simple once you get used to the operations involved.
 As this is a programming language, importing data is performed with a function call (rather than clicking buttons as something like Excel would have you do):
 
-```
+```Mathematica
 file=Import["path/to/file.txt","Table"]
 ```
 
@@ -23,7 +23,7 @@ This will simply insert the string for your file path wherever your cursor is.
 The second argument specifies how *Mathematica* should interpret the file we have imported (in this case, as a `Table` or list).
 Now that we have the file imported, lets look at some of its properties:
 
-```
+```Mathematica
 First[file]
 Length[file]
 Dimensions[file]
@@ -35,7 +35,7 @@ You can now manipulate this list as you would any other list (`Flatten`, `Partit
 
 There are **MANY** types of files that *Mathematica* can import
 
-```
+```Mathematica
 $ImportFormats
 ```
 
@@ -47,14 +47,14 @@ If it is not specified, then *Mathematica* will try to guess the file type from 
 Exporting is just as easy as Importing.
 Again, instead of clicking on buttons we will program this operation with a function call:
 
-```
+```Mathematica
 Export["/path/to/file.xls",list]
 ```
 
 Now you have saved this file and can use any other program to access it as you normally would. 
 There are many file types you can export as shown here
 
-```
+```Mathematica
 $ExportFormats
 ```
 
@@ -66,7 +66,7 @@ This is where graphics become essential, and after importing the data into *Math
 The most basic function to make a figure with data is a `ListPlot`
 
 {% raw %}
-```
+```Mathematica
 list1 = Table[Cos[n], {n, 0, 2 Pi, .1}];
 ListPlot[list1]
 ```
@@ -75,7 +75,7 @@ ListPlot[list1]
 Notice that the horizontal axis is not "n", as we might like; by default, the horizontal axis represents the number of the element of the list.  It is easy enough to fix this in the definition of the list:
 
 {% raw %}
-```
+```Mathematica
 list2 = Table[{n, Cos[n]}, {n, 0, 2 Pi, .1}];
 ListPlot[list2]
 ```
@@ -89,7 +89,7 @@ Another commonly used graphic is the histogram.
 This was added fairly recently (version 7), but while they are very easy to make and they look reasonably nice, the function does not have many options which other, more specialized software packages have.
 To use a histogram simply use the function on a list of data
 
-```
+```Mathematica
 data = RandomVariate[NormalDistribution[-1, 1], 200]
 Histogram[data]
 ```
@@ -99,7 +99,7 @@ Many of these plots require the data to be in a specific list structure, which y
 Here are a few examples:
 
 {% raw %}
-```
+```Mathematica
 matrix = {{1, 2, 3, 4}, {4, 3, 2, 2}, {1, 10, 1, 5}, {1, 1, 1, 0}, {-1, -5, 0, -1}}
 ListPlot3D[matrix]
 ListContourPlot[matrix]

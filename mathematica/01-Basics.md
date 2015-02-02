@@ -15,7 +15,7 @@ Welcome to *Mathematica*!
 First things are first: you evaluate input by selecting a cell and pressing "Shift-Enter".
 You assign values to a variable using `=`; the names of a variables cannot start with a number.
 
-```
+``` Mathematica
 x = 1
 x1234 = 2
 2 x
@@ -26,14 +26,14 @@ If *Mathematica* currently holds a value for a variable, it shows up in **black*
  
 *Mathematica* tries to be exact unless you specify otherwise; if you want the decimal approximation of a number, use `N[number]`
 
-```
+``` Mathematica
 {E, e, Pi, applesauce}
 N[{E, e, Pi, applesauce}]
 ```
 
 You can remove the value of a variable using `Clear[x]`
 
-```
+```Mathematica
 Clear[x, x1234]
 ```
 
@@ -41,7 +41,7 @@ Clear[x, x1234]
 **Parentheses** are used for order of operations;
 **Curly brackets** denote lists.
 
-```
+```Mathematica
 func = Sin[x]
 poly = (x + y)^2
 list = {w, x, y, z}
@@ -52,19 +52,19 @@ list2 = {a, b, c, d}
 
 The built-in Help in *Mathematica* is amazing.  If you don't know what something does or how it's used, either press F1 or use `?` with the function name:
 
-```
+```Mathematica
 ?LegendreP
 ```
 
 You can find more information by using `??` before the function:
 
-```
+```Mathematica
 ?? Plot
 ```
 
 `*` is a wildcard; `Plot*`, for example, will return every function which starts with the characters "Plot".  You can use two of them at once as well:
 
-```
+```Mathematica
 ?*Bessel*
 ```
 
@@ -72,14 +72,14 @@ You can find more information by using `??` before the function:
 
 As we stated, curly brackets denote lists.
 
-```
+```Mathematica
 list = {w, x, y, z}
 list2 = {a, b, c, d}
 ```
 
 Two square brackets take only the specified element of the list:
 
-```
+```Mathematica
 list[[2]]
 ```
 
@@ -87,19 +87,19 @@ Lists in *Mathematica* are much like vectors; nested lists (i.e. lists of lists)
 
 Multiplication by a constant is pretty straightforward:
 
-```
+```Mathematica
 2 list
 ```
 
 You can take the dot product of two lists:
 
-```
+```Mathematica
 list.list2
 ```
 
 It's sometimes useful to remove a piece of the list with `Drop` or select a specific part of a list with `Take`:
 
-```
+```Mathematica
 Drop[list, 1]
 Drop[list, -1]
 Take[list, 2]
@@ -107,38 +107,38 @@ Take[list, 2]
 
 To make two lists into one (`Union` also removes duplicated elements):
 
-```
+```Mathematica
 list3 = Union[list, list2]
 ```
 
 To split a long list into a series of sublists:
 
-```
+```Mathematica
 Partition[list3, 2]
 ```
 
 You can generate lists by hand using curly brackets, but `Table` does it automatically by evaluating an expression which runs over the index:
 
-```
+```Mathematica
 listInt = Table[i, {i, 1, 12}]
 listSq = Table[i^2, {i, 1, 12}]
 ```
 
 You can make two lists into a list of ordered pairs using `Transpose`:
 
-```
+```Mathematica
 Transpose[{listInt, listSq}]
 ```
 
 ## Replacement Rules vs Functions
 
-```
+```Mathematica
 list
 ```
 
 You can temporarily set the value of a variable using the following commands:
 
-```
+```Mathematica
 list /. x -> 2
 list /. {w -> 1, y -> 3}
 ```
@@ -147,7 +147,7 @@ list /. {w -> 1, y -> 3}
 
 User-defined functions can take any number of arguments, but you have to specify them initially.
 
-```
+```Mathematica
 func2[x_] = Sin[x];
 func3[a_,b_,c_] = a + b^2 + c^4;
 ```
@@ -155,7 +155,7 @@ func3[a_,b_,c_] = a + b^2 + c^4;
 (Note the necessary underscores!)
 
 Evaluaion of functions is easy!
-```
+```Mathematica
 N[func2[1]]
 
 N[func3[2,4,10]
@@ -163,7 +163,7 @@ N[func3[2,4,10]
 
 If you don't define the argument of a function, then you can still work with it using replacement rules:
 
-```
+```Mathematica
 func = Sin[x];
 
 N[func /. x -> 1]
@@ -175,13 +175,13 @@ Visualization in *Mathematica* is an intricate subject; we will take it up in de
 
 Continuous functions can be plotted using `Plot`:
 
-```
+```Mathematica
 Plot[Sin[x]^2, {x, 0, 2 Pi}, ImageSize -> Large]
 ```
 
 For lists, you use `ListPlot`:
 
-```
+```Mathematica
 ListPlot[pairs, ImageSize -> Large]
 ```
 
@@ -189,26 +189,26 @@ ListPlot[pairs, ImageSize -> Large]
 
 Usually, functions in *Mathematica* are fully spelled out.  Not so for derivatives!  The function is just a capital `D`.
 
-```
+```Mathematica
 D[Sin[w t], t]
 D[BesselJ[n, x], x]
 ```
 
 *Mathematica* can do both definite and indefinite integrals:
 
-```
+```Mathematica
 psi[x_] = A Sin[3 x];
 Integrate[psi[x]^2, {x, -a, a}]
 ```
 
-```
+```Mathematica
 int = Integrate[(Sin[t^2]^4 - 10 Tan[2 t])/Csc[t], t]
 N[int /. t -> 0]
 ```
 
 As we all know, some integrals don't have exact solutions (or they are really tough to find).  You can do a numerical integration using `NIntegrate`.
 
-```
+```Mathematica
 NIntegrate[x^2/(E^x - 1), {x, 0, Infinity}]
 ```
 

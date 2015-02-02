@@ -20,15 +20,16 @@ tests**, **conditionals**, **branches**, and **loops** in Python.
 
 Generally, we can compare two objects using one of the **comparison operators**.
 
-| **Operator** | &nbsp; | **Operation**               | &nbsp; | **Syntax** | &nbsp; | **Description**                                       |
-|-------------:|--------|:----------------------------|--------|:-----------|--------|:------------------------------------------------------|
-| `==`         | &nbsp; | Tests Equality              | &nbsp; | `a == b`   | &nbsp; | True if a is equivalent to b; False otherwise         |
-| `!=`         | &nbsp; | Tests Inequality            | &nbsp; | `a != b`   | &nbsp; | True if a is inequivalent to b; False otherwise       |
-| `<>`         | &nbsp; | Tests Inequality            | &nbsp; | `a <> b`   | &nbsp; | True if a is inequivalent to b; False otherwise       |
-| `>`          | &nbsp; | Tests greater-than          | &nbsp; | `a > b`    | &nbsp; | True if a is strictly greater than b; False otherwise |
-| `<`          | &nbsp; | Tests less-than             | &nbsp; | `a < b`    | &nbsp; | True if a is strictly less than b; False otherwise    |
-| `>=`         | &nbsp; | Tests Greater-than-or-equal | &nbsp; | `a >= b`   | &nbsp; | True if a is not less than b; False otherwise         |
-| `<=`         | &nbsp; | Tests Less-than-or-equal    | &nbsp; | `a <= b`   | &nbsp; | True if a is not greater than b; False otherwise      |
+| **Operator**   | **Operation**                 | **Syntax**   | **Description**                                         |
+| -------------: | :---------------------------- | :----------- | :------------------------------------------------------ |
+| `==`           | Tests Equality                | a&nbsp;==&nbsp;b     | True if a is equivalent to b; else False                |
+| `!=`           | Tests Inequality              | a&nbsp;!=&nbsp;b     | True if a is inequivalent to b; else False              |
+| `<>`           | Tests Inequality              | a&nbsp;<>&nbsp;b     | True if a is inequivalent to b; else False              |
+| `>`            | Tests greater-than            | a&nbsp;>&nbsp;b      | True if a is strictly greater than b; else False        |
+| `<`            | Tests less-than               | a&nbsp;<&nbsp;b      | True if a is strictly less than b; else False           |
+| `>=`           | Tests Greater-than-or-equal   | a&nbsp;>=&nbsp;b     | True if a is not less than b; else False                |
+| `<=`           | Tests Less-than-or-equal      | a&nbsp;<=&nbsp;b     | True if a is not greater than b; else False             |
+{:.table .table-condensed}
 
 Comparisons are by definition binary operations meaning you need two objects two
 compare. Usually, the objects need to be of the same (or logically similar) types.

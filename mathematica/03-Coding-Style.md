@@ -18,26 +18,26 @@ There are many ways to impliment loops in *Mathematica*, here we will stick to t
 
 #### Table 
 
-```
+```Mathematica
 ?Table
 ```
 
 The **Table** function is used when you want to loop over a list and return a list as a result. An example is making a list of the squares
 
-``` mma
+```Mathematica
 Table[x^2,{x,1,10}]
 ```
 
 #### Do 
 
-```
+```Mathematica
 ?Do
 ```
 
 The **Do** function is useful for looping over a set of instructions a fixed amount of times.
 This function is analogous to the loops in *python*, *C* and *fortran*. 
 
-``` mma
+```Mathematica
 Do[Print[n^2], {n, 4}]
 ```
 
@@ -46,13 +46,13 @@ This can be rectified by using a **Module** as will be seen later in this tuoria
 
 #### While
 
-```
+```Mathematica
 ?While
 ```
 
 The while loop is similar to a **Do** loop but rather than running a fixed amount of loops, it will continually test a Boolean expression until it returns false.
 
-```
+```Mathematica
 x = 1.;
 While[x > 0.001,
  Print[x];
@@ -78,11 +78,11 @@ Evaluating mutiple sets of the same module will not affect the local varibles to
 
 Lets look at the help for module
 
-``` mma
+```Mathematica
 ?Module
 ```
 
-``` mma
+```Mathematica
 Module[{x}, Print[x]; Attributes[x]]
 ```
 
@@ -92,7 +92,7 @@ You will see from this code that x is not really x, it is `x$###` and it has att
 
 $$ \zeta(x) = \sum_{n=1}^{\infty} \frac{1}{n^x} $$
 
-``` mma
+```Mathematica
 zetaModule[x_] := Module[{xLocal = x, sumLocal = 0.0},
   Do[sumLocal += 1/n^(xLocal);
    , {n, 1, 1000000}];
