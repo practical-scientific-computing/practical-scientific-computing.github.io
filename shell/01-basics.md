@@ -143,18 +143,52 @@ friend.
 The most used commands are the ones for moving yourself and files
 around the filesystem.
 
-| Command &nbsp; | Mnemonic         | Description 
+| Command | Mnemonic         | Description 
 |---------|------------------|------------------------------------------------
 | `ls`    | list             | Lists directory contents
-| `cd`    | change directory &nbsp; | Change current working directory
+| `cd`    | change directory | Change current working directory
+
+### ls
+
+The contents of a directory on a Unix system can be listed by the `ls` command.
+The behavior of `ls` can be greatly altered by the many switches available to
+it. The more useful ones include:
+
+  * `-l` long format showing more details
+  * `-h` print file sizes in a more human-readable format
+  * `-a` show all files, including hidden files
+  * A number of sorting switches:
+    * `-t` sort by modification time
+    * `-S` sort by file size.
+    * `-X` alphabetically by extension
+  * `--group-directories-first` sort directoris before files
+
+In UNIX-like systems, files starting with a period `.` are considered 'hidden'
+and are not normally listed by `ls`. Here is what the output of `ls` looks like
+on a typical system:
+
+![using ls](media/ls.png)
+
+### cd
+
+To move between directories, we use the `cd` command, which takes the name of
+the directory you wish to move to as an argument. Files and directories can be
+referred to by either their **absolute path** or their **relative path** with
+respect to where you currently are.
+
+Before we can discuss the difference, we must first explain how direcories are
+structured in a UNIX-like system.
 
 ### The UNIX Directory Tree
 
 The UNIX standard outlines an order for where files should go. UNIX-like
 operating systems like Linux and MacOS share much of this structure. The Windows
-file structure however is very different. The UNIX directory tree starts at a
+file tree however is very different. The UNIX directory tree starts at a
 directory called 'the root directory' or 'root'. The root directory is located 
-at `/` which is read as either 'root' or 'slash'.
+at `/` which is read as either 'root' or 'slash'. Using `ls`, we can inspect 
+the contents of a typical root directory:
+
+![using ls -l](media/lsl.png)
 
 Within the root directory are a number of subdirectories. As a user, all of your
 personal files will reside in `/home/username` and this is where you'll spend
@@ -174,23 +208,89 @@ most of your time.
 | `/root`           | root-home         | root user's home directory                            |
 | `/run`            | ...               | ramdisk tmpfs for temporary OS runtime files          |
 | `/sys`            | system, sys       | system virtual fs                                     |
-| `/tmp`            | temp, temporary &nbsp;  | ramdisk tmpfs for general temporary files             |
+| `/tmp`            | temp, temporary   | ramdisk tmpfs for general temporary files             |
 | `/usr`            | user              | userland applications                                 |
 | `/usr/bin`        | user bin          | system commands, applications, and binaries           |
-| `/usr/include` &nbsp; |user include           | system programming header files                       |
+| `/usr/include`    | user include      | system programming header files                       |
 | `/usr/lib`        | user lib          | system shared libraries                               |
 | `/usr/local`      | user local        | same as /usr but for host-specific files/commands     |
 | `/usr/share`      | user share        | system shared resource files                          |
 | `/var`            | variable, var     | runtime variable files                                |
 
+### Using cd
+
+Absolute paths are always referenced from the root directory and will always
+start with a `/` like this path to a directory 'documents' in the home directory
+of the user 'prismo':
+
+```console
+$ cd /home/prismo/documents
+```
+Regardless of what directory you are currently in, changing directory with an
+absolute path will take you where you wanted to go. However, that's a lot of
+writing and often we are already in a directory that is close to our intended
+destination. In this case, we can use a relative path with respect to our
+current working directory:
+
+```console
+$ pwd
+/home/prismo
+$ cd documents
+$ pwd
+/home/prismo/documents
+```
+Every directory contains at least two
+special hidden directories: 
+
+  * `.` refers to the current working directory (cwd)
+  * `..` refers to the parent directory of the cwd.
+
+We can use these to make relative paths up the directory tree:
+
+```console
+$ pwd
+/home/prismo/documents
+$ cd ../science
+$ pwd
+/home/prismo/science
+```
+
+You will spend most of your time in your home directory, and so there are
+special ways of refering to your home directory. The name `~` refers to the
+absolute path of your home directory. So, regardless of where you are in the
+filesystem, you can do things like:
+
+```console
+$ pwd
+/var/log
+$ cd ~/documents
+$ pwd
+/home/prismo/documents
+```
+In fact, `~` is an alias for something called the `$HOME` environment variable.
+We'll learn more about environment variables later. 
+
+If `cd` is given no arguments, it will return you to `~`.
+
+```console
+$ pwd
+/var/log
+$ cd
+$ pwd
+/home/prismo
+```
+
 ## Manipulating Files
 
-| Command &nbsp; | Mnemonic         | Description 
+| Command | Mnemonic         | Description 
 |---------|------------------|------------------------------------------------
 | `mkdir` | make directory   | Makes a new directory
 | `mv`    | move             | Moves a file in the filesystem
 | `cp`    | copy             | Copies a file to a new location
 | `rm`    | remove           | Deletes a file from the filesystem
-| `touch` &nbsp; | ...              | Touches the filesystem, creating an empty file
-| `rmdir` | remove directory &nbsp; | Removes an empty directory from the filesystem
+| `touch` | ...              | Touches the filesystem, creating an empty file
+| `rmdir` | remove directory | Removes an empty directory from the filesystem
 
+## File Permissions
+
+Files on a Unix-like system 
