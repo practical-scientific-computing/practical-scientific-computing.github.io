@@ -280,17 +280,166 @@ $ pwd
 /home/prismo
 ```
 
+Lastly, `cd` remembers the last working directory in an environment variable
+`$OLDPWD`. When `cd` is called with a hyphen as it's argument, it will change
+directories to the last remembered working directory and print its name:
+
+```console
+$ pwd
+/home/prismo/documents
+$ cd ../research/pickle_recipes
+$ pwd
+/home/prismo/research/pickle_recipes
+$ cd -
+~/documents
+$ pwd
+/home/prismo/documents
+```
+
+So to summarize the special directory names:
+
+| Name   | Location                  |
+|--------|---------------------------|
+| `.`    | current working directory |
+| `..`   | parent of cwd             |
+| `~`    | user home directory       |
+| `-`    | last working directory    |
+
+
 ## Manipulating Files
 
-| Command | Mnemonic         | Description 
-|---------|------------------|------------------------------------------------
-| `mkdir` | make directory   | Makes a new directory
-| `mv`    | move             | Moves a file in the filesystem
-| `cp`    | copy             | Copies a file to a new location
-| `rm`    | remove           | Deletes a file from the filesystem
-| `touch` | ...              | Touches the filesystem, creating an empty file
-| `rmdir` | remove directory | Removes an empty directory from the filesystem
+| Command | Syntax                        | Description 
+|---------|-------------------------------|------------------------------------------------
+| `mkdir` | `mkdir [OPT]... DIRECTORY...` | Makes a new directory at path DIRECTORY
+| `mv`    | `mv [OPT]... SRC DEST`        | Moves (renames) file at path SRC to path DEST
+|         | `mv [OPT]... SRC... DIR`      | Moves all SRCs into directory DIR
+|         | `mv [OPT]... -t DIR SRC...`   | Moves all SRCs into directory DIR
+|=========|===============================|================================================
+| `cp`    | `cp [OPT]... SRC DEST`        | Copies SRC to a new location DEST
+|         | `cp [OPT]... SRC... DIR`      | Copies all SRCs into directory DIR
+|         | `cp [OPT]... -t DIR SRC...`   | Copies all SRCs into directory DIR
+|=========|===============================|================================================
+| `rm`    | `rm [OPT]... FILE`            | Deletes FILE from the filesystem
+|         | `rm [OPT]... -r DIR`          | Deletes directory DIR and their contents recursively 
+|=========|===============================|================================================
+| `touch` | `touch [OPT]... FILE...`      | Touches the filesystem, creating empty FILEs
+| `rmdir` | `rmdir DIR...`                | Removes empty DIRs from the filesystem
+
 
 ## File Permissions
 
-Files on a Unix-like system 
+Unix-like systems are what we call *multi-user* environments. As such, they
+attach attributes, called **permissions**, to every file (including directories)
+that control access to that file.
+
+There are three types of access to a file. **Read (r)** access allows a file to be
+read; **write (r)** access allows a file to be created, modified, or deleted; and
+**execute (x)** access allows a program to be run or a directory to be entered.
+
+On top of this, there are three levels of permission granularity controlling who
+has these permissions. Permissions can be granted to to the file's **owning user
+(u)**, to members of a file's **group (g)**, or to everyone else or **others
+(o)**.
+
+We can inpect what permissions a file has by looking at the long-form output of
+`ls -l`:
+
+
+```console
+$ ls -l
+total 0
+drwxr-x--- 2 prismo cosmowl     40 Feb  2 01:26 limited
+drwx------ 2 prismo prismo      40 Feb  2 01:26 private
+drwxr-xr-x 2 jake   finn        40 Feb  2 01:26 public
+drwxrwxrwx 2 prismo ooo         40 Feb  2 01:27 reckless
+-rw------- 1 pepbut pepbut       0 Feb  2 01:32 confidential
+-rw-r--r-- 1 peeble peeble       0 Feb  2 01:26 default
+-rw-rw-r-- 1 peeble royalty      0 Feb  2 01:31 group_edit
+-rwxrwxrwx 1 lich   lich         0 Feb  2 01:38 insane
+-rwxr-xr-x 1 root   root         0 Feb  2 01:30 program
+-rwx------ 1 randy  bnubs        0 Feb  2 01:30 secret_script
+```
+
+The first column shows the file's permissions as a string of characters.
+
+In order from left to right, the characters indicate:
+
+  * File is a directory (**d**) or not (**-**)
+  * Owning user has read access (**r**) or not (**-**)
+  * Owning user has write access (**w**) or not (**-**)
+  * Owning user has execute access (**x**) or not (**-**)
+  * Group members have read access (**r**) or not (**-**)
+  * Group members have write access (**w**) or not (**-**)
+  * Group members have execute access (**x**) or not (**-**)
+  * Others have read access (**r**) or not (**-**)
+  * Others have write access (**w**) or not (**-**)
+  * Others have execute access (**x**) or not (**-**)
+
+The second column indicates the number of **links** that point to the file.
+Directories always have at least 2 (`.` and `..`) while files have at least one.
+
+The third column is the owning user's name.
+
+The fourth column is the file's group name.
+
+The fifth column is the filesize (default in bytes).
+
+The sixth column is the month, day, time/year that the file was last
+modified.
+
+The seventh column is the filename.
+
+### Changing File Permissions
+
+We can modify the permissions of a file with the command `chmod` (short for 'change mode
+bits'). The syntax is 
+
+```console
+$ chmod MODE FILE
+```
+
+where MODE is either a symbolic modifer string or an octal number representing
+the desired bit mode. The symbolic representation is easier to use for
+beginners. From the man page:
+
+
+    The format of a symbolic mode is [ugoa...][[-+=][perms...]...],
+    where perms is either zero or more letters from the set rwxXst,
+    or a single letter from the set ugo.
+
+The set ugoa corresponds to user, group, others, and all. The operators -+=
+remove, add, or set exactly the permissons that follow. The set of perms rwxXst
+correspond to read (r), write (w), execute (x), and three other modes. (X) sets
+the execute (x) bit only if the file is a directory or an (x) bit is already
+set, (s) sets the set uid/gid bit, and (t) sets the "stick bit" that restricts
+deletion. The last two (s) and (t) are uncommon for most casual uses.
+
+Multiple symbolic modes, separated by commas, can be passed at the same time.
+
+So for example to add the read and write permissions for the owning user and
+group of a file, while removing everything from others, we write:
+
+```console
+$ chmod ug+rw,o-wrx file
+```
+
+When sharing files with others, or when writing programs, you must make sure the
+permissions are set correctly. For instance, a common issue for beginners is to
+forget to set executable permissions on scripts.
+
+Another thing to be careful about is ensuring sensitive files are private or
+restricted. For instance, any public-private cryptography keys you have must be
+kept secret and should have permissions '-rw-------' (they should be considered
+compromised if they are ever readable, even for a moment, by anyone other than
+the owning user). Likewise, progams usually should have write permissions only
+for the owning user otherwise the code could be modified by a malicious user.
+
+In the example above, the directory 'reckless' and the program 'insane' have
+dangerous permissions and should be avoided unless you really know what you're
+doing. The directory 'public', the file 'default', and the program 'program'
+have pretty typical settings for non-sensitive files. Lastly, 'private',
+'confidential', and 'secret_script' have permissions that are typical for
+sensitive or secret files.
+
+When used properly, UNIX permissions are a powerful management tool that keep
+systems secure.
