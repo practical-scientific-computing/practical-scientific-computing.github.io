@@ -33,7 +33,7 @@ denoted by whatever follows a `#` character and can occur anywhere on a line.
 Comments are invisible to the Python interpereter. There are *no block comments in
 Python*. This is due to one of the language's core philosophies:
 
-    "Explicit is better than implicit".
+> "Explicit is better than implicit".
     
 By forcing every comment line to start with `#`, the developer must make a
 concious choice to comment out multiple lines. Multiple instructions can be

@@ -36,21 +36,21 @@ $ python3
 ```
 You should see something like the following
 
-{% highlight pycon %}
+``` nohighlight
 Python 3.4.2 (default, Jan 12 2015, 11:38:40) 
 [GCC 4.9.2 20141224 (prerelease)] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
-{% endhighlight %}
+```
 
 Great! You've opened python for the first time! Now how the heck do you get out
-of it? You can either type `exit()` or use the key command `Ctrl-D` to exit.
+of it? You can either type <kbd>exit()</kbd> or use the key command <kbd>Ctrl-D</kbd> to exit.
 
 Now let's try typing some things in the python command line. The `>>>` means the
 interpreter is ready for the next command. How about some simple math? Try
 typing the following, then pressing enter.
 
-{% highlight pycon %}
+{% highlight python %}
 >>> 1+1
 
 >>> 300+1.
@@ -73,7 +73,7 @@ counting.
 
 Now, try the following:
 
-{% highlight pycon %}
+{% highlight python %}
 >>> print("hello world")
 
 >>> print("SPAM")

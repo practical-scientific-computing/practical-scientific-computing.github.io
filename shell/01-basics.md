@@ -6,20 +6,37 @@ group: Shell
 type: tutorial
 ---
 
-# Basic Shell Usage
+# Basic Shell Commands
 
 Upon firing up a terminal emulator, it will start some flavor of textual
 command-line-interface (**cli**) called a **shell**. There are many
 different shells available including but not limited to:
 
-  * bash (the **B**ourne-**a**gain **sh**ell)
-  * zsh (**Z**hong **Sh**ao shell)
-  * sh (the original Bourne **sh**ell)
-  * csh (the **C**-**sh**ell)
-  * tcsh (the **T**ENEX-**csh**)
-  * ksh (the **K**orn **sh**ell)
-  * fish (the **f**riendly **i**nteractive **sh**ell)
-  * Ad nauseum....
+
+bash
+  : the **B**ourne-**a**gain **sh**ell
+  
+zsh 
+  : **Z**hong **Sh**ao shell
+
+sh 
+  : the original Bourne **sh**ell
+
+csh 
+  : the **C**-**sh**ell
+
+tcsh 
+  : the **T**ENEX-**csh**
+
+ksh 
+  : the **K**orn **sh**ell
+
+fish 
+  : the **f**riendly **i**nteractive **sh**ell
+
+...
+  : ad nauseum
+{:.dl-horizontal}
 
 On most systems, including Linux and modern MacOS, the default shell will be bash.
 Some older Unix and Mac systems will use (t)csh by default. Unless specifically
@@ -40,24 +57,41 @@ $
 ```
 
 From the prompt, we can issue **commands** to do virtually anything we wish a
-computer to do. Every command is either a program, script or shell function.
+computer to do. Every command is either a program, script or shell function. We
+issue a command by typing it in at the prompt and pressing <kbd>Enter</kbd>.
 
-We issue a command by typing it in at the prompt and press *ENTER*. Most
-commands expect number of mandatory **positional arguments** which are typed
-after the command name, in order, and each separated by spaces.
+Most commands expect number of mandatory **positional arguments** which are
+typed after the command name, in order, and each separated by a
+<kbd>Space</kbd>.  Most commands can also take a number of non-mandatory
+**optional arguments** or **switches**. Switches can dramatically alter what a
+command does.  A switch is invoked by writing it's name after a command.  
 
-Most commands can also take a number of non-mandatory **optional arguments**
-or **switches**. Switches can dramatically alter what a command does.  A switch
-is invoked by preceding it's name by a number of hyphens `-`. One hyphen is used
-if the switch has a single character name and two hyphens are used if the switch
-name is more than one character. If a switch expects an argument, that is then
-written following the switch name separated by a space. 
+All switch names start with a hyphen. One hyphen <kbd>-</kbd> is used if
+the switch has a single character name and two hyphens <kbd>--</kbd> are used if
+the switch name is more than one character.
+{:.alert .alert-info}
 
-Commands and arguments are case-sensitive. You will find that most commands and
-multi-character switches are all lowercase, while single character switches to be
-of any case.
+**Arguments to a switch, when needed, follow the switch name.** If a switch
+expects an argument, that is then written following the switch name separated by
+a <kbd>Space</kbd>. 
+{:.alert .alert-info}
 
-We'll look at some basic commands first.
+Switches that do not take an argument can be grouped together after a single
+hyphen.
+{:.alert .alert-info}
+
+**Every part of a command is Space separated.** The command, all its arguments
+(both positional and optional) and any switches invoked after a command must
+each be separated by a <kbd>Space</kbd>.
+{:.alert .alert-warning}
+
+**Commands and arguments are case-sensitive.** You will find that most commands and
+multi-character switches are all lowercase, while single character switches to
+be of any case. **Some commands will have single character switches of the same
+name, but different case!**
+{:.alert .alert-danger}
+
+We'll look at some examples using basic commands first.
 
 ## Who and Where am I?
 
@@ -65,7 +99,7 @@ The command `whoami` will return the username you are currently logged in as:
 
 ``` bash
 $ whoami
-user
+prismo
 ```
 
 The command will dump it's response below the prompt and issue a new one.
@@ -77,15 +111,16 @@ command `pwd` (short for 'print working directory'):
 
 ``` bash
 $ pwd
-/home/user
+/home/prismo
 ```
 
-If you are using a machine remotely through a terminal, it helps to know the
-hostname of the machine you are using. We find this with the command `hostname`:
+It is useful to know the hostname of the machine you are using, especially if
+you are using a machine remotely through a terminal. We find this with the
+command `hostname`:
 
 ``` bash
 $ hostname
-laptop
+timeroom
 ```
 
 Many folks will modify their prompt to include all this information in the
@@ -93,7 +128,7 @@ prompt so they don't lose track of who and where they are so some prompts may
 look like:
 
 ``` bash
-[username@laptop: /home/user] $
+[prismo@timeroom: /home/prismo] $
 ```
 
 but for brevity, examples here will just use `$` and sometimes maybe `#` as the
@@ -107,12 +142,11 @@ regular use to recall the syntax for all but the most used commands. The
 developers of all this stuff know this and have provided some help that you can
 access right from the prompt. This can be done two ways:
 
-First, many commands take optional arguments. Options on a shell command are
-denoted by one or two dashes followed by a keyword indicating the option to
-invoke. Most commands have implemented an option named `--help` that will print a
-summary of a command's use and syntax. It looks like this:
+Most commands implement a switch named `--help` that will print a summary of a
+command's use and syntax without actually running the command. It looks like
+this:
 
-``` 
+``` nohighlight
 $ whoami --help
 Usage: whoami [OPTION]...
 Print the user name associated with the current effective user ID.
@@ -125,10 +159,11 @@ GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
 For complete documentation, run: info coreutils 'whoami invocation'
 ```
 
-The other means of getting help in the terminal is by using the command `man`
-which will bring up a command's manual page (if it exists, and it usually will)
-in a text-viewing program called a **pager**. The command `man` takes the
-name of the command you wish to see the manual for as an argument.
+The other means of getting help in the terminal is by reading the command's
+manual page. To access the manual for a command, we invoke the command `man`.
+The command `man` takes the name of the command you wish to see the manual for
+as an argument.  The manual page will appear in a terminal text-viewing program
+called a **pager**.
 
 ``` bash
 $ man whoami
@@ -137,13 +172,36 @@ $ man whoami
 ![man page](media/man.png)
 
 The manual pages tend to be complete and will tell you everything you could want
-to know, but they can sometimes be daunting. So, as always, Google is your
-friend.
+to know, but they can sometimes be daunting. To sort out all this mess, 
+you should take a moment to read `man`'s manual page:
+
+``` bash
+$ man man
+```
+
+A manual page's SYNOPSIS section is often all you really care about reading.
+
+``` nohighlight
+The following conventions apply to the SYNOPSIS section
+and can be used as a guide in other sections.
+
+bold text          type exactly as shown.
+italic text        replace with appropriate argument.
+[-abc]             any or all arguments within [ ] are optional.
+-a|-b              options delimited by | cannot be used together.
+argument ...       argument is repeatable.
+[expression] ...   entire expression within [ ] is repeatable.
+
+Exact rendering may vary depending on the output  device.   For  instance,
+man will usually not be able to render italics when running in a terminal,
+and will typically use underlined or coloured text instead.
+```
 
 ## Getting Around
 
 The most used commands are the ones for moving yourself and files
 around the filesystem.
+
 
 | Command | Mnemonic         | Description 
 |---------|------------------|------------------------------------------------
@@ -151,35 +209,42 @@ around the filesystem.
 | `cd`    | change directory | Change current working directory
 {:.table}
 
-### ls
+### `ls`
 
-The contents of a directory on a Unix system can be listed by the `ls` command.
-The behavior of `ls` can be greatly altered by the many switches available to
-it. The more useful ones include:
+The contents directory can be listed by the `ls` command.  The behavior of `ls`
+can be greatly altered by the many switches available to it. The more useful
+ones include:
 
   * `-l` long format showing more details
   * `-h` print file sizes in a more human-readable format
   * `-a` show all files, including hidden files
-  * A number of sorting switches:
-    * `-t` sort by modification time
-    * `-S` sort by file size.
-    * `-X` alphabetically by extension
+  * `-t` sort by modification time
+  * `-S` sort by file size.
+  * `-X` alphabetically by extension
   * `--group-directories-first` sort directoris before files
 
-In UNIX-like systems, files starting with a period `.` are considered 'hidden'
-and are not normally listed by `ls`. Here is what the output of `ls` looks like
-on a typical system:
+ Here is what the output of `ls` looks like on a typical system:
 
 ![using ls](media/ls.png)
 
-### cd
+**Hidden files.** On UNIX-like systems, files starting with a period `.` are considered 'hidden'
+and are not normally listed by `ls`.
+{:.alert .alert-warning}
 
-To move between directories, we use the `cd` command, which takes the name of
-the directory you wish to move to as an argument. Files and directories can be
-referred to by either their **absolute path** or their **relative path** with
-respect to where you currently are.
+### `cd`
 
-Before we can discuss the difference, we must first explain how direcories are
+To move between directories, we use the `cd` command, which takes the **path**
+of the directory you wish to move to as an argument.
+
+``` bash
+$ cd /home/prismo/pickle_recipes
+```
+
+Files and directories can be referred to by either their **absolute path** or
+their **relative path** with respect to where you currently are.
+{:.alert .alert-info}
+
+To understand paths, we must first explain how directories are
 structured in a UNIX-like system.
 
 ### The UNIX Directory Tree
@@ -191,11 +256,9 @@ directory called 'the root directory' or 'root'. The root directory is located
 at `/` which is read as either 'root' or 'slash'. Using `ls`, we can inspect 
 the contents of a typical root directory:
 
-![using ls -l](media/lsl.png)
+![rootdir](media/lsl.png)
 
-Within the root directory are a number of subdirectories. As a user, all of your
-personal files will reside in `/home/username` and this is where you'll spend
-most of your time. 
+A typical UNIX filesystem will have the following directories and subdirectories:
 
 | Path              | Read As           | Contains                                              | 
 |:------------------|:------------------|:------------------------------------------------------|
@@ -221,7 +284,23 @@ most of your time.
 | `/var`            | variable, var     | runtime variable files                                |
 {:.table}
 
-### Using cd
+For those coming from Windows, `/` is in some ways like `C:\` except that it is
+a bit more abstract. On Windows systems, `C:\` is the root directory of a single
+disk partition. On UNIX-like systems `/` is the root directory of everything,
+and it not limited to a single disk partition. All other mounted filesystems
+and disk partitions appear as subdirectories of `/`. 
+{:.alert .alert-info}
+
+As a user, all of your personal files will reside in `/home/username` and this
+is where you'll spend most of your time. For users familiar with Windows, this
+is like the `C:\Users\username` directory.
+{:.alert .alert-info}
+
+Most of the programs and executables on a UNIX system reside in the `/usr/bin`
+('bin' for 'binary' as in *binary executable*) directory.
+{:.alert .alert-info}
+
+### Using `cd`
 
 Absolute paths are always referenced from the root directory and will always
 start with a `/` like this path to a directory 'documents' in the home directory
@@ -231,10 +310,12 @@ of the user 'prismo':
 $ cd /home/prismo/documents
 ```
 Regardless of what directory you are currently in, changing directory with an
-absolute path will take you where you wanted to go. However, that's a lot of
-writing and often we are already in a directory that is close to our intended
-destination. In this case, we can use a relative path with respect to our
-current working directory:
+absolute path will take you where you wanted to go.
+{:.alert .alert-info}
+
+Writing out absolute paths is long and tiresome. Often we are already in a
+directory that is close to our intended destination. In this case, we can use a
+relative path with respect to our current working directory:
 
 ``` bash
 $ pwd
@@ -261,7 +342,7 @@ $ pwd
 
 You will spend most of your time in your home directory, and so there are
 special ways of refering to your home directory. The name `~` refers to the
-absolute path of your home directory. So, regardless of where you are in the
+absolute path of your home directory. Regardless of where you are in the
 filesystem, you can do things like:
 
 ``` bash
@@ -271,8 +352,10 @@ $ cd ~/documents
 $ pwd
 /home/prismo/documents
 ```
+
 In fact, `~` is an alias for something called the `$HOME` environment variable.
 We'll learn more about environment variables later. 
+{:.alert .alert-info}
 
 If `cd` is given no arguments, it will return you to `~`.
 
@@ -313,6 +396,9 @@ So to summarize the special directory names:
 
 ## Manipulating Files
 
+The following table of commands consists of those used for creating, moving, and
+destroying (deleting) files and directories.
+
 | Command | Syntax                        | Description 
 |---------|-------------------------------|------------------------------------------------
 | `mkdir` | `mkdir [OPT]... DIRECTORY...` | Makes a new directory at path DIRECTORY
@@ -331,6 +417,21 @@ So to summarize the special directory names:
 | `rmdir` | `rmdir DIR...`                | Removes empty DIRs from the filesystem
 {:.table}
 
+The syntax for the above commands are taken directly from their manual
+pages. Each syntax should be written on a single line!
+{:.alert alert-danger}
+
+There is a command `rename` but it does not work the way you think. The ordinary
+way to rename a file is to move it into it's new name using `mv`.
+{:.alert .alert-warning}
+
+The commands `rm` and `rmdir` will not remove a non-empty directory. To do that,
+you must use `rm`'s 'force' and 'recursive' switches `rm -rf PATH`.
+{:.alert .alert-warning}
+
+**Commands to delete a file cannot be undone!** There is no 'recycle bin' when using
+shell commands.
+{:.alert .alert-danger}
 
 ## File Permissions
 
@@ -395,6 +496,17 @@ modified.
 
 The seventh column is the filename.
 
+To see what groups your username is a member of, use the `groups` command. If
+you are in the same group as a file, then the file's group permissions are
+granted to you.
+{:.alert .alert-info}
+
+**Permissions are additive.** Everyone is granted *others* permissions. All
+members of a file's group are granted *group* permissions. The owning user is
+granted *user* permissions. If you have some permissions from each category,
+they all will apply to you.
+{:.alert .alert-info}
+
 ### Changing File Permissions
 
 We can modify the permissions of a file with the command `chmod` (short for 'change mode
@@ -413,12 +525,12 @@ beginners. From the man page:
     where perms is either zero or more letters from the set rwxXst,
     or a single letter from the set ugo.
 
-The set ugoa corresponds to user, group, others, and all. The operators -+=
-remove, add, or set exactly the permissons that follow. The set of perms rwxXst
-correspond to read (r), write (w), execute (x), and three other modes. (X) sets
-the execute (x) bit only if the file is a directory or an (x) bit is already
-set, (s) sets the set uid/gid bit, and (t) sets the "stick bit" that restricts
-deletion. The last two (s) and (t) are uncommon for most casual uses.
+The set `ugoa` corresponds to user, group, others, and all. The operators `-+=`
+remove, add, or set exactly the permissons that follow. The set of perms
+`rwxXst` correspond to read (r), write (w), execute (x), and three other modes.
+(X) sets the execute (x) bit only if the file is a directory or an (x) bit is
+already set, (s) sets the set uid/gid bit, and (t) sets the "sticky bit" that
+restricts deletion. The last two (s) and (t) are uncommon for most casual uses.
 
 Multiple symbolic modes, separated by commas, can be passed at the same time.
 
@@ -449,3 +561,14 @@ sensitive or secret files.
 
 When used properly, UNIX permissions are a powerful management tool that keep
 systems secure.
+
+### Changing File Owner and Group
+
+To change a file's owner and group, use the command `chown`. The syntax for
+`chown` is
+
+``` nohighlight
+chown [OPTION]... [OWNER][:[GROUP]] FILE...
+chown [OPTION]... --reference=RFILE FILE...
+```
+You must have write permission to change file ownership.
