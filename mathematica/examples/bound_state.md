@@ -14,7 +14,7 @@ $$ \hbar^2/(2m)=1 $$
 
 $$ -E=d^2 \text{ in region 1 and 3} $$
 
-$$ E+V=k^2 \text{ in region 2} $$
+$$ E+ |V| =k^2 \text{ in region 2} $$
 {% endraw %}
 
 ![Quantum Well](/mathematica/media/quantum_well.png "Quantum Finite Well")
