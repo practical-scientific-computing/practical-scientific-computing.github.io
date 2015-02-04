@@ -10,7 +10,7 @@ type: example
 For this example lets find the wavefunction of the bound states of a quantum particle in a well using scaled units where:
 
 {% raw %}
-$$ -\hbar^2/(2m)=1 $$
+$$ \hbar^2/(2m)=1 $$
 
 $$ -E=d^2 \text{ in region 1 and 3} $$
 
