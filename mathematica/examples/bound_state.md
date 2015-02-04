@@ -8,8 +8,11 @@ type: example
 # Bound states of a finite well
 
 For this example lets find the wavefunction of the bound states of a quantum particle in a well using scaled units where:
+
 $$-\hbar/(2m)=1$$ 
+
 $$-E=d^2 \text{ in region 1 and 3}$$
+
 $$E+V=k^2 \text{ in region 2}$$
 
 ![Quantum Well](/mathematica/media/quantum_well.png "Quantum Finite Well")
@@ -56,6 +59,7 @@ Plot[ en (20 + en) + 100 Sin[Sqrt[20 + en]]^2, {en, -wellDepth, 0}]
 e0 = en /. FindRoot[eq1, {en, -15}]
 e1 = en /. FindRoot[eq1, {en, -4}]
 ```
+
 `FindRoot` can also find zeros of system of equations by supplying all of the unknowns for the system, as well as a guess for each unknown. Finding the constants for the ground state yields
 
 ```
