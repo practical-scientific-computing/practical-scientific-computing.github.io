@@ -11,7 +11,9 @@ For this example lets find the wavefunction of the bound states of a quantum par
 
 {% raw %}
 $$ -\hbar^2/(2m)=1 $$
+
 $$ -E=d^2 \text{ in region 1 and 3} $$
+
 $$ E+V=k^2 \text{ in region 2} $$
 {% endraw %}
 
