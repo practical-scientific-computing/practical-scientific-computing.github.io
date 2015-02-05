@@ -42,7 +42,9 @@ Some of the most useful options
 | `ssh -Y some_user@some_comp`      | Connect to some_comp with secure X11 forwarding 
 | `ssh -p 000 some_user@some_comp`  | Connect to some_comp as some_user through port 000
 {:.table}
+
 ## Uses
+
 Why would you use any of these other flags? Let's say you have a graphic or something else
 on some_comp which you'd like to look at on your current computer. An easy way to do this
 is by connecting using `ssh -Y some_user@some_com`, then running something like
@@ -52,7 +54,9 @@ firefox mydata.png
 ```
 
 which will then pop up the firefox window.
+
 ## Caveats
+
 Taken from the man pages of ssh:
 
 X11 forwarding should be enabled with caution.  Users with the ability to bypass file permissions on the remote host (for the user's X authorization database) 
