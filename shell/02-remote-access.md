@@ -16,7 +16,7 @@ you're doing to work on the computers at UC for this tutorial. There are several
 | `ssh`    | Secure SHell  | log into remote machine and execute commands
 | `scp`    | Secure Copy   | copy files between host on a network, using passwords
 | `rsync`  | Remote Sync   | remote data copying tool that minimizes amount of copied data
-| `screen` | Screen        | use multipla virtual terminals in the same window
+| `screen` | Screen        | use multiple virtual terminals in the same window
 {:.table}
 
 While you can dive in to the man pages yourself to get the full usage of these commands, we'll go over a few
@@ -36,7 +36,7 @@ Some of the most useful options
 
 | Command                           | Meaning
 |-----------------------------------|---------------------------------------------------
-| `ssh some_user@some_comp`         | Connedt to some_comp as some_user
+| `ssh some_user@some_comp`         | Connect to some_comp as some_user
 | `ssh -X some_user@some_comp`      | Connect to some_comp with X11 forwarding enabled
 | `ssh -x some_user@some_comp`      | Connect to some_comp with X11 forwarding disabled
 | `ssh -Y some_user@some_comp`      | Connect to some_comp with secure X11 forwarding 
@@ -47,7 +47,7 @@ Some of the most useful options
 
 Why would you use any of these other flags? Let's say you have a graphic or something else
 on some_comp which you'd like to look at on your current computer. An easy way to do this
-is by connecting using `ssh -Y some_user@some_com`, then running something like
+is by connecting using `ssh -Y some_user@some_comp`, then running something like
 
 ```
 firefox mydata.png
@@ -105,7 +105,35 @@ scp options source destination
 
 # rsync
 
+Similar to `scp` is `rsync`. The advantage to using `rsync` is that it is generally faster than `scp`, mainly because it only transfers the differences
+from one file to another. As with `scp`, the syntax is:
 
+```
+rsync options source destination
+```
+
+So, in order to transfer the same file `data.txt` from the above source, you can say:
+
+```
+rsync some_user@some_comp:~/mydata/data.txt ./
+```
+
+There are a host of other options which you can use to help speed things up.
+
+| Option           | Meaning
+|------------------|---------------------------------------------------
+|  `r`             | Copy data recursively
+|  `a`             | Archive mode: Allows recursive copying, while preserve user ownership, sym links, permissions, ownership and timestamps
+|  `z`             | Compress data
+|  `h`             | Human readable numbers for messages
+|  `v`             | Verbose output
+{:.table}
+
+So, in order to copy the whole `mydata` directory, as above, but have some more output, we can do
+
+```
+rsync -zvha some_user@some_comp:~/mydata/ ~/some/other/path/
+```
 # screen
 
 Screen is probably the most useful command that you could possibly have with remote connections. Let's see why:
@@ -187,7 +215,7 @@ where 3591 corresponds to the number in the list `screen -ls`. Now, in this scre
 Ctrl-a : sessionname session2
 ```
 
-You'll see a box pop up at the bottom of the screen, which is your line. Now detatch this screen
+You'll see a box pop up at the bottom of the screen, which is your line. Now detach this screen
 
 ```
 Ctrl-a d
@@ -208,7 +236,7 @@ There are screens on:
 2 Sockets in /var/run/screen/S-user.
 ```
 
-Now, you can reattach the screen either by the name you gave it, or by the number
+Now, you can re-attach the screen either by the name you gave it, or by the number
 ```
 screen -r session2
 ```
