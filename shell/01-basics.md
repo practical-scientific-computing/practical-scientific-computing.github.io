@@ -64,7 +64,12 @@ Most commands expect number of mandatory **positional arguments** which are
 typed after the command name, in order, and each separated by a
 <kbd>Space</kbd>.  Most commands can also take a number of non-mandatory
 **optional arguments** or **switches**. Switches can dramatically alter what a
-command does.  A switch is invoked by writing it's name after a command.  
+command does.  A switch is invoked by writing it's name after a command. A
+command will have a general structure in the form:
+
+```nohighlight
+$ commandname --long-switch-name switch_argument -m -a -n -y -SwtchZ arg1 arg2
+```
 
 All switch names start with a hyphen. One hyphen <kbd>-</kbd> is used if
 the switch has a single character name and two hyphens <kbd>--</kbd> are used if
@@ -91,6 +96,13 @@ be of any case. **Some commands will have single character switches of the same
 name, but different case!**
 {:.alert .alert-danger}
 
+Ordinarily only one command is issued per line. To issue to commands on the same
+line, they must be separated by `;`
+
+```nohighlight
+$ command1 arg1; command2 arg2
+```
+
 We'll look at some examples using basic commands first.
 
 ## Who and Where am I?
@@ -107,7 +119,7 @@ Once you know *who* you are, it helps to know *where* you are. The shell keeps
 track of where you are in the filesystem (much like a file manager). Many
 commands that you issue need the location of files relative to where you
 currently are. To find out what directory you are currently in, issue the
-command `pwd` (short for 'print working directory'):
+command `pwd` (short for '**p**rint **w**orking **d**irectory'):
 
 ``` bash
 $ pwd
@@ -123,15 +135,14 @@ $ hostname
 timeroom
 ```
 
-Many folks will modify their prompt to include all this information in the
-prompt so they don't lose track of who and where they are so some prompts may
-look like:
+Many folks will modify their prompt to include all this information so they
+don't lose track of who and where they are so some prompts may look like:
 
 ``` bash
 [prismo@timeroom: /home/prismo] $
 ```
 
-but for brevity, examples here will just use `$` and sometimes maybe `#` as the
+but for brevity, examples here will use just `$` and sometimes maybe `#` as the
 shell prompt.
 
 ## Getting Help
@@ -209,9 +220,9 @@ around the filesystem.
 | `cd`    | change directory | Change current working directory
 {:.table}
 
-### `ls`
+###  The Command `ls`
 
-The contents directory can be listed by the `ls` command.  The behavior of `ls`
+The contents of a directory can be listed by the `ls` command.  The behavior of `ls`
 can be greatly altered by the many switches available to it. The more useful
 ones include:
 
@@ -231,7 +242,7 @@ ones include:
 and are not normally listed by `ls`.
 {:.alert .alert-warning}
 
-### `cd`
+### The Command `cd`
 
 To move between directories, we use the `cd` command, which takes the **path**
 of the directory you wish to move to as an argument.
@@ -483,7 +494,8 @@ In order from left to right, the characters indicate:
   * Others have execute access (**x**) or not (**-**)
 
 The second column indicates the number of **links** that point to the file.
-Directories always have at least 2 (`.` and `..`) while files have at least one.
+Directories always have at least 2 (its name in its parent directory and `.`
+within it) while files have at least one.
 
 The third column is the owning user's name.
 
