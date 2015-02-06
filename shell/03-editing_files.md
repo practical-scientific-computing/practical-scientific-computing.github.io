@@ -73,6 +73,7 @@ Options affect the behavior of `find` as a whole. Commonly used options include:
 `-depth`
   : Process a directory's contents before the directory itself. Basically work
   from the bottom up.
+{:.dl-horizontal}
 
   Deleting directories requires they be empty, so some actions like `-delete`
   will imply `-depth` automatically.
@@ -80,6 +81,7 @@ Options affect the behavior of `find` as a whole. Commonly used options include:
 
 `-maxdepth LEVEL`
   : Descend only to at most a positive integer LEVEL below the given path.
+{:.dl-horizontal}
 
   Do not confuse `-maxdepth` with `-depth`: they have completely different
   behaviours and uses.
@@ -90,6 +92,7 @@ Options affect the behavior of `find` as a whole. Commonly used options include:
 
 `-help`
   : Print usage hints to the terminal.
+{:.dl-horizontal}
 
 * * *
 
@@ -105,6 +108,7 @@ tests include:
   : Match parts of the filename (excluding parent directories). `-name` is
   case-sensitive, whereas `-iname` is case-insensitive. The `PATTERN` can
   include **wildcard characters**.
+{:.dl-horizontal}
   
   Common wildcards include:\\
   `*` which matches any number of any characters,\\
@@ -117,6 +121,7 @@ tests include:
 `-regex REGEXP`
   : Matches the whole path against a **regular expression** also referred to as
   a **regex** or **regexp**.
+{:.dl-horizontal}
 
   Regular expressions are an extremely powerful means of matching patterns. They
   are used in many places and are worth learning, but deserve a treatment in
@@ -126,13 +131,11 @@ tests include:
 `-size n[bcwkMG]`
   : Matches files greater than n units of space. The suffixes correspond to
   blocks, bytes, words, kilobytes, Megabytes, and Gigabytes respectively.
-^
 
 `-readable`
 `-writeable`
 `-executable`
   : Matches files to which you have these access permissions.
-^
 
 `-type c`
   : Matches files of type `c` where `c` is typically one of\\
@@ -140,7 +143,6 @@ tests include:
   `f` for regular file, or\\
   `l` for symbolic link. Other types also exits.\\
   See the manual page for more info.
-^
 
 `-mtime [+-]N`
 `-ctime [+-]N`
@@ -148,7 +150,7 @@ tests include:
   : Matches against modification, creation, or access timestamps exactly N days
   ago. If N is preceded by `+` (`-`), times greater (less) than N days ago are
   matched.
-^
+{:.dl-horizontal}
 
 * * *
 
@@ -159,16 +161,16 @@ command on a matched file. By default, `find` does the action `-print` when it
 matches a file, which prints the full file name (with path starting from a
 path argument) separated by a new line. Commonly used actions include:
 
-`-exec COMMAND... [{}];`
-`-execdir COMMAND [{}];`
-  : This option executes an arbitrary `COMMAND`. The command can be anything.
-  All arguments following `-exec` are assumed to be part of the command until
-  the first occurance of `;`. The characters `{}`, if encountered in the command
-  expression, are replaced with the path to the currently examined file. If you
-  used `-execdir`, find will run the command from the subdirectory containing the
-  matched file.
+`-exec CMD {};`
+`-execdir CMD {};`
+  : This option executes an arbitrary command `CMD`. The command can be
+  anything.  All arguments following `-exec` are assumed to be part of the
+  command until the first occurance of `;`. The (optional) characters `{}`, if
+  encountered in the command expression, are replaced with the path to the
+  currently examined file. If you used `-execdir`, find will run the command
+  from the subdirectory containing the matched file.
 
-`-ok COMMAND ;`
+`-ok CMD ;`
   : Like `-exec` but prompts the user before executing the command. Very useful
   if your expression may alter the file. It cannot take `{}` to represent the
   current matched file, so use it in conjunction with `-exec` as needed for
@@ -198,17 +200,16 @@ operators, in decending order of precedence, are:
 
 `( EXPR )`
   : Groups an expression together.
-^
 
 `! EXPR`
 `-not EXPR`
   : Negates the expression.
-^
 
 `EXPR1 EXPR2`
 `EXPR1 -a EXPR2`
 `EXPR1 -and EXPR2`
   : Combines the two expressions with the logical conjunction "and".
+{:.dl-horizontal}
   
 By default, if two expressions are given without an operator joining them, the
 operator `-and` is assumed.
@@ -217,22 +218,21 @@ operator `-and` is assumed.
 `EXPR1 -o EXPR2`
 `EXPR1 -or EXPR2`
   : Combines the two adjacent expressions with the logical disjunction "or".
-^
 
 `EXPR1 , EXPR2`
   : Processes both expressions, but discards the value of EXPR1 and uses the
   value of EXPR2. This is used in creative cases to search for multiple types of
   files in one traversal of the filesystem.
-^
+{:.dl-horizontal}
 
 **Be mindful of the <kbd>Spaces</kbd> surrounding everything!** Each of the
-expression elements is technically an argument. As said earlier, all arguments
-must be separated by a space. This includes `(` and `)`
+expression elements is technically a command argument. As said earlier, all
+arguments must be separated by a space. This includes `(` and `)`
 {:.alert .alert-warning}
 
 Many shells treat the characters `*[]{}()?$` amongst others as special
 operators. To prevent your shell from altering any input to `find`, **wrap
-expressions in quotations** as necessary.
+expressions in quotations** as necessary. If in doubt, use quotes.
 {:.alert .alert-warning}
 
 * * *
@@ -368,22 +368,19 @@ you are looking for. A few of the most useful ones include:
   : Prefix the line number where the match occurs in the output.
 
 `-A NUM`
-`--after-context=NUM`
-  : Print NUM lines following a match. Useful if you are looking for an unknown
-  expression near a known expression.
+  : "After context". Print NUM lines following a match.
+  Useful if you are looking for an unknown expression near a known expression.
 
 `-B NUM`
-`--before-context=NUM`
-  : Print NUM lines preceeding a match.
+  : "Before context". Print NUM lines preceeding a match.
 
 `-C NUM`
-`--context=NUM`
-  : Print NUM lines preceeding and following a match.
+  : "Context". Print NUM lines both preceeding and following a match.
 
 `-d ACTION`
-`--directories=ACTION`
-  : Controls how `grep` behaves when it encounters a directory. Default is
-  'read', but can be 'skip' or 'recurse' as well.
+  : Directory action. Controls how `grep` behaves when it encounters a
+  directory. Default is 'read', but can be 'skip' or 'recurse' as well.
+{:.dl-horizontal}
 
 ## Reading Files
 
@@ -618,15 +615,20 @@ We are not going to learn ViM in this tutorial.
 
 So why mention it?
 
-Long, long ago in the before-time, there was `ed`, the **ed**itor. But `ed` 
-was awful and was replaced by `ex`, the **ex**tended editor. And then CRT
-monitors replaced teletypewriters, and `ex` was given a **vi**sual mode
-which came to be called `vi`. `vi` lives on today as the *de facto* standard
-Unix editor. "ViM" stands for "**Vi** i**m**proved" and adds a great deal of
-features beyond what `vi` was originally designed for. Because of the long
-history between `vi` and Unix, there is a great possibility that you may one day
-find yourself suddenly in a `vi` session. When that happens, if you have not
-been exposed to `vi`, nothing will quell your panic.
+Long, long ago in the before-time, there was `ed`, the **ed**itor. But `ed` was
+awful and was replaced by `ex`, the **ex**tended editor. And then CRT monitors
+replaced teletypewriters, and `ex` was given a **vi**sual mode which came to be
+called `vi`. `vi` lives on today as the *de facto* standard Unix editor and is
+available on virtually all Unix-like systems. However, `vi` is an extremely
+minimal editor. Yet the nature of how it works is very appealing so it was
+improved into a full-featured editor `vim` or the "**vi** i**m**proved" editor.
+`vim` adds a great many features beyond what `vi` was originally designed
+for.
+
+As you spend more and more time working in a terminal, and because of the long
+historical relationship between `vi` and Unix, there is a good chance that you
+may one day find yourself suddenly in a `vi` session. When that happens, if you
+have not been exposed to `vi`, nothing will quell your panic.
 
 > 
 > You press the keys with no effect,\\
@@ -649,10 +651,10 @@ and `vim` will be in normal mode. Here, the keys <kbd>h</kbd>, <kbd>j</kbd>,
 and right respectively. Essentially every key *does something* in normal mode.
 Key combinations do even more things. 
 
-One must be careful about hitting random keys in `vi`'s normal mode. For
-instance hitting <kbd>ggdG</kbd> will appear to erase the whole document. It
-does the same thing as <kbd><kbd>Ctrl-a</kbd> <kbd>Ctrl-v</kbd></kbd> would in GUI text
-editor.
+One must be careful about hitting random keys in `vi`/`vim`'s normal mode. For
+instance the key sequence <kbd>ggdG</kbd> will appear to erase the whole
+document. It does the same thing as <kbd><kbd>Ctrl-a</kbd>
+<kbd>Ctrl-v</kbd></kbd> would in GUI text editor.
 {:.alert .alert-warning}
 
 Pressing <kbd>u</kbd> in normal mode will undo the last change. `vim` keeps a
@@ -662,21 +664,52 @@ lengthy default undo history.
 `vi` keeps only one operation in its undo history. Don't mess up!
 {:.alert .alert-danger}
 
-To actually enter text, you need to switch modes into insert mode. This can be
-done many ways. Pressing <kbd>i</kbd> is the ordinary way to enter insert mode
-where the cursor currently is. Other options are to press <kbd>a</kbd> to append
-text immediately after the cursor, or <kbd>I</kbd> to insert text at the
-beginning of a line, or <kbd>A</kbd> to insert text at the end of the line, or
-<kbd>o</kbd> to insert text on a new line below the current one, or so on and so
-forth.
+To actually enter text, you need to switch modes to insert mode. This can be
+done many ways. From normal mode, you can start editing text in insert mody by pressing:
+
+<kbd>i</kbd>
+  : To insert text where the cursor cursor currently is. This is the ordinary way to enter insert mode.
+  
+<kbd>a</kbd> 
+  : Enter insert mode to append text immediately after the cursor.
+
+<kbd>I</kbd>
+  : Enter insert mode to insert text at the beginning of the current line
+
+<kbd>A</kbd>
+  : Enter insert mode to append text at the end of the line
+
+<kbd>o</kbd>
+  : To open a new line below the cursor and insert text there.
+
+...
+  : So on and so forth
+{:.dl-horizontal}
+  
+There are thousands of keybindings that do specific things. When you learn
+to use them, you can edit text faster and easier than you ever have before but
+you can see how these editors are not for the faint of heart.
 
 Pressing <kbd>Esc</kbd> will return you from insert mode back to normal mode. In
 normal mode, you can also issue commands to the editor from a command line mode.
-To enter command mode, press <kbd>:</kbd>. The commands you need to know are
-`:q` to quit. If there are unsaved changes and you wish to quit without saving,
-you must issue the command `:q!`. To save (write) any changes, issue the command
-`:w`. If the file does not exist, you must issue the command `:w FILENAME`. And
-lastly, to save and exit, you can issue the command `:wq`.
+To enter command mode, press <kbd>:</kbd>. Once in command mode, a `:` appears
+at the bottom of the editor. Typing will write out the command after the `:` and
+pressing <kbd>Enter</kbd> will issue the command.
+
+The commands you need to know are:
+
+`:q`
+  : Quits the editor. If there are unsaved changes and
+you wish to quit without saving, you must issue the command `:q!`.
+
+`:w`
+ : Saves (writes) any changes to the file. If creating a new document with no
+ file yet, you must issue the command `:w FILENAME`.
+{:.dl-horizontal}
+ 
+Commands can be chained together. For instance, the command `:wq` will save the
+file and then quit the editor.
+{:.alert .alert-info}
 
 This is the bare minimum you need to know if you ever find yourself
 spontaneously in a `vi` session editing some crucial file.
