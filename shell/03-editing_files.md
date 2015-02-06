@@ -429,8 +429,6 @@ The authors of GNU software often have terrible senses of humor. In this case
 naming the program `less` because `less` is 'more' while `more` is 'less'.
 {:.alert .alert-info}
 
-#### `less`
-
 If you've looked at a man page, the output was probably dumped into `less`,
 which takes up the whole terminal screen.
 
@@ -487,11 +485,213 @@ There are many keyboard short-cuts in `less`. Some of the most useful are:
 
 ## Editing Files
 
-### Editors 
+Editing text is done properly using a dedicated text editor. There are many
+available for use in a terminal, and we'll look at the basics of the most
+commonly available.
 
-#### Nano
+### Nano
 
-#### Vim
+The default terminal text editor on Ubuntu-based flavors of GNU/Linux is a
+program called `nano` (a recursive acronym for "**n**ano is **ano**ther editor).
 
-#### Emacs
+Nano is easy to learn and simple to use. Nano is good for those who are new to
+terminal text editors because of both its simplicity as well as its on-screen help
+mode which is enabled by default and gives hints about how to use it.
+
+Nano is invoked by calling:
+
+``` nohighlight
+$ nano [OPTIONS] [[+LINE,COLUMN] FILE]...
+```
+
+![nano](media/nano.png)
+
+At the bottom of the program are the help mode hints. The symbol `^` indicates
+the <kbd>Ctrl</kbd> key. So pressing <kbd><kbd>Ctrl</kbd> <kbd>g</kbd></kbd>
+will bring up an on-screen help menu. Keyboard shortcuts with `M-` indicate the
+'meta' key which is typically <kbd>Alt</kbd>.
+
+<kbd>Ctrl G</kbd>
+  : Display the help text
+
+<kbd>Ctrl X</kbd>
+  : Close the current file buffer / Exit from nano
+
+<kbd>Ctrl O</kbd>
+  : Write the current file to disk
+
+<kbd>Ctrl J</kbd>
+  : Justify the current paragraph
+
+<kbd>Ctrl W</kbd>
+  : Search for a string or a regular expression
+
+<kbd>Ctrl Y</kbd>
+  : Go to previous screen
+
+<kbd>Ctrl V</kbd>
+  : Go to next screen
+
+<kbd>Ctrl K</kbd>
+  : Cut the current line and store it in the cutbuffer
+
+<kbd>Ctrl U</kbd>
+  : Uncut from the cutbuffer into the current line
+
+<kbd>Ctrl C</kbd>
+  : Display the position of the cursor
+
+<kbd>Ctrl T</kbd>
+  : Invoke the spell checker, if available
+
+<kbd>Alt \</kbd>
+  : Go to the first line of the file
+
+<kbd>Alt /</kbd>
+  : Go to the last line of the file
+
+<kbd>Ctrl \_</kbd>
+  : Go to line and column number
+
+<kbd>Ctrl \\</kbd>
+  : Replace a string or a regular expression
+
+<kbd>Ctrl ^</kbd>
+  : Mark text at the cursor position
+
+<kbd>Alt W</kbd>
+  : Repeat last search
+
+<kbd>Alt ^</kbd>
+  : Copy the current line and store it in the cutbuffer
+
+<kbd>Alt }</kbd>
+  : Indent the current line
+
+<kbd>Alt {</kbd>
+  : Unindent the current line
+
+<kbd>Ctrl Space</kbd>
+  : Go forward one word
+
+<kbd>Alt Space</kbd>
+  : Go back one word
+{:.dl-horizontal}
+
+Lines that are longer than the width of the terminal are, by default, allowed to
+go off the screen. When this happens, a `$` symbol is shown at the edge of the
+line where it continues off-screen.
+
+Nano has a soft-wrap mode that will wrap lines on screen, but not put hard
+carraige returns in the lines. It also has a hard-wrap mode where long lines
+will be broken up into new lines. Be careful about which wrapping mode you are
+in, especially when editing programs, scripts, and configuration files.
+{:.alert .alert-warning}
+
+Nano is a safe choice for quickly editing a file in a terminal, but its
+simplicity and heavy use of <kbd>Ctrl</kbd> in editing operations makes it hard
+to use for any serious writing, especially programming. A better alternative is
+to use a more fully featured editor with a more comfortable interface. If you
+are working with files on a local machine, then a GUI-based text editor like
+Sublime Text, Gedit, Textmate, Kate, Notepad++ may be a better choice.
+
+If you must do lots of serious editing in a terminal (for example, you do a lot
+of work on a remote cluster on the other side of the world where your experiment
+resides over a crummy trans-pacific network connection), then it may be worth
+the time investment to learn to use an adept terminal-mode editor like ViM.
+
+### Vi and ViM
+
+ViM is a super-powerful terminal-friendly extensible modal text editor.
+
+![vim](media/vim.png)
+
+Once mastered, ViM allows an author to do mind-boggling text-editing operations
+at lightning speed using [minimal keystrokes](http://www.vimgolf.com/). The key
+phrase here is "once mastered". Someone who has used ViM daily for 10 years will
+still be learning about new features, tricks, and techniques. It has a steep
+learning curve to begin to use effectively. It requires you to unlearn many
+paradigms of text editing before you can *really get it*. However, many people
+who adopt it find themselves wondering how they ever got along without it.
+
+We are not going to learn ViM in this tutorial.
+
+So why mention it?
+
+Long, long ago in the before-time, there was `ed`, the **ed**itor. But `ed` 
+was awful and was replaced by `ex`, the **ex**tended editor. And then CRT
+monitors replaced teletypewriters, and `ex` was given a **vi**sual mode
+which came to be called `vi`. `vi` lives on today as the *de facto* standard
+Unix editor. "ViM" stands for "**Vi** i**m**proved" and adds a great deal of
+features beyond what `vi` was originally designed for. Because of the long
+history between `vi` and Unix, there is a great possibility that you may one day
+find yourself suddenly in a `vi` session. When that happens, if you have not
+been exposed to `vi`, nothing will quell your panic.
+
+> 
+> You press the keys with no effect,\\
+> Your mode is not correct.\\
+> The screen blurs, your fingers shake;\\
+> You forgot to press escape.\\
+> Can't insert, can't delete,\\
+> Cursor keys won't repeat.\\
+> You try to quit, but can't leave,\\
+> An extra "bang" is all you need.\\
+> \\
+>   -- Chuck Musciano, *Addicted To vi*
+>
+
+`vi` and it's younger cousin `vim` are *modal editors*. These editors can be put
+into a number of **modes** within which keypresses do specific actions. The two
+most important modes are **normal mode** and **insert mode**. Upon startup `vi`
+and `vim` will be in normal mode. Here, the keys <kbd>h</kbd>, <kbd>j</kbd>,
+<kbd>k</kbd>, and <kbd>l</kbd> can be used to move the cursor left, down, up,
+and right respectively. Essentially every key *does something* in normal mode.
+Key combinations do even more things. 
+
+One must be careful about hitting random keys in `vi`'s normal mode. For
+instance hitting <kbd>ggdG</kbd> will appear to erase the whole document. It
+does the same thing as <kbd><kbd>Ctrl-a</kbd> <kbd>Ctrl-v</kbd></kbd> would in GUI text
+editor.
+{:.alert .alert-warning}
+
+Pressing <kbd>u</kbd> in normal mode will undo the last change. `vim` keeps a
+lengthy default undo history.
+{:.alert .alert-info}
+
+`vi` keeps only one operation in its undo history. Don't mess up!
+{:.alert .alert-danger}
+
+To actually enter text, you need to switch modes into insert mode. This can be
+done many ways. Pressing <kbd>i</kbd> is the ordinary way to enter insert mode
+where the cursor currently is. Other options are to press <kbd>a</kbd> to append
+text immediately after the cursor, or <kbd>I</kbd> to insert text at the
+beginning of a line, or <kbd>A</kbd> to insert text at the end of the line, or
+<kbd>o</kbd> to insert text on a new line below the current one, or so on and so
+forth.
+
+Pressing <kbd>Esc</kbd> will return you from insert mode back to normal mode. In
+normal mode, you can also issue commands to the editor from a command line mode.
+To enter command mode, press <kbd>:</kbd>. The commands you need to know are
+`:q` to quit. If there are unsaved changes and you wish to quit without saving,
+you must issue the command `:q!`. To save (write) any changes, issue the command
+`:w`. If the file does not exist, you must issue the command `:w FILENAME`. And
+lastly, to save and exit, you can issue the command `:wq`.
+
+This is the bare minimum you need to know if you ever find yourself
+spontaneously in a `vi` session editing some crucial file.
+{:.alert .alert-info}
+
+For the record, this entire tutorial page was written in ViM, which is _by far_
+the author's favorite editor for everything between plain text and programming.
+It takes a few weeks of learning to become modestly proficient and a few years
+to master, but if you spend much of your day writing documents or code, the
+effort put into learning ViM is absolutely worth it. Oh, and it does
+find-and-replace operations using regular expressions.
+
+{::comment}
+### Emacs
+
+I do not know enough about emacs to write anything about it.
+{:/comment}
 
