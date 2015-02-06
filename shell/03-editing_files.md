@@ -73,6 +73,7 @@ Options affect the behavior of `find` as a whole. Commonly used options include:
 `-depth`
   : Process a directory's contents before the directory itself. Basically work
   from the bottom up.
+{:.dl-horizontal}
 
   Deleting directories requires they be empty, so some actions like `-delete`
   will imply `-depth` automatically.
@@ -80,6 +81,7 @@ Options affect the behavior of `find` as a whole. Commonly used options include:
 
 `-maxdepth LEVEL`
   : Descend only to at most a positive integer LEVEL below the given path.
+{:.dl-horizontal}
 
   Do not confuse `-maxdepth` with `-depth`: they have completely different
   behaviours and uses.
@@ -90,6 +92,7 @@ Options affect the behavior of `find` as a whole. Commonly used options include:
 
 `-help`
   : Print usage hints to the terminal.
+{:.dl-horizontal}
 
 * * *
 
@@ -105,6 +108,7 @@ tests include:
   : Match parts of the filename (excluding parent directories). `-name` is
   case-sensitive, whereas `-iname` is case-insensitive. The `PATTERN` can
   include **wildcard characters**.
+{:.dl-horizontal}
   
   Common wildcards include:\\
   `*` which matches any number of any characters,\\
@@ -117,6 +121,7 @@ tests include:
 `-regex REGEXP`
   : Matches the whole path against a **regular expression** also referred to as
   a **regex** or **regexp**.
+{:.dl-horizontal}
 
   Regular expressions are an extremely powerful means of matching patterns. They
   are used in many places and are worth learning, but deserve a treatment in
@@ -126,13 +131,11 @@ tests include:
 `-size n[bcwkMG]`
   : Matches files greater than n units of space. The suffixes correspond to
   blocks, bytes, words, kilobytes, Megabytes, and Gigabytes respectively.
-^
 
 `-readable`
 `-writeable`
 `-executable`
   : Matches files to which you have these access permissions.
-^
 
 `-type c`
   : Matches files of type `c` where `c` is typically one of\\
@@ -140,7 +143,6 @@ tests include:
   `f` for regular file, or\\
   `l` for symbolic link. Other types also exits.\\
   See the manual page for more info.
-^
 
 `-mtime [+-]N`
 `-ctime [+-]N`
@@ -148,7 +150,7 @@ tests include:
   : Matches against modification, creation, or access timestamps exactly N days
   ago. If N is preceded by `+` (`-`), times greater (less) than N days ago are
   matched.
-^
+{:.dl-horizontal}
 
 * * *
 
@@ -159,16 +161,16 @@ command on a matched file. By default, `find` does the action `-print` when it
 matches a file, which prints the full file name (with path starting from a
 path argument) separated by a new line. Commonly used actions include:
 
-`-exec COMMAND... [{}];`
-`-execdir COMMAND [{}];`
-  : This option executes an arbitrary `COMMAND`. The command can be anything.
-  All arguments following `-exec` are assumed to be part of the command until
-  the first occurance of `;`. The characters `{}`, if encountered in the command
-  expression, are replaced with the path to the currently examined file. If you
-  used `-execdir`, find will run the command from the subdirectory containing the
-  matched file.
+`-exec CMD {};`
+`-execdir CMD {};`
+  : This option executes an arbitrary command `CMD`. The command can be
+  anything.  All arguments following `-exec` are assumed to be part of the
+  command until the first occurance of `;`. The (optional) characters `{}`, if
+  encountered in the command expression, are replaced with the path to the
+  currently examined file. If you used `-execdir`, find will run the command
+  from the subdirectory containing the matched file.
 
-`-ok COMMAND ;`
+`-ok CMD ;`
   : Like `-exec` but prompts the user before executing the command. Very useful
   if your expression may alter the file. It cannot take `{}` to represent the
   current matched file, so use it in conjunction with `-exec` as needed for
@@ -198,17 +200,16 @@ operators, in decending order of precedence, are:
 
 `( EXPR )`
   : Groups an expression together.
-^
 
 `! EXPR`
 `-not EXPR`
   : Negates the expression.
-^
 
 `EXPR1 EXPR2`
 `EXPR1 -a EXPR2`
 `EXPR1 -and EXPR2`
   : Combines the two expressions with the logical conjunction "and".
+{:.dl-horizontal}
   
 By default, if two expressions are given without an operator joining them, the
 operator `-and` is assumed.
@@ -217,22 +218,21 @@ operator `-and` is assumed.
 `EXPR1 -o EXPR2`
 `EXPR1 -or EXPR2`
   : Combines the two adjacent expressions with the logical disjunction "or".
-^
 
 `EXPR1 , EXPR2`
   : Processes both expressions, but discards the value of EXPR1 and uses the
   value of EXPR2. This is used in creative cases to search for multiple types of
   files in one traversal of the filesystem.
-^
+{:.dl-horizontal}
 
 **Be mindful of the <kbd>Spaces</kbd> surrounding everything!** Each of the
-expression elements is technically an argument. As said earlier, all arguments
-must be separated by a space. This includes `(` and `)`
+expression elements is technically a command argument. As said earlier, all
+arguments must be separated by a space. This includes `(` and `)`
 {:.alert .alert-warning}
 
 Many shells treat the characters `*[]{}()?$` amongst others as special
 operators. To prevent your shell from altering any input to `find`, **wrap
-expressions in quotations** as necessary.
+expressions in quotations** as necessary. If in doubt, use quotes.
 {:.alert .alert-warning}
 
 * * *
@@ -368,22 +368,19 @@ you are looking for. A few of the most useful ones include:
   : Prefix the line number where the match occurs in the output.
 
 `-A NUM`
-`--after-context=NUM`
-  : Print NUM lines following a match. Useful if you are looking for an unknown
-  expression near a known expression.
+  : "After context". Print NUM lines following a match.
+  Useful if you are looking for an unknown expression near a known expression.
 
 `-B NUM`
-`--before-context=NUM`
-  : Print NUM lines preceeding a match.
+  : "Before context". Print NUM lines preceeding a match.
 
 `-C NUM`
-`--context=NUM`
-  : Print NUM lines preceeding and following a match.
+  : "Context". Print NUM lines both preceeding and following a match.
 
 `-d ACTION`
-`--directories=ACTION`
-  : Controls how `grep` behaves when it encounters a directory. Default is
-  'read', but can be 'skip' or 'recurse' as well.
+  : Directory action. Controls how `grep` behaves when it encounters a
+  directory. Default is 'read', but can be 'skip' or 'recurse' as well.
+{:.dl-horizontal}
 
 ## Reading Files
 
