@@ -618,15 +618,20 @@ We are not going to learn ViM in this tutorial.
 
 So why mention it?
 
-Long, long ago in the before-time, there was `ed`, the **ed**itor. But `ed` 
-was awful and was replaced by `ex`, the **ex**tended editor. And then CRT
-monitors replaced teletypewriters, and `ex` was given a **vi**sual mode
-which came to be called `vi`. `vi` lives on today as the *de facto* standard
-Unix editor. "ViM" stands for "**Vi** i**m**proved" and adds a great deal of
-features beyond what `vi` was originally designed for. Because of the long
-history between `vi` and Unix, there is a great possibility that you may one day
-find yourself suddenly in a `vi` session. When that happens, if you have not
-been exposed to `vi`, nothing will quell your panic.
+Long, long ago in the before-time, there was `ed`, the **ed**itor. But `ed` was
+awful and was replaced by `ex`, the **ex**tended editor. And then CRT monitors
+replaced teletypewriters, and `ex` was given a **vi**sual mode which came to be
+called `vi`. `vi` lives on today as the *de facto* standard Unix editor and is
+available on virtually all Unix-like systems. However, `vi` is an extremely
+minimal editor. Yet the nature of how it works is very appealing so it was
+improved into a full-featured editor `vim` or the "**vi** i**m**proved" editor.
+`vim` adds a great many features beyond what `vi` was originally designed
+for.
+
+As you spend more and more time working in a terminal, and because of the long
+historical relationship between `vi` and Unix, there is a good chance that you
+may one day find yourself suddenly in a `vi` session. When that happens, if you
+have not been exposed to `vi`, nothing will quell your panic.
 
 > 
 > You press the keys with no effect,\\
@@ -649,10 +654,10 @@ and `vim` will be in normal mode. Here, the keys <kbd>h</kbd>, <kbd>j</kbd>,
 and right respectively. Essentially every key *does something* in normal mode.
 Key combinations do even more things. 
 
-One must be careful about hitting random keys in `vi`'s normal mode. For
-instance hitting <kbd>ggdG</kbd> will appear to erase the whole document. It
-does the same thing as <kbd><kbd>Ctrl-a</kbd> <kbd>Ctrl-v</kbd></kbd> would in GUI text
-editor.
+One must be careful about hitting random keys in `vi`/`vim`'s normal mode. For
+instance the key sequence <kbd>ggdG</kbd> will appear to erase the whole
+document. It does the same thing as <kbd><kbd>Ctrl-a</kbd>
+<kbd>Ctrl-v</kbd></kbd> would in GUI text editor.
 {:.alert .alert-warning}
 
 Pressing <kbd>u</kbd> in normal mode will undo the last change. `vim` keeps a
@@ -662,21 +667,52 @@ lengthy default undo history.
 `vi` keeps only one operation in its undo history. Don't mess up!
 {:.alert .alert-danger}
 
-To actually enter text, you need to switch modes into insert mode. This can be
-done many ways. Pressing <kbd>i</kbd> is the ordinary way to enter insert mode
-where the cursor currently is. Other options are to press <kbd>a</kbd> to append
-text immediately after the cursor, or <kbd>I</kbd> to insert text at the
-beginning of a line, or <kbd>A</kbd> to insert text at the end of the line, or
-<kbd>o</kbd> to insert text on a new line below the current one, or so on and so
-forth.
+To actually enter text, you need to switch modes to insert mode. This can be
+done many ways. From normal mode, you can start editing text in insert mody by pressing:
+
+<kbd>i</kbd>
+  : To insert text where the cursor cursor currently is. This is the ordinary way to enter insert mode.
+  
+<kbd>a</kbd> 
+  : Enter insert mode to append text immediately after the cursor.
+
+<kbd>I</kbd>
+  : Enter insert mode to insert text at the beginning of the current line
+
+<kbd>A</kbd>
+  : Enter insert mode to append text at the end of the line
+
+<kbd>o</kbd>
+  : To open a new line below the cursor and insert text there.
+
+...
+  : So on and so forth
+{:.dl-horizontal}
+  
+There are thousands of keybindings that do specific things. When you learn
+to use them, you can edit text faster and easier than you ever have before but
+you can see how these editors are not for the faint of heart.
 
 Pressing <kbd>Esc</kbd> will return you from insert mode back to normal mode. In
 normal mode, you can also issue commands to the editor from a command line mode.
-To enter command mode, press <kbd>:</kbd>. The commands you need to know are
-`:q` to quit. If there are unsaved changes and you wish to quit without saving,
-you must issue the command `:q!`. To save (write) any changes, issue the command
-`:w`. If the file does not exist, you must issue the command `:w FILENAME`. And
-lastly, to save and exit, you can issue the command `:wq`.
+To enter command mode, press <kbd>:</kbd>. Once in command mode, a `:` appears
+at the bottom of the editor. Typing will write out the command after the `:` and
+pressing <kbd>Enter</kbd> will issue the command.
+
+The commands you need to know are:
+
+`:q`
+  : Quits the editor. If there are unsaved changes and
+you wish to quit without saving, you must issue the command `:q!`.
+
+`:w`
+ : Saves (writes) any changes to the file. If creating a new document with no
+ file yet, you must issue the command `:w FILENAME`.
+{:.dl-horizontal}
+ 
+Commands can be chained together. For instance, the command `:wq` will save the
+file and then quit the editor.
+{:.alert .alert-info}
 
 This is the bare minimum you need to know if you ever find yourself
 spontaneously in a `vi` session editing some crucial file.
