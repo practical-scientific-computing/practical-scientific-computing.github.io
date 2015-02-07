@@ -8,7 +8,7 @@ type: tutorial
 
 # Basic Shell Commands
 
-Upon firing up a terminal emulator, it will start some flavor of textual
+Upon firing up a terminal emulator, it will start some flavor of text
 command-line-interface (**cli**) called a **shell**. There are many
 different shells available including but not limited to:
 
@@ -180,7 +180,7 @@ called a **pager**.
 $ man whoami
 ```
 
-![man page](media/man.png)
+![manpage](media/man.png)
 
 The manual pages tend to be complete and will tell you everything you could want
 to know, but they can sometimes be daunting. To sort out all this mess, 
@@ -232,11 +232,11 @@ ones include:
   * `-t` sort by modification time
   * `-S` sort by file size.
   * `-X` alphabetically by extension
-  * `--group-directories-first` sort directoris before files
+  * `--group-directories-first` sort directories before files
 
  Here is what the output of `ls` looks like on a typical system:
 
-![using ls](media/ls.png)
+![ls](media/ls.png)
 
 **Hidden files.** On UNIX-like systems, files starting with a period `.` are considered 'hidden'
 and are not normally listed by `ls`.
@@ -444,9 +444,78 @@ you must use `rm`'s 'force' and 'recursive' switches `rm -rf PATH`.
 shell commands.
 {:.alert .alert-danger}
 
+
+### A Note On Filenames
+
+Filenames can be between 1 and 255 characters in length and use any 8-bit
+character except `/` which denotes directory separation.
+
+It is most convenient to use only the characters `A-Z`,`a-z`,`0-9`,`.`,`_`, and
+`-` whenever possible. This is because shells interperet many symbols as
+instructions. For instance, we've already seen that the shell looks for
+
+  * ` ` (<kbd>Space</kbd>) as an argument separator
+  * `;` as a command separator
+  * sequences starting with `-` as command switches
+  * `~` as your home directory.
+
+Shells generally treat characters in the set 
+
+``` nohighlight
+`!@#$%&*()+=[]{}|\;‘“<>/?
+```
+ 
+as special characters. To use any of these in a filename, the character must be
+**escaped** or marked in a way that the shell knows it is not to treat it as a
+shell instruction. To escape a character, you put a `\` in front of it. So to
+use a file named `Research Paper - first draft (prl).pdf` in a command,
+you would need to escape all the parentheses and <kbd>Spaces</kbd>:
+
+``` nohighlight
+$ touch Research\ Paper\ -\ first\ draft\ \(prl\).pdf
+```
+
+Of course no one wants to type that out. So you can alternatively wrap the
+filename in quotations: the shell will know the characters in the name are not
+to be interpereted as shell functions:
+
+``` nohighlight
+$ touch "Research Paper - first draft (prl).pdf"
+```
+
+The need to escape special characters in filenames applies to all functions.
+{:.alert .alert-warning}
+
+Not escaping the characters would cause a number of errors:
+`touch` would try to make files named `Research`, `Paper`, `first`, `draft` and 
+update the timestamp on the last working directory `-`, but ultimately fail when
+it encounters the parentheses.
+{:.alert .alert-danger}
+
+A better practice for naming files is to use shell-safe names that do not
+require escaping like `research_paper-prl_draft_01.pdf` whenever possible, even
+when using a graphical user interface (GUI) as such a name has almost universal
+cross-compatibility between systems.
+{:.alert .alert-info}
+
+Even though the character `-` is considered shell-safe, it can cause problems
+especially if it is the first character in the filename because the shell will
+think it is a switch. To access a file named like this, we must write out the
+file's path:
+
+```nohighlight
+$ mv -bad_name better_name
+mv: invalid option -- 'a'
+Try 'mv --help' for more information.
+$ mv ./-bad_name better_name
+```
+
+Never start a filename with `-`. Doing so will only lead to heartbreak.
+{:.alert .alert-warning}
+
 ## File Permissions
 
-Unix-like systems are what we call *multi-user* environments. As such, they
+Unix-like systems are *multi-user environments*. As such, they
 attach attributes, called **permissions**, to every file (including directories)
 that control access to that file.
 
@@ -463,7 +532,7 @@ We can inpect what permissions a file has by looking at the long-form output of
 `ls -l`:
 
 
-``` bash
+``` nohighlight
 $ ls -l
 total 0
 drwxr-x--- 2 prismo cosmowl     40 Feb  2 01:26 limited
@@ -584,3 +653,18 @@ chown [OPTION]... [OWNER][:[GROUP]] FILE...
 chown [OPTION]... --reference=RFILE FILE...
 ```
 You must have write permission to change file ownership.
+
+
+### Changing You Password
+
+To change your login password, issue the command 
+
+```nohighlight
+$ passwd
+```
+
+`passwd` will prompt you for your current password and then your new password
+twice. If something goes wrong in the process, your password will not be
+changed. Normal users (ie, not superusers or adminstrators) can only change
+their own passwords. In most cases, changing your password to a weak one will be
+rejected and a reason given.
