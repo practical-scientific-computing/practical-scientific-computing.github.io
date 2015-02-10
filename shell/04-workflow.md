@@ -9,9 +9,9 @@ type: tutorial
 In Unix-like environments, programs are designed with specialized functions that can be stitched together to perform some meaningful task. This idea of carring-out complex tasks by combining simple components is pervasive in Unix. Doug McIlroy, the inventor of Unix pipelining, summed up this philosophy best: "Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface."[1]
 
 To accomodate this building-block approach, each program in a Unix-like system has the following properties:
-  * A channel for receiving input, known as standard input (*stdin*)
-  * A channel for sending output, known as standard output (*stdout*)
-  * A channel for error messages and diagnostics, known as standard error (*stderr*)
+    * A channel for receiving input, known as standard input (*stdin*)
+    * A channel for sending output, known as standard output (*stdout*)
+    * A channel for error messages and diagnostics, known as standard error (*stderr*)
 
 Together, these are known as the *standard streams*. When you run a program on the shell, you can think of the standard input as being the keyboard, and the stdout and stderr as the terminal window.
 
