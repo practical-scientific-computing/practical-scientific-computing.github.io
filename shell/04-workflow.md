@@ -51,6 +51,7 @@ Hello World
 ```
 
 Though it appears a bit convoluted, we could extend this example further by writing out filtered output to another new file:
+
 ```console
 $ uniq < hello > hello_filtered
 $ cat hello_filtered
