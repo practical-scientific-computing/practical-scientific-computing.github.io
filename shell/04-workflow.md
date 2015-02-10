@@ -9,6 +9,7 @@ type: tutorial
 In Unix-like environments, programs are designed with specialized functions that can be stitched together to perform some meaningful task. This idea of carring-out complex tasks by combining simple components is pervasive in Unix. Doug McIlroy, the inventor of Unix pipelining, summed up this philosophy best: "Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface."[1]
 
 To accomodate this building-block approach, each program in a Unix-like system has the following properties:
+
     * A channel for receiving input, known as standard input (*stdin*)
     * A channel for sending output, known as standard output (*stdout*)
     * A channel for error messages and diagnostics, known as standard error (*stderr*)
@@ -19,7 +20,7 @@ What if you want to save the output of a program to a file instead of displaying
 
 ```console
 $ echo "Hello World"
-Hello World!
+Hello World
 $ echo "Hello World" > hello
 ```
 
@@ -27,10 +28,10 @@ Notice that echo did not produce output the second time. Why? The standard outpu
 
 ```console
 $ cat hello
-Hello world!
+Hello world
 ```
 
-Keep in mind that the `>` operator has the following very particular behavior. If you run the first example again, you will see that your `hello` file only contains *one* instance of "Hello World!". When you invoke `>`, it _will_ overwrite whatever file already exists. Instead, you may want to do is *append* by using the `>>` operator. Try it:
+Keep in mind that the `>` operator has a very particular behavior. If you run the first example again, you will see that your `hello` file only contains *one* instance of "Hello World!". When you invoke `>`, it _will_ overwrite whatever file already exists. Instead, you may want to *append* by using the `>>` operator. Try it:
 
 ```console
 $ echo "Hello World" >> hello
