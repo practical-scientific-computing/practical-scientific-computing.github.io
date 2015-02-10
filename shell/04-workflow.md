@@ -65,6 +65,7 @@ Try 'tr --help' for more information.
 ```
 
 If you try to redirect the output of cut, however, you will see that you get nothing:
+
 ```console
 $ tr > tr_output
 tr: missing operand
@@ -74,6 +75,7 @@ $
 ```
 
 It might be desirable to save the diagnostic output, which you can do by explicitly telling the shell that you want to redirect the _stderr_ using `2>`
+
 ```console
 $ tr 2> tr_output
 $ cat tr_output
