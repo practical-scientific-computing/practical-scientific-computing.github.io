@@ -91,6 +91,7 @@ Pipes
 In a previous example, we used redirection to read _stdin_ from a file and write _stdout_ to a file. However, this approach has some problems. For one, we have to write a new file every time we operate on our data, or overwrite our original data. Second, we can only run one program at a time. Unix has an elegant solution for both of these problems, known as _pipelining_. Separating a list of programs with the `|` (pipe) key connects the _stdout_ of one process to the _stdin_ of another.
 
 You can think of it visually like this:
+
 ```console
     input  
       |
