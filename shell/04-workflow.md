@@ -1,6 +1,6 @@
 ---
 title: Redirection, pipes and job control
-ordering: 5
+ordering: 4
 layout: default
 group: Shell
 type: tutorial
