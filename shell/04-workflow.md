@@ -7,7 +7,7 @@ type: tutorial
 ---
 
 Redirection, pipes and job control
------------------------------------
+====================
 
 In Unix-like environments, programs are designed with specialized functions that can be stitched together to perform some meaningful task. This idea of carring-out complex tasks by combining simple components is pervasive in Unix. Doug McIlroy, the inventor of Unix pipelining, summed up this philosophy best: "Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface."[1]
 
@@ -18,6 +18,9 @@ To accomodate this building-block approach, each program in a Unix-like system h
 * A channel for error messages and diagnostics, known as standard error (*stderr*)
 
 Together, these are known as the *standard streams*. When you run a program on the shell, you can think of the standard input as being the keyboard, and the stdout and stderr as the terminal window.
+
+Redirection
+------------
 
 What if you want to save the output of a program to a file instead of displaying it on the screen? This can be done simply by using *redirection*. The basic redirection operators are `>` for redirecting output, `>>` for appending to a file, and `<` for redirecting the input. More often than not, you will redirect output rather than input. For example, let us try taking the output of the `echo` command and saving it to a file.
 
