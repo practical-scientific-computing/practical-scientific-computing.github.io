@@ -191,6 +191,8 @@ screen -r
 
 What happened? The task you were performing is still running on the remote host, but your computer detatched, and so did the screen session you had. See the usefulness?
 
+Before we move forward, type `exit()` into the python window. This will exit.
+
 Now there are some other options that you can add. Let's say you wanted to name your screen session. You can do
 
 
