@@ -297,8 +297,8 @@ grep [OPTIONS] PATTERN [FILE...]
 ```
 
 `grep` searchs all given FILEs for the given PATTERN. The pattern type and
-output can be customized through various options. If no file is given, grep will
-search standard input.
+output can be customized through various options. If no file is given, `grep`
+will search standard input.
 
 `grep` expects a regex. As said before, the details of writing a regular
 expression are beyond the scope of this tutorial, but we'll show you some
@@ -415,7 +415,7 @@ $ cat /etc/passwd /etc/group
 ### Pagers and `less`
 
 The best way to actually read a text file in the terminal is to use a **pager**.
-A pager allows one to view and move through a text file 'one page at a time'.
+A pager allows one to view and move through a text stream 'one page at a time'.
 One of the earliest pagers was a program called `more` that allowed a user to
 step forward (and only forward) through a long stream of text lines. This
 limitation makes using `more` to read through a text stream cumbersome. Thus
@@ -451,11 +451,11 @@ There are many keyboard short-cuts in `less`. Some of the most useful are:
   : Quits `less` and returns you to the terminal prompt.
 
 <kbd>g</kbd>
-  : Takes you to the top of the document, or, if a number N is typed before pressing
-  <kbd>g</kbd>, takes you to the Nth line of the document.
+  : Goes to the top of the document, or, if a number N is typed before pressing
+  <kbd>g</kbd>, goes to the Nth line of the document.
 
 <kbd>G</kbd>
-  : Takes you to the end of the document.
+  : Go to the end of the document.
 
 <kbd>Space</kbd>
   : Scrolls down one page at a time.
@@ -489,7 +489,9 @@ commonly available.
 ### Nano
 
 The default terminal text editor on Ubuntu-based flavors of GNU/Linux is a
-program called `nano` (a recursive acronym for "**n**ano is **ano**ther editor).
+program called `nano` (a 
+[recursive acronym](https://en.wikipedia.org/wiki/Recursive_acronym)
+for "**n**ano is **ano**ther editor).
 
 Nano is easy to learn and simple to use. Nano is good for those who are new to
 terminal text editors because of both its simplicity as well as its on-screen help
@@ -654,7 +656,7 @@ Key combinations do even more things.
 One must be careful about hitting random keys in `vi`/`vim`'s normal mode. For
 instance the key sequence <kbd>ggdG</kbd> will appear to erase the whole
 document. It does the same thing as <kbd><kbd>Ctrl-a</kbd>
-<kbd>Ctrl-v</kbd></kbd> would in GUI text editor.
+<kbd>Ctrl-v</kbd></kbd> would in a GUI text editor.
 {:.alert .alert-warning}
 
 Pressing <kbd>u</kbd> in normal mode will undo the last change. `vim` keeps a
