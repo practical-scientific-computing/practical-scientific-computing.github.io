@@ -1,10 +1,13 @@
 ---
-title: Redirection, pipelining and job control
+title: Redirection, pipes and job control
 ordering: 5
 layout: default
 group: Shell
 type: tutorial
 ---
+
+Redirection, pipes and job control
+-----------------------------------
 
 In Unix-like environments, programs are designed with specialized functions that can be stitched together to perform some meaningful task. This idea of carring-out complex tasks by combining simple components is pervasive in Unix. Doug McIlroy, the inventor of Unix pipelining, summed up this philosophy best: "Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface."[1]
 
@@ -88,7 +91,7 @@ Try 'tr --help' for more information.
 Pipes
 ------
 
-In a previous example, we used redirection to read _stdin_ from a file and write _stdout_ to a file. However, this approach has some problems. For one, we have to write a new file every time we operate on our data, or overwrite our original data. Second, we can only run one program at a time. Unix has an elegant solution for both of these problems, known as _pipelining_. Separating a list of programs with the `|` (pipe) key connects the _stdout_ of one process to the _stdin_ of another.
+In a previous example, we used redirection to read _stdin_ from a file and write _stdout_ to a file. However, this approach has some limitations. For one, we have to write a new file every time we operate on our data, or overwrite our original data. Second, we can only run one program at a time. Unix has an elegant solution for both of these problems, known as _pipelining_. Separating a list of programs with the `|` (pipe) key connects the _stdout_ of one process to the _stdin_ of another.
 
 You can think of it visually like this:
 
@@ -148,9 +151,9 @@ You can also combine redirection and pipes. Try taking the previous example and 
 Basic job control
 -----------
 
-The shell also provides powerful shortcuts and utilities for canceling, suspending, and resuming processes. In Unix-like systems, all programs understand _signals_, which are a simple way to tell a process that it is supposed to do something. You can imagine them as being like traffic signals. 
+Suppose you have a very long-running simulation or analysis, and you would like it to run for many hours or days. Using job control, you can ensure that your program stays running even if you get disconnected from the remote server. Our "simulation" will use the venerable `sleep` program.
 
-Suppose you have a very long running sleep process:
+The shell provides powerful shortcuts and utilities for canceling, suspending, and resuming processes. In Unix-like systems, all programs understand _signals_, which are a simple way to tell a process that it is supposed to do something. You can imagine them as being like traffic signals. For example, a 10000s run of our "simulation":
 
 ```console
 $ sleep 10000
