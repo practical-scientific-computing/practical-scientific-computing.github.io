@@ -31,7 +31,7 @@ $ cat hello
 Hello world
 ```
 
-Keep in mind that the `>` operator has a very particular behavior. If you run the first example again, you will see that your `hello` file only contains *one* instance of "Hello World!". When you invoke `>`, it _will_ overwrite whatever file already exists. Instead, you may want to *append* by using the `>>` operator. Try it:
+Keep in mind that the `>` operator has a very particular behavior. If you run the first example again, you will see that your `hello` file only contains *one* instance of "Hello World". When you invoke `>`, it *will* overwrite whatever file already exists. Instead, you may want to *append* by using the `>>` operator. Try it:
 
 ```console
 $ echo "Hello World" >> hello
@@ -85,19 +85,101 @@ tr: missing operand
 Try 'tr --help' for more information.
 ```
 
-Obviously this all very pedagogical. In the "real world", ...
+Pipes
+------
 
+In a previous example, we used redirection to read _stdin_ from a file and write _stdout_ to a file. However, this approach has some problems. For one, we have to write a new file every time we operate on our data, or overwrite our original data. Second, we can only run one program at a time. Unix has an elegant solution for both of these problems, known as _pipelining_. Separating a list of programs with the `|` (pipe) key connects the _stdout_ of one process to the _stdin_ of another.
 
-
-
+You can think of it visually like this:
 ```console
-                                                             ____________
-                     ____________                           |            | --> ...
-                    |            |  --> standard output --> | program #2 |
-standard input -->  | program #1 |                          |____________| --> ...
-                    |____________|  --> standard error
+    input  
+      |
+      |
+ _____V_____
+|           |
+| program 1 |---> stderr 1
+|___________|
+      |
+(pipe)| 
+      | stdout 1
+ _____V______
+|           |
+| program 2 |---> stderr 2
+|___________|
+      |
+(pipe)| 
+      | stdout 2
+ _____V______
+|           |
+| program 3 |---> stderr 3
+|___________|
+      |
+(pipe)|
+      V
+ final output
 ```
 
+Suppose we take "Hello World" from before and we want to turn it into a comma separated list of values. We can use the `tr` (translate) program to do this:
+
+```console
+$ echo "Hello World" > hello
+$ tr ' ' ',' hello
+Hello,World
+```
+
+Or we can skip the intermediary file and use a pipe: 
+
+```console
+$ echo "Hello World" | tr ' ' ','
+Hello,World
+```
+
+And, for purely pedagogical reasons, we also want to reverse the line:
+
+```console
+$ echo "Hello World" | tr ' ' ',' | rev
+dlroW,olleH
+```
+
+You can also combine redirection and pipes. Try taking the previous example and redirecting the output to a file named `hello_reversed`.
+
+
+Basic job control
+-----------
+
+The shell also provides powerful shortcuts and utilities for canceling, suspending, and resuming processes. In Unix-like systems, all programs understand _signals_, which are a simple way to tell a process that it is supposed to do something. You can imagine them as being like traffic signals. 
+
+Suppose you have a very long running sleep process:
+
+```console
+$ sleep 10000
+```
+
+How would you exit early from this? An easy way is to simply use `CTRL-C`, which sends the _kill_ signal to the program. The kill signal tells the process to end immediately and return control of the shell back to the user. Similarly, you can pause a process with the `CTRL-Z` (suspend) signal. 
+
+```console
+$ sleep 10000
+^Z
+[1]+  Stopped                 sleep 10000
+$
+```
+
+Once the process is stopped, you can resume it by simply typing `fg`, and it will pick up where it left off. 
+
+You may find that you have started a long-running job in your terminal session, but have to disconnect from the shell for some reason (such as closing your laptop, leaving a shared computer, etc). Unfortunately, suspending the job (`CTRL-Z`) will not alone be effective here for reasons beyond this material. Happily, there`s a recipe to rescue such jobs:
+
+* First, stop the job with `CTRL-Z` and get its job number ([1] in the previous example). 
+* Next, send it to the "background" with the `bg` command.
+* Finally, use the `disown` command with a percentage sign followed by the job number to disconnect the job from your shell.
+
+```console
+$ sleep 10000
+^Z
+[1]+  Stopped                 sleep 10000
+$ bg 
+[1]+ sleep 10000 &
+$ disown %1
+```
 
 
 [1] Peter H. Salus. A Quarter-Century of Unix. Addison-Wesley. 1994. ISBN 0-201-54777-5
