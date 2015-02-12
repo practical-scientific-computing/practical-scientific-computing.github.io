@@ -193,6 +193,14 @@ What happened? The task you were performing is still running on the remote host,
 
 Before we move forward, type `exit()` into the python window. This will exit.
 
+To detatch your screen, say
+
+```
+Ctrl-a d
+```
+
+The dash means to hold them at the same time. 
+
 Now there are some other options that you can add. Let's say you wanted to name your screen session. You can do
 
 
@@ -200,13 +208,14 @@ Now there are some other options that you can add. Let's say you wanted to name 
 screen -S mySession
 ```
 
-Now you're back in a screen session. To detatch your screen, say
+
+Now, we have two active sessions running. To see them, first detatch the current session,
 
 ```
 Ctrl-a d
 ```
 
-The dash means to hold them at the same time. Now, we have two active sessions running. To see them, type
+then type
 
 ```
 screen -ls
@@ -226,7 +235,7 @@ If you wanted to name the screen session that doesn't have a name, you can recon
 ```
 screen -r 3591
 ```
-where 3591 corresponds to the number in the list `screen -ls`. Now, in this screen, say
+where 3591 corresponds to the number in the list `screen -ls`. Now, in this screen session, say
 
 ```
 Ctrl-a : sessionname session2
