@@ -76,6 +76,20 @@ scp some_user@some_comp:~/mydata/data.txt ./
 
 This will copy the data `data.txt` to your current directory.
 
+Let's try this ourselves. [Here is a sample file TestData.txt](/shell/media/TestData.txt). Download this to your current computer.
+
+Now, find where you downloaded the file on your computer, and go to that folder in the shell.
+
+Next, type the following:
+
+```
+scp TestData.txt your_user@your_host:~/
+```
+(NB change `your_user` to your user name, and `your_host` to the host)
+
+We are copying the file `TestData.txt` from your computer that you are currently working on to the Unix account you are working on.
+This will prompt you for the password. Go ahead and enter it. Now, go to your home folder on your Unix account. Do you see the file?
+
 If you have many files which you'd like to copy over, all with similar names, i.e. `data1.txt`,`data2.txt`, etc, then you can use the wildcard `*` to aid you.
 
 ```
@@ -117,6 +131,7 @@ So, in order to transfer the same file `data.txt` from the above source, you can
 ```
 rsync some_user@some_comp:~/mydata/data.txt ./
 ```
+Try copying the same data as above with `rsync` now.
 
 There are a host of other options which you can use to help speed things up.
 
