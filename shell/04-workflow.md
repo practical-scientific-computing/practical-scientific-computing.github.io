@@ -175,9 +175,9 @@ Once the process is stopped, you can resume it by simply typing `fg`, and it wil
 
 You may find that you have started a long-running job in your terminal session, but have to disconnect from the shell for some reason (such as closing your laptop, leaving a shared computer, etc). Unfortunately, suspending the job (`CTRL-Z`) will not alone be effective here for reasons beyond this material. Happily, there`s a recipe to rescue such jobs:
 
-* First, stop the job with `CTRL-Z` and get its job number ([1] in the previous example). 
+* First, stop the job with `CTRL-Z` and get its job number (`[1]` in the previous example). 
 * Next, send it to the "background" with the `bg` command.
-* Finally, use the `disown` command with a percentage sign followed by the job number to disconnect the job from your shell.
+* Finally, use the `disown` command with a percentage sign followed by the job number to disassociate the job from your shell.
 
 ```console
 $ sleep 10000
