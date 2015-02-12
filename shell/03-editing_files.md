@@ -1,6 +1,6 @@
 ---
 title: Text Files
-ordering: 2
+ordering: 3
 layout: default
 group: Shell
 type: tutorial
