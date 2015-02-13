@@ -3,6 +3,7 @@ title: Regular Expressions
 layout: default
 group: Shell
 type: advanced
+published: false
 ---
 
 # Regular Expressions
