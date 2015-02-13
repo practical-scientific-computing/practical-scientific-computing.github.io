@@ -17,4 +17,5 @@ Lets fetch a file from the matplotlib python examples
 curl -o http://matplotlib.org/examples/animation/basic_example.py
 ```
 
-Note that the option `-o` is needed to get this command to work correctly.
+Note that the option `-o` is needed to save the file to your system. 
+There are many other commands which are supported by LibcURL, all of which can be found in the man pages (`man curl`).
