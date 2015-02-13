@@ -56,7 +56,7 @@ in [the find tutorial](shell/adv-find).
 Print all regular files named exactly ".bashrc" within and below `~`:
 
 ``` nohighlight
-$ find ~ -type f -name bash.rc 
+$ find ~ -type f -name .bashrc 
 ```
 
 Print all regular files ending in "rc" within `~` and below:
