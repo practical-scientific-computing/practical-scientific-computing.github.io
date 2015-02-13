@@ -76,6 +76,20 @@ scp some_user@some_comp:~/mydata/data.txt ./
 
 This will copy the data `data.txt` to your current directory.
 
+Let's try this ourselves. [Here is a sample file TestData.txt](/shell/media/TestData.txt). Download this to your current computer.
+
+Now, find where you downloaded the file on your computer, and go to that folder in the shell.
+
+Next, type the following:
+
+```
+scp TestData.txt your_user@your_host:~/
+```
+(NB change `your_user` to your user name, and `your_host` to the host)
+
+We are copying the file `TestData.txt` from your computer that you are currently working on to the Unix account you are working on.
+This will prompt you for the password. Go ahead and enter it. Now, go to your home folder on your Unix account. Do you see the file?
+
 If you have many files which you'd like to copy over, all with similar names, i.e. `data1.txt`,`data2.txt`, etc, then you can use the wildcard `*` to aid you.
 
 ```
@@ -117,6 +131,7 @@ So, in order to transfer the same file `data.txt` from the above source, you can
 ```
 rsync some_user@some_comp:~/mydata/data.txt ./
 ```
+Try copying the same data as above with `rsync` now.
 
 There are a host of other options which you can use to help speed things up.
 
@@ -176,6 +191,16 @@ screen -r
 
 What happened? The task you were performing is still running on the remote host, but your computer detatched, and so did the screen session you had. See the usefulness?
 
+Before we move forward, type `exit()` into the python window. This will exit.
+
+To detatch your screen, say
+
+```
+Ctrl-a d
+```
+
+The dash means to hold them at the same time. 
+
 Now there are some other options that you can add. Let's say you wanted to name your screen session. You can do
 
 
@@ -183,13 +208,14 @@ Now there are some other options that you can add. Let's say you wanted to name 
 screen -S mySession
 ```
 
-Now you're back in a screen session. To detatch your screen, say
+
+Now, we have two active sessions running. To see them, first detatch the current session,
 
 ```
 Ctrl-a d
 ```
 
-The dash means to hold them at the same time. Now, we have two active sessions running. To see them, type
+then type
 
 ```
 screen -ls
@@ -209,7 +235,7 @@ If you wanted to name the screen session that doesn't have a name, you can recon
 ```
 screen -r 3591
 ```
-where 3591 corresponds to the number in the list `screen -ls`. Now, in this screen, say
+where 3591 corresponds to the number in the list `screen -ls`. Now, in this screen session, say
 
 ```
 Ctrl-a : sessionname session2
