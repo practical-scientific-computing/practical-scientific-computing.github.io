@@ -149,6 +149,7 @@ So, in order to copy the whole `mydata` directory, as above, but have some more 
 ```
 rsync -zvha some_user@some_comp:~/mydata/ ~/some/other/path/
 ```
+
 # screen
 
 Screen is probably the most useful command that you could possibly have with remote connections. Let's see why:
