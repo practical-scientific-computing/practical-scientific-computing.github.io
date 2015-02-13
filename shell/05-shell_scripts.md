@@ -71,3 +71,69 @@ echo "Goodbye!"
 Again, check the file permissions and run. What have we done? We've effectively redirected the output of `pwd` to mydir by creating a subshell with `$()`
 
 # Loops.
+
+Loops are your friend. There are three different types of loops.
+
+| Loop type      | Meaning
+|----------------|---------------------------------------------------------
+| for            | iterate over a series
+| while          | while some condition is true, do stuff, exit when false
+| until          | same as while, but evaluates while control is false
+{:.table}
+
+## `for` Loop example
+
+Edit a new file to contain the following:
+
+```
+#!/bin/bash                                                                                                                                                                       
+mydir=$(pwd)
+echo $mydir "contains"
+for file in $( ls $mydir ); do
+    echo $file
+done
+```
+
+Note, the spacing is important! Let's break this script down. 
+
+First, we set `mydir` to be the current directory. Next, we print out the variable to check it. 
+Then, for each file in the directory `mydir`, do print the file. Finally, we're done.
+
+Remember that any variable must have the `$` before it.
+
+## `while` Loop example
+
+NB: Go see [this site](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-7.html) for the following examples. 
+
+Edit another new file, and have it have the lines:
+
+```
+#!/bin/bash 
+COUNTER=0
+while [  $COUNTER -lt 10 ]; do
+    echo The counter is $COUNTER
+    let COUNTER=COUNTER+1 
+done
+```
+
+Breaking this down, we set the variable `COUNTER`, and while the counter is less than 10, we
+print out the counter value. Finally we let the counter iterate its value by one. Something we
+haven't seen before is the `[ ]` construction. This allows for a conditional test, i.e. less than.
+
+
+## `until` Loop example
+
+The final example we will cover is the `until` construction. Edit this file and say:
+
+```
+COUNTER=20
+until [  $COUNTER -lt 10 ]; do
+    echo COUNTER $COUNTER
+    let COUNTER-=1
+done
+```
+
+Now go ahead and run it. Again, let's break down the logic.
+
+The first step is to set `COUNTER` to 20. Next, we say that until `COUNTER` is less that 10, do
+print out counter. Then we finally let the counter subtract 1 from its value.
