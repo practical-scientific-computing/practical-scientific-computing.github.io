@@ -1060,7 +1060,9 @@ Be aware of this in case you use a malformed out-of-range index. Python lets you
 do a lot of things that would be considered "dangerous" in other languages (like
 C/C++). The philosophy behind this is summed up as:
 
-    We are all consenting adults here.
+>
+> We are all consenting adults here.
+>
 
 Basically, the language authors trust that you'll be careful in exchange for
 having the freedom to do what you want.
