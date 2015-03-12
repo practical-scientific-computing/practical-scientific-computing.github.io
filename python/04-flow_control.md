@@ -31,7 +31,7 @@ Generally, we can compare two objects using one of the **comparison operators**.
 | `<=`           | Tests Less-than-or-equal      | a&nbsp;<=&nbsp;b     | True if a is not greater than b; else False             |
 {:.table .table-condensed}
 
-Comparisons are by definition binary operations meaning you need two objects two
+Comparisons are by definition binary operations meaning you need two objects to
 compare. Usually, the objects need to be of the same (or logically similar) types.
 The result of a comparison is a boolean, ie, true or false.  How this works is
 pretty straight-forward for numeric objects.
@@ -58,7 +58,7 @@ Python doesn't care if you mix floats and integers: they're both numerics and
 Python knows how to handle that up to a certain exception:
 
 ```Python
-0.2 = 2/5
+0.2 == 2/5
 1.0 == 1
 0.999999999999999 == 1
 0.99999999999999999 == 1 # Huh?
