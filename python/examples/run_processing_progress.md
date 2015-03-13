@@ -95,4 +95,12 @@ title("Progress on Processing of Data",bbox={'facecolor':'0.8', 'pad':5})
 show()
 
 ```
+
+Now, copy this to the file progress.py, and simply run on the command line.
+
+```
+$ python progress.py
+```
+You should produce the following plot (reminder, not the same numbers).
+
 ![Progress Output](/python/media/progress_output.png "Progress Output")
