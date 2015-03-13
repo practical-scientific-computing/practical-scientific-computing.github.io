@@ -7,4 +7,4 @@ type: example
 
 # Flow Control and Functions Notebooks
 
-[http://www.physics.uc.edu/~belhormp/files/flow_and_functions.ipynb](Flow Control and Functions Examples)
+[Flow Control and Functions Examples](http://www.physics.uc.edu/~belhormp/files/flow_and_functions.ipynb)
