@@ -43,7 +43,7 @@ total2process = [2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120, 2121, 2122, 212
 
 runs2touch = []
 
-#10 random runs
+#30 random runs
 current_dir = os.getcwd()
 for i in range(30):
     runs2touch.append(random.choice(total2process))
