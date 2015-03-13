@@ -457,7 +457,7 @@ numbers = [1, 2, 3, 4, 5, 6]
 for number in numbers:
     if not (number % 2):
        continue
-    print(i, 'squared is', i**2)
+    print(number, 'squared is', number**2)
 ```
 
 We can use the `break` statement to skip all further iterations of the smallest
@@ -477,10 +477,10 @@ normally. If a loop ends due to `break`, the `else` clause is skipped.
 
 
 ```Python
-primes_count = 0
+primes = []
 prime_candidate = 2
 # Find the first 10 prime numbers.
-while primes_count < 10:
+while len(primes) < 10:
     for factor in range(2, prime_candidate):
         if prime_candidate % factor == 0:
             # Non-prime
@@ -488,6 +488,8 @@ while primes_count < 10:
     else:
         # Loop didn't hit 'break'
         print(prime_candidate, 'is prime')
+        primes.append(prime_candidate)
+    prime_candidate += 1
 ```
 
 ## Summary
