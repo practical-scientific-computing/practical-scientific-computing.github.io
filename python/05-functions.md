@@ -9,7 +9,7 @@ published: true
 
 # Functions
 
-[python/media/functions.ipynb](Click Here) to download this tutorial
+[Click Here](python/media/functions.ipynb) to download this tutorial
 as an iPython Notebook.
 
 Functions are constructs that encapsulate a set of instructions to be reused

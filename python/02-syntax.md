@@ -8,7 +8,7 @@ type: tutorial
 
 # Basic Python Syntax
 
-[python/media/basic_tutorial.ipynb](Click Here) to download this tutorial
+[Click Here](python/media/basic_tutorial.ipynb) to download this tutorial
 as an iPython Notebook.
 
 Normally, each line in Python code forms a single instructional statement.

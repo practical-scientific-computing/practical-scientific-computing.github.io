@@ -8,7 +8,7 @@ type: tutorial
 
 # Flow Control and Logic
 
-[python/media/flow_and_logic.ipynb](Click Here) to download this tutorial
+[Click Here](python/media/flow_and_logic.ipynb) to download this tutorial
 as an iPython Notebook.
 
 We've seen some basic math operations and data structures in Python, but to
