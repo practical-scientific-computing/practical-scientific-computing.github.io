@@ -9,6 +9,9 @@ published: true
 
 # Functions
 
+[python/media/functions.ipynb](Click Here) to download this tutorial
+as an iPython Notebook.
+
 Functions are constructs that encapsulate a set of instructions to be reused
 throughout a program. Like mathematical functions, Python functions take any
 number of input arguments and return a single ouput. Functions always return an
@@ -66,13 +69,19 @@ normalize([1, 2, 3]), normalize((1, 2, 3))
 
 
 
-There are a few of things to note here. First, Python knows how to do fractional
+There are a few things to note here. First, Python knows how to do fractional
 exponentiation. Second, unlike C/C++, we do not need to tell Python what type of
 object the function is to return nor do we need to express the argument types.
 You can pass anything into `normalize` and as long as that object supports the
 operations done on it, the function will work. Python is what we call a **duck-
-typed** language, from the expression "If it looks like a duck, swims like a
-duck, and quacks like a duck, then it probably is a duck".
+typed** language, from the expression 
+
+>
+> If it looks like a duck,
+> swims like a duck,
+> and quacks like a duck,
+> then it probably is a duck".
+>
 
 ## Duck Typing
 
@@ -84,7 +93,7 @@ the plus side, duck-typed code is:
  * **polymorphic** by default - one function can handle multiple input types
 without any more work on the author's part
 
-The downsides to duck-typing are that Passing the wrong object can give two
+The downsides to duck-typing are that passing the wrong object can give two
 kinds of runtime errors:
 
   * The function CAN process the input, but the output is meaningless
@@ -165,14 +174,14 @@ basic good practices when writing functions. Some key points to writing good
 functions are:
 
   * Function naming
-  * Code Documentation
-  * Clear Exits
+  * Code documentation
+  * Simple exits and branching
   * Code reuse (Use many small functions opposed to few large ones)
 
 ### Function Naming
 
 We've mentioned that function names should be made of full words, separated if
-necessary by underscores. Because functions DO something, the name should often
+necessary by underscores. Because functions *do* something, the name should often
 be a verb. Likewise, argument names should usually be clear nouns that express
 what the argument should be. Let's see the normalize example again:
 
@@ -190,10 +199,14 @@ def nml(v):
     return o
 ```
 
-Using crummy names for things forces the author to read the code carefully to
-make sure they understand what's happening. This is bad for duck typed languages
-because it hides the intended purpose of the function. We need to know what a
+Without variables with semantic meaning, it is more difficult for an author
+to be sure they are using a function as it was intended. This is bad for duck
+typed languages without knowing the intended purpose of the code, one can wind
+up with a program that runs to completion but produces nonsensical results like
+the imaginary vector normalization example. We need to know what a
 function is *intended* to do in order to prevent passing bad arguments to it.
+
+Furthermore, semantic code is self-documenting to some degree.
 
 ### Code Documentation
 

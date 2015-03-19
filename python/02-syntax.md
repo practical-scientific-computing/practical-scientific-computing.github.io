@@ -8,6 +8,9 @@ type: tutorial
 
 # Basic Python Syntax
 
+[python/media/basic_tutorial.ipynb](Click Here) to download this tutorial
+as an iPython Notebook.
+
 Normally, each line in Python code forms a single instructional statement.
 Using *number literals* and the built-in operators `+` (add) and `-` (subtract),
 one can construct a simple instruction:

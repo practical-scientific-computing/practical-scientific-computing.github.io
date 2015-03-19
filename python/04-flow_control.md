@@ -8,6 +8,9 @@ type: tutorial
 
 # Flow Control and Logic
 
+[python/media/flow_and_logic.ipynb](Click Here) to download this tutorial
+as an iPython Notebook.
+
 We've seen some basic math operations and data structures in Python, but to
 really tie it altogether, we will need a few more things. The first is how to
 make comparisons between two objects. The second is how to change the behavior
