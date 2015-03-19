@@ -1,0 +1,56 @@
+#!/bin/env python3
+'''A module to produce a pie chart showing the progress of data processing based
+on the number of files in a directory.
+'''
+
+import os
+
+def check_progress(data_dir, unprocessed_tag='Raw', processed_tag='Run'):
+    '''Generates a pie chart showing the progress of processing data in a
+    directory.
+
+    check_progress finds all files in data_dir and computes the ratio of the
+    number of files with 'Run' in their filename to those without.
+    '''
+    filenames = os.listdir(data_dir)
+    processed_runs = len([i for i in filenames if processed_tag in i])
+    number_of_data_files = len([i for i in filenames if unprocessed_tag in i])
+
+    percent_completed = processed_runs / number_of_data_files
+    percent_remaining = 1 - percent_completed
+
+    import matplotlib
+    import matplotlib.pyplot as plt
+    matplotlib.rcParams.update({'font.size': 16})
+    plt.figure(1, figsize=(6, 6))
+    plt.axis('equal')
+    plot_properties = {
+        'labels':['Remaining', 'Completed'],
+        'autopct':'%.1f%%',
+        'startangle':90,
+        'colors':('lightcoral', 'yellowgreen'),
+    }
+    plt.pie((percent_remaining, percent_completed), **plot_properties)
+    plt.title("Processed Data")
+    plt.draw()
+    plt.show()
+
+if __name__ == '__main__':
+    from argparse import ArgumentParser
+    PARSER = ArgumentParser(
+        description='''Check data processing progress.''')
+    PARSER.add_argument(
+        'directory', metavar='DIR', type=str,
+        help='directory to check progress in.')
+    PARSER.add_argument(
+        '-p', '--processed-tag', metavar='PTAG', type=str, default='Run',
+        help='Files containing substring PTAG are assumed to be processed.')
+    PARSER.add_argument(
+        '-u', '--unprocessed-tag', metavar='UTAG', type=str, default='Raw',
+        help='Files containing substring UTAG are assumed to be unprocessed.')
+    ARGS = PARSER.parse_args()
+
+    check_progress(
+        ARGS.directory,
+        ARGS.unprocessed_tag,
+        ARGS.processed_tag)
