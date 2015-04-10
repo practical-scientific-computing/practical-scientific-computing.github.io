@@ -13,8 +13,11 @@ def check_progress(data_dir, unprocessed_tag='Raw', processed_tag='Run'):
     number of files with 'Run' in their filename to those without.
     '''
     filenames = os.listdir(data_dir)
-    processed_runs = len([i for i in filenames if processed_tag in i])
     number_of_data_files = len([i for i in filenames if unprocessed_tag in i])
+    if number_of_data_files == 0:
+        print('No data files found in {}'.format(data_dir))
+        return
+    processed_runs = len([i for i in filenames if processed_tag in i])
 
     percent_completed = processed_runs / number_of_data_files
     percent_remaining = 1 - percent_completed

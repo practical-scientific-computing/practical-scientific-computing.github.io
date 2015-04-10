@@ -73,13 +73,17 @@ def check_progress(data_dir, unprocessed_tag='Raw', processed_tag='Run'):
     # Get the directory contents.
     filenames = os.listdir(data_dir)
 
+    number_of_data_files = len([i for i in filenames if unprocessed_tag in i])
+    if number_of_data_files == 0:
+        print('No data files found in {}'.format(data_dir))
+        return
+
     # Just for fun, we can extract specific run numbers from the files
     # found in the dir, even though we don't need this info to make
     # the progress pie chart.
     processed_runs = tuple(
         extract_run_number(i) for i in filenames if processed_tag in i)
     print('Processed runs', sorted(processed_runs))
-    number_of_data_files = len([i for i in filenames if unprocessed_tag in i])
 
     # Compute the progress percentages.
     percent_completed = len(processed_runs) / number_of_data_files
